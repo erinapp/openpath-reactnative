@@ -124,9 +124,29 @@ repositories {
 
 
 dependencies {
-    //noinspection GradleDynamicVersion
+  //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-// From node_modules
+
+  // From node_modules
+
+  // Openpath Mobile Access Core SDK
+  implementation files('libs/openpath-mobile-access-core-release.aar') // Openpath Mobile Access Core SDK Dependencies
+  implementation 'com.madgag.spongycastle:core:1.54.0.0'
+  implementation 'com.madgag.spongycastle:prov:1.54.0.0'
+  implementation 'com.madgag.spongycastle:pkix:1.54.0.0'
+  implementation 'com.madgag.spongycastle:pg:1.54.0.0'
+  implementation 'at.favre.lib:bcrypt:0.9.0'
+  implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+  implementation 'com.amazonaws:aws-android-sdk-core:2.33.0'
+  implementation 'com.amazonaws:aws-android-sdk-logs:2.33.0'
+  implementation 'com.auth0.android:jwtdecode:2.0.1'
+  implementation 'com.auth0:java-jwt:3.10.3'
+  implementation 'com.google.android.gms:play-services-location:20.0.0'
+  implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+  implementation 'no.nordicsemi.android:ble:2.2.4'
+  implementation 'no.nordicsemi.android.support.v18:scanner:1.4.4'
+  implementation 'com.github.instacart.truetime-android:library:3.5'
+  annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.4.1'
 }
 
 if (isNewArchitectureEnabled()) {

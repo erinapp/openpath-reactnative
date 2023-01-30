@@ -1,0 +1,11 @@
+framework module OpenpathMobileAccessCore {
+  umbrella header "OpenpathMobileAccessCore.h"
+
+  export *
+  module * { export * }
+}
+
+module OpenpathMobileAccessCore.Swift {
+    header "OpenpathMobileAccessCore-Swift.h"
+    requires objc
+}

@@ -1,29 +1,46 @@
 # openpath-reactnative
- 
+
 ## Installation
 
-```sh
-npm install openpath-reactnative
+### On Android
+
+- Install npm package
+- Add foreground service into AndroidManifest.xml
+
+```
+<service android:name="com.openpath.mobileaccesscore.OpenpathForegroundService" android:foregroundServiceType="location" android:exported="false"/>
+<receiver android:name="com.openpath.mobileaccesscore.OpenpathBroadcastReceiver" android:enabled="true" android:exported="false">
+  <intent-filter>
+    <action android:name="android.intent.action.BOOT_COMPLETED" />
+    <category android:name="android.intent.category.DEFAULT" />
+  </intent-filter>
+  <intent-filter>
+    <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+  </intent-filter>
+</receiver>
+<receiver android:name="com.openpath.mobileaccesscore.OpenpathAlarmReceiver" android:process=":remote" android:exported="false" />
 ```
 
-## Usage
+### On iOS
 
-```js
-import { multiply } from "openpath-reactnative";
+> Note: You must using XCode 13.2.x version to be able build on iOS
 
-// ...
+- Install npm package
+- Run pod install
+- Add permissions into info.plist
 
-const result = await multiply(3, 7);
+```
+<key>UIBackgroundModes</key>
+<array>
+    <string>bluetooth-central</string>
+    <string>fetch</string>
+    <string>location</string>
+    <string>remote-notification</string>
+  </array>
 ```
 
-## Contributing
+### Example Usage
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
-
----
+You can see example usage [here](./example/src/App.tsx)
 
 Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)

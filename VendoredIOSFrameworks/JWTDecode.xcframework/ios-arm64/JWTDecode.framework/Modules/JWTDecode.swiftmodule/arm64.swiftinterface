@@ -1,0 +1,86 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name JWTDecode
+import Foundation
+@_exported import JWTDecode
+import Swift
+import _Concurrency
+@_hasMissingDesignatedInitializers @objc(A0JWT) public class _JWT : ObjectiveC.NSObject {
+  @objc public var header: [Swift.String : Any] {
+    @objc get
+  }
+  @objc public var body: [Swift.String : Any] {
+    @objc get
+  }
+  @objc public var signature: Swift.String? {
+    @objc get
+  }
+  @objc public var expiresAt: Foundation.Date? {
+    @objc get
+  }
+  @objc public var expired: Swift.Bool {
+    @objc get
+  }
+  @objc public class func decode(jwt jwtValue: Swift.String) throws -> JWTDecode._JWT
+  @objc deinit
+}
+public enum DecodeError : Foundation.LocalizedError {
+  case invalidBase64Url(Swift.String)
+  case invalidJSON(Swift.String)
+  case invalidPartCount(Swift.String, Swift.Int)
+  public var localizedDescription: Swift.String {
+    get
+  }
+}
+public protocol JWT {
+  var header: [Swift.String : Any] { get }
+  var body: [Swift.String : Any] { get }
+  var signature: Swift.String? { get }
+  var string: Swift.String { get }
+  var expiresAt: Foundation.Date? { get }
+  var issuer: Swift.String? { get }
+  var subject: Swift.String? { get }
+  var audience: [Swift.String]? { get }
+  var issuedAt: Foundation.Date? { get }
+  var notBefore: Foundation.Date? { get }
+  var identifier: Swift.String? { get }
+  var expired: Swift.Bool { get }
+}
+extension JWTDecode.JWT {
+  public func claim(name: Swift.String) -> JWTDecode.Claim
+}
+public func decode(jwt: Swift.String) throws -> JWTDecode.JWT
+public struct Claim {
+  public var rawValue: Any? {
+    get
+  }
+  public var string: Swift.String? {
+    get
+  }
+  public var boolean: Swift.Bool? {
+    get
+  }
+  public var double: Swift.Double? {
+    get
+  }
+  public var integer: Swift.Int? {
+    get
+  }
+  public var date: Foundation.Date? {
+    get
+  }
+  public var array: [Swift.String]? {
+    get
+  }
+}
+public struct IDTokenValidation {
+  public let issuer: Swift.String
+  public let audience: Swift.String
+  public init(issuer: Swift.String, audience: Swift.String)
+  public func validate(_ jwt: JWTDecode.JWT, nonce: Swift.String? = nil) -> JWTDecode.ValidationError?
+}
+public enum ValidationError : Swift.Error {
+  case invalidClaim(Swift.String)
+  case expired
+  case nonce
+}

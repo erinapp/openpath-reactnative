@@ -3,12 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E555C0D2413F4C50049A1A2 /* OpenpathReactnative.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* OpenpathReactnative.m */; };
-		F4FF95D7245B92E800C19C63 /*  OpenpathReactnative.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  OpenpathReactnative.swift */; };
+		2FFF3E292918889500ADD394 /* ObjcExceptionBridging.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E1C2918889200ADD394 /* ObjcExceptionBridging.xcframework */; };
+		2FFF3E2A2918889500ADD394 /* CryptoSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E1D2918889200ADD394 /* CryptoSwift.xcframework */; };
+		2FFF3E2B2918889500ADD394 /* MQTTClient.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E1E2918889200ADD394 /* MQTTClient.xcframework */; };
+		2FFF3E2C2918889500ADD394 /* XCGLogger.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E1F2918889200ADD394 /* XCGLogger.xcframework */; };
+		2FFF3E2D2918889500ADD394 /* JWTDecode.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E202918889200ADD394 /* JWTDecode.xcframework */; };
+		2FFF3E2E2918889500ADD394 /* BCryptSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E212918889300ADD394 /* BCryptSwift.xcframework */; };
+		2FFF3E2F2918889500ADD394 /* AWSCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E222918889300ADD394 /* AWSCore.xcframework */; };
+		2FFF3E302918889500ADD394 /* SocketRocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E232918889300ADD394 /* SocketRocket.xcframework */; };
+		2FFF3E312918889500ADD394 /* AWSLogs.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E242918889300ADD394 /* AWSLogs.xcframework */; };
+		2FFF3E322918889500ADD394 /* Reachability.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E252918889300ADD394 /* Reachability.xcframework */; };
+		2FFF3E332918889500ADD394 /* SwiftSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E262918889400ADD394 /* SwiftSocket.xcframework */; };
+		2FFF3E342918889500ADD394 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E272918889500ADD394 /* OpenSSL.xcframework */; };
+		2FFF3E352918889500ADD394 /* OpenpathMobileAccessCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFF3E282918889500ADD394 /* OpenpathMobileAccessCore.xcframework */; };
+		F4FF95D7245B92E800C19C63 /* OpenpathReactnative.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* OpenpathReactnative.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +37,19 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libOpenpathReactnative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpenpathReactnative.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FFF3E1C2918889200ADD394 /* ObjcExceptionBridging.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ObjcExceptionBridging.xcframework; sourceTree = "<group>"; };
+		2FFF3E1D2918889200ADD394 /* CryptoSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CryptoSwift.xcframework; sourceTree = "<group>"; };
+		2FFF3E1E2918889200ADD394 /* MQTTClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MQTTClient.xcframework; sourceTree = "<group>"; };
+		2FFF3E1F2918889200ADD394 /* XCGLogger.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = XCGLogger.xcframework; sourceTree = "<group>"; };
+		2FFF3E202918889200ADD394 /* JWTDecode.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JWTDecode.xcframework; sourceTree = "<group>"; };
+		2FFF3E212918889300ADD394 /* BCryptSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BCryptSwift.xcframework; sourceTree = "<group>"; };
+		2FFF3E222918889300ADD394 /* AWSCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AWSCore.xcframework; sourceTree = "<group>"; };
+		2FFF3E232918889300ADD394 /* SocketRocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SocketRocket.xcframework; sourceTree = "<group>"; };
+		2FFF3E242918889300ADD394 /* AWSLogs.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AWSLogs.xcframework; sourceTree = "<group>"; };
+		2FFF3E252918889300ADD394 /* Reachability.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Reachability.xcframework; sourceTree = "<group>"; };
+		2FFF3E262918889400ADD394 /* SwiftSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SwiftSocket.xcframework; sourceTree = "<group>"; };
+		2FFF3E272918889500ADD394 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OpenSSL.xcframework; sourceTree = "<group>"; };
+		2FFF3E282918889500ADD394 /* OpenpathMobileAccessCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OpenpathMobileAccessCore.xcframework; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* OpenpathReactnative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenpathReactnative.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* OpenpathReactnative-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenpathReactnative-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* OpenpathReactnative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenpathReactnative.swift; sourceTree = "<group>"; };
@@ -35,6 +60,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFF3E312918889500ADD394 /* AWSLogs.xcframework in Frameworks */,
+				2FFF3E302918889500ADD394 /* SocketRocket.xcframework in Frameworks */,
+				2FFF3E2A2918889500ADD394 /* CryptoSwift.xcframework in Frameworks */,
+				2FFF3E2B2918889500ADD394 /* MQTTClient.xcframework in Frameworks */,
+				2FFF3E2C2918889500ADD394 /* XCGLogger.xcframework in Frameworks */,
+				2FFF3E332918889500ADD394 /* SwiftSocket.xcframework in Frameworks */,
+				2FFF3E342918889500ADD394 /* OpenSSL.xcframework in Frameworks */,
+				2FFF3E2E2918889500ADD394 /* BCryptSwift.xcframework in Frameworks */,
+				2FFF3E322918889500ADD394 /* Reachability.xcframework in Frameworks */,
+				2FFF3E352918889500ADD394 /* OpenpathMobileAccessCore.xcframework in Frameworks */,
+				2FFF3E292918889500ADD394 /* ObjcExceptionBridging.xcframework in Frameworks */,
+				2FFF3E2D2918889500ADD394 /* JWTDecode.xcframework in Frameworks */,
+				2FFF3E2F2918889500ADD394 /* AWSCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +90,19 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				2FFF3E222918889300ADD394 /* AWSCore.xcframework */,
+				2FFF3E242918889300ADD394 /* AWSLogs.xcframework */,
+				2FFF3E212918889300ADD394 /* BCryptSwift.xcframework */,
+				2FFF3E1D2918889200ADD394 /* CryptoSwift.xcframework */,
+				2FFF3E202918889200ADD394 /* JWTDecode.xcframework */,
+				2FFF3E1E2918889200ADD394 /* MQTTClient.xcframework */,
+				2FFF3E1C2918889200ADD394 /* ObjcExceptionBridging.xcframework */,
+				2FFF3E282918889500ADD394 /* OpenpathMobileAccessCore.xcframework */,
+				2FFF3E272918889500ADD394 /* OpenSSL.xcframework */,
+				2FFF3E252918889300ADD394 /* Reachability.xcframework */,
+				2FFF3E232918889300ADD394 /* SocketRocket.xcframework */,
+				2FFF3E262918889400ADD394 /* SwiftSocket.xcframework */,
+				2FFF3E1F2918889200ADD394 /* XCGLogger.xcframework */,
 				F4FF95D6245B92E800C19C63 /* OpenpathReactnative.swift */,
 				B3E7B5891CC2AC0600A0062D /* OpenpathReactnative.m */,
 				F4FF95D5245B92E700C19C63 /* OpenpathReactnative-Bridging-Header.h */,
@@ -117,7 +168,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4FF95D7245B92E800C19C63 /* OpenpathReactnative.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* OpenpathReactnative.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,37 +272,55 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/OpenpathMobileAccessCore.framework",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = OpenpathReactnative;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OpenpathReactnative-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/OpenpathMobileAccessCore.framework",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = OpenpathReactnative;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OpenpathReactnative-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

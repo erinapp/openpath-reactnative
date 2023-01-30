@@ -1,6 +1,6 @@
 {
   "name": "openpath-reactnative",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -40,13 +40,12 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/nald-dev/openpath-reactnative",
-  "author": "nald-dev <rynvva@gmail.com> (https://github.com/nald-dev)",
+  "repository": "https://github.com/erinapp/openpath-reactnative",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nald-dev/openpath-reactnative/issues"
+    "url": "https://github.com/erinapp/openpath-reactnative/issues"
   },
-  "homepage": "https://github.com/nald-dev/openpath-reactnative#readme",
+  "homepage": "https://github.com/erinapp/openpath-reactnative#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -150,5 +149,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
   }
 }

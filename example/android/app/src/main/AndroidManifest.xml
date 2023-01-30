@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   package="com.openpathreactnativeexample">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,5 +23,20 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+
+      <service android:name="com.openpath.mobileaccesscore.OpenpathForegroundService" android:foregroundServiceType="location" android:exported="false"/>
+
+      <receiver android:name="com.openpath.mobileaccesscore.OpenpathBroadcastReceiver" android:enabled="true" android:exported="false">
+        <intent-filter>
+          <action android:name="android.intent.action.BOOT_COMPLETED" />
+          <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
+        <intent-filter>
+          <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+        </intent-filter>
+      </receiver>
+
+      <receiver android:name="com.openpath.mobileaccesscore.OpenpathAlarmReceiver" android:process=":remote" android:exported="false" />
     </application>
 </manifest>

@@ -1,0 +1,22 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios11.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BCryptSwift
+@_exported import BCryptSwift
+import Foundation
+import Swift
+import _Concurrency
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BCryptSwift : ObjectiveC.NSObject {
+  public class func generateSaltWithNumberOfRounds(_ rounds: Swift.UInt) -> Swift.String
+  public class func generateSalt() -> Swift.String
+  public class func hashPassword(_ password: Swift.String, withSalt salt: Swift.String) -> Swift.String?
+  public class func verifyPassword(_ password: Swift.String, matchesHash hash: Swift.String) -> Swift.Bool?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class BCryptSwiftRandom : ObjectiveC.NSObject {
+  public class func generateNumberBetween(_ first: Swift.Int32, _ second: Swift.Int32) -> Swift.Int32
+  public class func generateNumberSequenceBetween(_ first: Swift.Int32, _ second: Swift.Int32, ofLength length: Swift.Int, withUniqueValues unique: Swift.Bool) -> [Swift.Int32]
+  public class func isNumber(_ number: Swift.Int32, inSequence sequence: [Swift.Int32], ofLength length: Swift.Int) -> Swift.Bool
+  public class func generateRandomSignedDataOfLength(_ length: Swift.Int) -> [Swift.Int8]
+  @objc override dynamic public init()
+  @objc deinit
+}
