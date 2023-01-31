@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "test",
   "main": "lib/commonjs/index",
+  "author": "Erin Living",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
   "react-native": "src/index",
