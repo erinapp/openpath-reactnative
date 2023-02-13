@@ -73,7 +73,7 @@ export async function getMobileCredential() {
   return getMobileCredentialResponse.data.data;
 }
 
-export async function provision() {
+export async function getSetupMobileToken() {
   const getSetupMobileTokenResponse = await axios.post(
     `${BASE_URL}/orgs/${orgId}/users/${userId}/credentials/${mobileCredentialId}/generateSetupMobileToken`,
     null,
@@ -84,9 +84,10 @@ export async function provision() {
     }
   );
 
-  const setupMobileToken =
-    getSetupMobileTokenResponse.data?.data?.setupMobileToken;
+  return getSetupMobileTokenResponse.data?.data?.setupMobileToken;
+}
 
+export async function provision(setupMobileToken: string) {
   const provisionResponse = await OpenpathReactnative.openpathProvision(
     setupMobileToken
   );
