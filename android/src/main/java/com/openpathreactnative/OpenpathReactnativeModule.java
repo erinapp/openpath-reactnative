@@ -149,8 +149,10 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
     public void onInit() {
         this.isOpenpathInitialized = true;
 
-        this.currentPromise.resolve("Openpath android initialized");
-        this.currentPromise = null;
+        if (this.currentPromise != null) {
+            this.currentPromise.resolve("Openpath android initialized");
+            this.currentPromise = null;
+        }
     }
 
     @Override
@@ -158,8 +160,10 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         Gson gson = new Gson();
         String json = gson.toJson(openpathProvisionResponse);
 
-        this.currentPromise.resolve(json);
-        this.currentPromise = null;
+        if (this.currentPromise != null) {
+            this.currentPromise.resolve(json);
+            this.currentPromise = null;
+        }
     }
 
     @Override
@@ -167,8 +171,10 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         Gson gson = new Gson();
         String json = gson.toJson(openpathSwitchUserResponse);
 
-        this.currentPromise.resolve(json);
-        this.currentPromise = null;
+        if (this.currentPromise != null) {
+            this.currentPromise.resolve(json);
+            this.currentPromise = null;
+        }
     }
 
     @Override
@@ -176,8 +182,10 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         Gson gson = new Gson();
         String json = gson.toJson(openpathSyncUserResponse);
 
-        this.currentPromise.resolve(json);
-        this.currentPromise = null;
+        if (this.currentPromise != null) {
+            this.currentPromise.resolve(json);
+            this.currentPromise = null;
+        }
     }
 
     @Override
@@ -185,8 +193,10 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         Gson gson = new Gson();
         String json = gson.toJson(openpathRequestResponse);
 
-        this.currentPromise.resolve(json);
-        this.currentPromise = null;
+        if (this.currentPromise != null) {
+            this.currentPromise.resolve(json);
+            this.currentPromise = null;
+        }
     }
 
     @Override
@@ -199,8 +209,10 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         Gson gson = new Gson();
         String json = gson.toJson(arrayList);
 
-        this.currentPromise.resolve(json);
-        this.currentPromise = null;
+        if (this.currentPromise != null) {
+            this.currentPromise.resolve(json);
+            this.currentPromise = null;
+        }
     }
 
     @Override
