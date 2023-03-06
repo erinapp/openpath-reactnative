@@ -28,7 +28,9 @@ export async function init() {
   if (Platform.OS === 'ios') {
     return 'Openpath iOS is already initialized by default';
   } else {
-    const initResponse = await OpenpathReactnative.openpathInit();
+    const initResponse = await OpenpathReactnative.openpathInit().catch(
+      (e: any) => console.error(`Openpath init error : ${JSON.stringify(e)}`)
+    );
 
     return initResponse;
   }
@@ -39,30 +41,35 @@ export async function login(
   password: string,
   forMobileLogin: boolean
 ) {
-  const loginResponse = await axios.post(`${BASE_URL}/auth/login`, {
-    email,
-    password,
-    forMobileLogin,
-  });
+  const loginResponse = await axios
+    .post(`${BASE_URL}/auth/login`, {
+      email,
+      password,
+      forMobileLogin,
+    })
+    .catch((e: any) =>
+      console.error(`Openpath login error : ${JSON.stringify(e)}`)
+    );
 
-  orgId = loginResponse.data.data.tokenScopeList[0].org.id;
-  userId = loginResponse.data.data.tokenScopeList[0].user.id;
-  bearerToken = `Bearer ${loginResponse.data.data.token}`;
+  orgId = loginResponse?.data?.data?.tokenScopeList[0]?.org?.id;
+  userId = loginResponse?.data?.data?.tokenScopeList[0]?.user?.id;
+  bearerToken = `Bearer ${loginResponse?.data?.data?.token}`;
 
-  return loginResponse.data.data;
+  return loginResponse?.data?.data;
 }
 
 export async function getMobileCredential() {
-  const getMobileCredentialResponse = await axios.get(
-    `${BASE_URL}/orgs/${orgId}/users/${userId}/credentials`,
-    {
+  const getMobileCredentialResponse = await axios
+    .get(`${BASE_URL}/orgs/${orgId}/users/${userId}/credentials`, {
       headers: {
         Authorization: bearerToken!,
       },
-    }
-  );
+    })
+    .catch((e: any) =>
+      console.error(`Openpath getMobileCredential error : ${JSON.stringify(e)}`)
+    );
 
-  const mobileCredentials = getMobileCredentialResponse.data.data.filter(
+  const mobileCredentials = getMobileCredentialResponse?.data?.data?.filter(
     (item: any) => item.credentialType.modelName === 'mobile'
   );
 
@@ -70,26 +77,32 @@ export async function getMobileCredential() {
     mobileCredentialId = mobileCredentials[0].id;
   }
 
-  return getMobileCredentialResponse.data.data;
+  return getMobileCredentialResponse?.data?.data;
 }
 
 export async function getSetupMobileToken() {
-  const getSetupMobileTokenResponse = await axios.post(
-    `${BASE_URL}/orgs/${orgId}/users/${userId}/credentials/${mobileCredentialId}/generateSetupMobileToken`,
-    null,
-    {
-      headers: {
-        Authorization: bearerToken!,
-      },
-    }
-  );
+  const getSetupMobileTokenResponse = await axios
+    .post(
+      `${BASE_URL}/orgs/${orgId}/users/${userId}/credentials/${mobileCredentialId}/generateSetupMobileToken`,
+      null,
+      {
+        headers: {
+          Authorization: bearerToken!,
+        },
+      }
+    )
+    .catch((e: any) =>
+      console.error(`Openpath getSetupMobileToken error : ${JSON.stringify(e)}`)
+    );
 
-  return getSetupMobileTokenResponse.data?.data?.setupMobileToken;
+  return getSetupMobileTokenResponse?.data?.data?.setupMobileToken;
 }
 
 export async function provision(setupMobileToken: string) {
   const provisionResponse = await OpenpathReactnative.openpathProvision(
     setupMobileToken
+  ).catch((e: any) =>
+    console.error(`Openpath provision error : ${JSON.stringify(e)}`)
   );
 
   const returnedProvisionResponse =
@@ -103,6 +116,8 @@ export async function provision(setupMobileToken: string) {
 export async function switchUser(userOpal: string) {
   const switchUserResponse = await OpenpathReactnative.openpathSwitchUser(
     userOpal
+  ).catch((e: any) =>
+    console.error(`Openpath switchUser error : ${JSON.stringify(e)}`)
   );
 
   const returnedSwitchUserResponse =
@@ -114,7 +129,9 @@ export async function switchUser(userOpal: string) {
 }
 
 export async function syncUser() {
-  const syncUserResponse = await OpenpathReactnative.openpathSyncUser();
+  const syncUserResponse = await OpenpathReactnative.openpathSyncUser().catch(
+    (e: any) => console.error(`Openpath syncUser error : ${JSON.stringify(e)}`)
+  );
 
   const returnedSyncUserResponse =
     typeof syncUserResponse === 'string'
@@ -135,6 +152,8 @@ export async function unlock(
     itemId,
     requestId,
     timeoutLong
+  ).catch((e: any) =>
+    console.error(`Openpath unlock error : ${JSON.stringify(e)}`)
   );
 
   const returnedUnlockResponse =
@@ -146,7 +165,9 @@ export async function unlock(
 }
 
 export async function getErrors() {
-  const getErrorsResponse = await OpenpathReactnative.openpathGetErrors();
+  const getErrorsResponse = await OpenpathReactnative.openpathGetErrors().catch(
+    (e: any) => console.error(`Openpath getErrors error : ${JSON.stringify(e)}`)
+  );
 
   const returnedGetErrorsResponse =
     typeof getErrorsResponse === 'string'
@@ -158,14 +179,24 @@ export async function getErrors() {
 
 export async function requestAuthorization(type: string) {
   const requestAuthorizationResponse =
-    await OpenpathReactnative.openpathRequestAuthorization(type);
+    await OpenpathReactnative.openpathRequestAuthorization(type).catch(
+      (e: any) =>
+        console.error(
+          `Openpath requestAuthorization error : ${JSON.stringify(e)}`
+        )
+    );
 
   return requestAuthorizationResponse;
 }
 
 export async function getAuthorizationStatuses() {
   const getAuthorizationStatusesResponse =
-    await OpenpathReactnative.openpathGetAuthorizationStatuses();
+    await OpenpathReactnative.openpathGetAuthorizationStatuses().catch(
+      (e: any) =>
+        console.error(
+          `Openpath getAuthorizationStatuses error : ${JSON.stringify(e)}`
+        )
+    );
 
   const returnedGetAuthorizationStatusesResponse =
     typeof getAuthorizationStatusesResponse === 'string'
@@ -177,7 +208,10 @@ export async function getAuthorizationStatuses() {
 
 export async function getReadersInRange(rssiThreshold: number) {
   const getReadersInRangeResponse =
-    await OpenpathReactnative.openpathGetReadersInRange(rssiThreshold);
+    await OpenpathReactnative.openpathGetReadersInRange(rssiThreshold).catch(
+      (e: any) =>
+        console.error(`Openpath getReadersInRange error : ${JSON.stringify(e)}`)
+    );
 
   const returnedGetReadersInRangeResponse =
     typeof getReadersInRangeResponse === 'string'
@@ -189,7 +223,10 @@ export async function getReadersInRange(rssiThreshold: number) {
 
 export async function getUserApiToken(userOpal: string) {
   const getUserApiTokenResponse =
-    await OpenpathReactnative.openpathGetUserApiToken(userOpal);
+    await OpenpathReactnative.openpathGetUserApiToken(userOpal).catch(
+      (e: any) =>
+        console.error(`Openpath getUserApiToken error : ${JSON.stringify(e)}`)
+    );
 
   return getUserApiTokenResponse;
 }
@@ -204,6 +241,10 @@ export async function enableErrorNotificationsForItem(
       enabled,
       itemType,
       itemId
+    ).catch((e: any) =>
+      console.error(
+        `Openpath enableErrorNotificationForItem error : ${JSON.stringify(e)}`
+      )
     );
 
   const returnedGetReadersInRangeResponse =
