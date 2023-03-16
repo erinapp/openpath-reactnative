@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
-  s.dependency 'OpenSSL-Universal', '1.1.1100'
+  s.dependency 'OpenSSL-Universal', '1.1.180'
   s.vendored_frameworks = 'VendoredIOSFrameworks/AWSCore.xcframework','VendoredIOSFrameworks/AWSLogs.xcframework','VendoredIOSFrameworks/BCryptSwift.xcframework','VendoredIOSFrameworks/CryptoSwift.xcframework','VendoredIOSFrameworks/JWTDecode.xcframework','VendoredIOSFrameworks/MQTTClient.xcframework','VendoredIOSFrameworks/ObjcExceptionBridging.xcframework','VendoredIOSFrameworks/OpenpathMobileAccessCore.xcframework', 'VendoredIOSFrameworks/Reachability.xcframework','VendoredIOSFrameworks/SocketRocket.xcframework','VendoredIOSFrameworks/SwiftSocket.xcframework','VendoredIOSFrameworks/XCGLogger.xcframework'
 
   # Don't install the dependencies when we run `pod install` in the old architecture.
