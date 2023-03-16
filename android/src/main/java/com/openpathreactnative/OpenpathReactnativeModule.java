@@ -28,265 +28,350 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
+import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Arguments;
+
 @ReactModule(name = OpenpathReactnativeModule.NAME)
 public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implements OpenpathMobileAccessCore.OpenpathEventHandler  {
-    public static final String NAME = "OpenpathReactnative";
+  public static final String NAME = "OpenpathReactnative";
 
-    public OpenpathReactnativeModule(ReactApplicationContext reactContext) {
-        super(reactContext);
+  ReactApplicationContext reactContext;
+
+  public OpenpathReactnativeModule(ReactApplicationContext reactContext) {
+    super(reactContext);
+
+    this.reactContext = reactContext;
+  }
+
+  @Override
+  @NonNull
+  public String getName() {
+    return NAME;
+  }
+
+  // Example method
+  // See https://reactnative.dev/docs/native-modules-android
+  boolean isOpenpathInitialized = false;
+  Promise currentPromise;
+
+  @ReactMethod
+  public void openpathInit(Promise promise) {
+    this.currentPromise = promise;
+
+    OpenpathMobileAccessCore.OpenpathEventHandler openpathEventHandler = this;
+
+    Activity activity = getCurrentActivity();
+
+    activity.runOnUiThread(() -> {
+      OpenpathMobileAccessCore.getInstance().init(activity.getApplication(), openpathEventHandler);
+    });
+  }
+
+  @ReactMethod
+  public void openpathProvision(String setupMobileToken, Promise promise) {
+    if (this.isOpenpathInitialized) {
+      this.currentPromise = promise;
+
+      String APP_NAME = "Erin Living";
+      OpenpathMobileAccessCore.getInstance().provision(APP_NAME, setupMobileToken);
+    }
+  }
+
+  @ReactMethod
+  public void openpathSwitchUser(String userOpal, Promise promise) {
+    this.currentPromise = promise;
+
+    OpenpathMobileAccessCore.getInstance().switchUser(userOpal);
+  }
+
+  @ReactMethod
+  public void openpathSyncUser(Promise promise) {
+    this.currentPromise = promise;
+
+    OpenpathMobileAccessCore.getInstance().syncUser();
+  }
+
+  @ReactMethod
+  public void openpathUnlock(String itemType, int itemId, int requestId, int timeout, Promise promise) {
+    this.currentPromise = promise;
+
+    OpenpathMobileAccessCore.getInstance().unlock(itemType, itemId, requestId, timeout);
+  }
+
+  @ReactMethod
+  public void openpathGetErrors(Promise promise) {
+    ArrayList<OpenpathError> errors = OpenpathMobileAccessCore.getInstance().getErrors();
+
+    Gson gson = new Gson();
+    String json = gson.toJson(errors);
+
+    promise.resolve(json);
+  }
+
+  @ReactMethod
+  public void openpathRequestAuthorization(String type, Promise promise) {
+    Activity activity = getCurrentActivity();
+
+    OpenpathMobileAccessCore.getInstance().requestAuthorization(activity, type);
+
+    promise.resolve("Openpath android authorization request submitted with type " + type);
+  }
+
+  @ReactMethod
+  public void openpathGetAuthorizationStatuses(Promise promise) {
+    ArrayList<OpenpathAuthorizationStatus> statuses = OpenpathMobileAccessCore.getInstance().getAuthorizationStatuses();
+
+    Gson gson = new Gson();
+    String json = gson.toJson(statuses);
+
+    promise.resolve(json);
+  }
+
+  @ReactMethod
+  public void openpathGetReadersInRange(int rssiThreshold, Promise promise) {
+    ArrayList<OpenpathReader> readers = OpenpathMobileAccessCore.getInstance().getReadersInRange(rssiThreshold);
+
+    Gson gson = new Gson();
+    String json = gson.toJson(readers);
+
+    promise.resolve(json);
+  }
+
+  @ReactMethod
+  public void openpathGetUserApiToken(String userOpal, Promise promise) throws InvalidAlgorithmParameterException, UnrecoverableKeyException, NoSuchPaddingException, IllegalBlockSizeException, CertificateException, IOException, NoSuchAlgorithmException, BadPaddingException, KeyStoreException, InvalidKeyException, NoSuchProviderException {
+    String userApiToken = OpenpathMobileAccessCore.getInstance().getUserApiToken(userOpal);
+
+    promise.resolve(userApiToken);
+  }
+
+  @ReactMethod
+  public void openpathEnableErrorNotificationsForItem(boolean enabled, String itemType, int itemId, Promise promise) {
+    this.currentPromise = promise;
+
+    OpenpathMobileAccessCore.getInstance().enableErrorNotificationsForItem(enabled, itemType, itemId);
+  }
+
+  @Override
+  public void onInit() {
+    this.isOpenpathInitialized = true;
+
+    if (this.currentPromise != null) {
+      this.currentPromise.resolve("Openpath android initialized");
+      this.currentPromise = null;
     }
 
-    @Override
-    @NonNull
-    public String getName() {
-        return NAME;
+    WritableMap payload = Arguments.createMap();
+
+    payload.putString("status", "Openpath android initialized");
+
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onInit", payload);
+  }
+
+  @Override
+  public void onProvisionResponse(OpenpathProvisionResponse openpathProvisionResponse) {
+    Gson gson = new Gson();
+    String json = gson.toJson(openpathProvisionResponse);
+
+    if (this.currentPromise != null) {
+      this.currentPromise.resolve(json);
+      this.currentPromise = null;
     }
 
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onProvisionResponse", json);
+  }
 
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
-    boolean isOpenpathInitialized = false;
-    Promise currentPromise;
+  @Override
+  public void onSwitchUserResponse(OpenpathSwitchUserResponse openpathSwitchUserResponse) {
+    Gson gson = new Gson();
+    String json = gson.toJson(openpathSwitchUserResponse);
 
-    @ReactMethod
-    public void openpathInit(Promise promise) {
-        this.currentPromise = promise;
-
-        OpenpathMobileAccessCore.OpenpathEventHandler openpathEventHandler = this;
-
-        Activity activity = getCurrentActivity();
-
-        activity.runOnUiThread(() -> {
-            OpenpathMobileAccessCore.getInstance().init(activity.getApplication(), openpathEventHandler);
-        });
+    if (this.currentPromise != null) {
+      this.currentPromise.resolve(json);
+      this.currentPromise = null;
     }
 
-    @ReactMethod
-    public void openpathProvision(String setupMobileToken, Promise promise) {
-        if (this.isOpenpathInitialized) {
-            this.currentPromise = promise;
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onSwitchUserResponse", json);
+  }
 
-            String APP_NAME = "Erin Living";
-            OpenpathMobileAccessCore.getInstance().provision(APP_NAME, setupMobileToken);
-        }
+  @Override
+  public void onSyncUserResponse(OpenpathSyncUserResponse openpathSyncUserResponse) {
+    Gson gson = new Gson();
+    String json = gson.toJson(openpathSyncUserResponse);
+
+    if (this.currentPromise != null) {
+      this.currentPromise.resolve(json);
+      this.currentPromise = null;
     }
 
-    @ReactMethod
-    public void openpathSwitchUser(String userOpal, Promise promise) {
-        this.currentPromise = promise;
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onSyncUserResponse", json);
+  }
 
-        OpenpathMobileAccessCore.getInstance().switchUser(userOpal);
+  @Override
+  public void onUnlockResponse(OpenpathRequestResponse openpathRequestResponse) {
+    Gson gson = new Gson();
+    String json = gson.toJson(openpathRequestResponse);
+
+    if (this.currentPromise != null) {
+      this.currentPromise.resolve(json);
+      this.currentPromise = null;
     }
 
-    @ReactMethod
-    public void openpathSyncUser(Promise promise) {
-        this.currentPromise = promise;
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onUnlockResponse", json);
+  }
 
-        OpenpathMobileAccessCore.getInstance().syncUser();
-    }
+  @Override
+  public void onItemsSet(ArrayList<OpenpathItem> arrayList, ArrayList<OpenpathOrderingItem> arrayList1) {
+     WritableMap payload = Arguments.createMap();
 
-    @ReactMethod
-    public void openpathUnlock(String itemType, int itemId, int requestId, int timeout, Promise promise) {
-        this.currentPromise = promise;
+     Gson gsonArrayList = new Gson();
+     String jsonArrayList = gsonArrayList.toJson(arrayList);
 
-        OpenpathMobileAccessCore.getInstance().unlock(itemType, itemId, requestId, timeout);
-    }
+     Gson gsonArrayList1 = new Gson();
+     String jsonArrayList1 = gsonArrayList1.toJson(arrayList);
 
-    @ReactMethod
-    public void openpathGetErrors(Promise promise) {
-        ArrayList<OpenpathError> errors = OpenpathMobileAccessCore.getInstance().getErrors();
+     payload.putString("arrayList", jsonArrayList);
+     payload.putString("arrayList1", jsonArrayList1);
 
-        Gson gson = new Gson();
-        String json = gson.toJson(errors);
+     this.reactContext
+     .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+     .emit("onItemsSet", payload);
+  }
 
-        promise.resolve(json);
-    }
+  @Override
+  public void onItemsUpdated(ArrayList<OpenpathItem> arrayList) {
+    Gson gson = new Gson();
+    String json = gson.toJson(arrayList);
 
-    @ReactMethod
-    public void openpathRequestAuthorization(String type, Promise promise) {
-        Activity activity = getCurrentActivity();
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onItemsUpdated", json);
+  }
 
-        OpenpathMobileAccessCore.getInstance().requestAuthorization(activity, type);
+  @Override
+  public void onUnprovisionResponse(OpenpathUnprovisionResponse openpathUnprovisionResponse) {
+    Gson gson = new Gson();
+    String json = gson.toJson(openpathUnprovisionResponse);
 
-        promise.resolve("Openpath android authorization request submitted with type " + type);
-    }
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onUnprovisionResponse", json);
+  }
 
-    @ReactMethod
-    public void openpathGetAuthorizationStatuses(Promise promise) {
-        ArrayList<OpenpathAuthorizationStatus> statuses = OpenpathMobileAccessCore.getInstance().getAuthorizationStatuses();
+  @Override
+  public void onUserSettingsSet(OpenpathUserSettings openpathUserSettings) {
+    Gson gson = new Gson();
+    String json = gson.toJson(openpathUserSettings);
 
-        Gson gson = new Gson();
-        String json = gson.toJson(statuses);
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onUserSettingsSet", json);
+  }
 
-        promise.resolve(json);
-    }
+  @Override
+  public void onLocationStatusChanged(OpenpathLocationStatus openpathLocationStatus) {
+    Gson gson = new Gson();
+    String json = gson.toJson(openpathLocationStatus);
 
-    @ReactMethod
-    public void openpathGetReadersInRange(int rssiThreshold, Promise promise) {
-        ArrayList<OpenpathReader> readers = OpenpathMobileAccessCore.getInstance().getReadersInRange(rssiThreshold);
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onLocationStatusChanged", json);
+  }
 
-        Gson gson = new Gson();
-        String json = gson.toJson(readers);
+  @Override
+  public void onBluetoothStatusChanged(boolean b, boolean b1) {
+    WritableMap payload = Arguments.createMap();
 
-        promise.resolve(json);
-    }
+    payload.putBoolean("b", b);
+    payload.putBoolean("b1", b1);
 
-    @ReactMethod
-    public void openpathGetUserApiToken(String userOpal, Promise promise) throws InvalidAlgorithmParameterException, UnrecoverableKeyException, NoSuchPaddingException, IllegalBlockSizeException, CertificateException, IOException, NoSuchAlgorithmException, BadPaddingException, KeyStoreException, InvalidKeyException, NoSuchProviderException {
-        String userApiToken = OpenpathMobileAccessCore.getInstance().getUserApiToken(userOpal);
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onBluetoothStatusChanged", payload);
+  }
 
-        promise.resolve(userApiToken);
-    }
+  @Override
+  public void onInternetStatusChanged(boolean b) {
+    WritableMap payload = Arguments.createMap();
 
-    @ReactMethod
-    public void openpathEnableErrorNotificationsForItem(boolean enabled, String itemType, int itemId, Promise promise) {
-        this.currentPromise = promise;
+    payload.putBoolean("b", b);
 
-        OpenpathMobileAccessCore.getInstance().enableErrorNotificationsForItem(enabled, itemType, itemId);
-    }
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onInternetStatusChanged", payload);
+  }
 
-    @Override
-    public void onInit() {
-        this.isOpenpathInitialized = true;
+  @Override
+  public void onNotificationClicked(String s, int i) {
+    WritableMap payload = Arguments.createMap();
 
-        if (this.currentPromise != null) {
-            this.currentPromise.resolve("Openpath android initialized");
-            this.currentPromise = null;
-        }
-    }
+    payload.putString("s", s);
+    payload.putInt("i", i);
 
-    @Override
-    public void onProvisionResponse(OpenpathProvisionResponse openpathProvisionResponse) {
-        Gson gson = new Gson();
-        String json = gson.toJson(openpathProvisionResponse);
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onNotificationClicked", payload);
+  }
 
-        if (this.currentPromise != null) {
-            this.currentPromise.resolve(json);
-            this.currentPromise = null;
-        }
-    }
+  @Override
+  public void onBluetoothError(int i, String s) {
+    WritableMap payload = Arguments.createMap();
 
-    @Override
-    public void onSwitchUserResponse(OpenpathSwitchUserResponse openpathSwitchUserResponse) {
-        Gson gson = new Gson();
-        String json = gson.toJson(openpathSwitchUserResponse);
+    payload.putInt("i", i);
+    payload.putString("s", s);
 
-        if (this.currentPromise != null) {
-            this.currentPromise.resolve(json);
-            this.currentPromise = null;
-        }
-    }
+    this.reactContext
+      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+      .emit("onBluetoothError", payload);
+  }
 
-    @Override
-    public void onSyncUserResponse(OpenpathSyncUserResponse openpathSyncUserResponse) {
-        Gson gson = new Gson();
-        String json = gson.toJson(openpathSyncUserResponse);
+  @Override
+  public void onBatteryOptimizationStatusChanged(boolean b) {
 
-        if (this.currentPromise != null) {
-            this.currentPromise.resolve(json);
-            this.currentPromise = null;
-        }
-    }
+  }
 
-    @Override
-    public void onUnlockResponse(OpenpathRequestResponse openpathRequestResponse) {
-        Gson gson = new Gson();
-        String json = gson.toJson(openpathRequestResponse);
+  @Override
+  public void onFeedbackResponse(OpenpathResponse openpathResponse) {
 
-        if (this.currentPromise != null) {
-            this.currentPromise.resolve(json);
-            this.currentPromise = null;
-        }
-    }
+  }
 
-    @Override
-    public void onItemsSet(ArrayList<OpenpathItem> arrayList, ArrayList<OpenpathOrderingItem> arrayList1) {
+  @Override
+  public void onRevertResponse(OpenpathRequestResponse openpathRequestResponse) {
 
-    }
+  }
 
-    @Override
-    public void onItemsUpdated(ArrayList<OpenpathItem> arrayList) {
-        Gson gson = new Gson();
-        String json = gson.toJson(arrayList);
+  @Override
+  public void onOverrideResponse(OpenpathRequestResponse openpathRequestResponse) {
 
-        if (this.currentPromise != null) {
-            this.currentPromise.resolve(json);
-            this.currentPromise = null;
-        }
-    }
+  }
 
-    @Override
-    public void onUnprovisionResponse(OpenpathUnprovisionResponse openpathUnprovisionResponse) {
+  @Override
+  public void onTriggerLockdownPlanResponse(OpenpathRequestResponse openpathRequestResponse) {
 
-    }
+  }
 
-    @Override
-    public void onUserSettingsSet(OpenpathUserSettings openpathUserSettings) {
+  @Override
+  public void onRevertLockdownPlanResponse(OpenpathRequestResponse openpathRequestResponse) {
 
-    }
+  }
 
-    @Override
-    public void onLocationStatusChanged(OpenpathLocationStatus openpathLocationStatus) {
+  @Override
+  public void onLockdownPlansSet(ArrayList<OpenpathLockdownPlan> arrayList) {
 
-    }
+  }
 
-    @Override
-    public void onBatteryOptimizationStatusChanged(boolean b) {
+  @Override
+  public void onEvent(JSONObject jsonObject) {
 
-    }
-
-    @Override
-    public void onBluetoothStatusChanged(boolean b, boolean b1) {
-
-    }
-
-    @Override
-    public void onInternetStatusChanged(boolean b) {
-
-    }
-
-    @Override
-    public void onFeedbackResponse(OpenpathResponse openpathResponse) {
-
-    }
-
-    @Override
-    public void onRevertResponse(OpenpathRequestResponse openpathRequestResponse) {
-
-    }
-
-    @Override
-    public void onOverrideResponse(OpenpathRequestResponse openpathRequestResponse) {
-
-    }
-
-    @Override
-    public void onTriggerLockdownPlanResponse(OpenpathRequestResponse openpathRequestResponse) {
-
-    }
-
-    @Override
-    public void onRevertLockdownPlanResponse(OpenpathRequestResponse openpathRequestResponse) {
-
-    }
-
-    @Override
-    public void onNotificationClicked(String s, int i) {
-
-    }
-
-    @Override
-    public void onBluetoothError(int i, String s) {
-
-    }
-
-    @Override
-    public void onLockdownPlansSet(ArrayList<OpenpathLockdownPlan> arrayList) {
-
-    }
-
-    @Override
-    public void onEvent(JSONObject jsonObject) {
-
-    }
+  }
 }

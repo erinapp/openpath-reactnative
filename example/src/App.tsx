@@ -10,6 +10,8 @@ import {
   getAuthorizationStatuses as openpathGetAuthorizationStatuses,
   getReadersInRange as openpathGetReadersInRange,
   getUserApiToken as openpathGetUserApiToken,
+  openpathEventEmitter,
+  OPENPATH_EVENT_NAMES,
 } from 'openpath-reactnative';
 import React, { useEffect, useState } from 'react';
 import {
@@ -34,7 +36,12 @@ const App = () => {
   const [isGettingUserApiToken, setIsGettingUserApiToken] = useState(false);
 
   const startOpenpath = async () => {
+    openpathEventEmitter.addListener(OPENPATH_EVENT_NAMES.ON_INIT, (e) => {
+      console.log('From event emitter onProvisionResponse ios', e);
+    });
+
     await openpathInit();
+
     await openpathLogin('account@email.com', 'yourPassword', true);
     await openpathGetMobileCredential();
   };
@@ -50,7 +57,7 @@ const App = () => {
   const provision = async () => {
     setIsProvisioning(true);
 
-    const response = await openpathProvision();
+    const response = await openpathProvision('');
 
     setIsProvisioning(false);
 
