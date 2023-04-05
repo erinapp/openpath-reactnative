@@ -130,7 +130,7 @@ dependencies {
   // From node_modules
 
   // Openpath Mobile Access Core SDK
-  implementation files('libs/openpath-mobile-access-core-release.aar') // Openpath Mobile Access Core SDK Dependencies
+  compileOnly fileTree(dir: "libs", include: ["*.aar"]) // Openpath Mobile Access Core SDK Dependencies
   implementation 'com.madgag.spongycastle:core:1.54.0.0'
   implementation 'com.madgag.spongycastle:prov:1.54.0.0'
   implementation 'com.madgag.spongycastle:pkix:1.54.0.0'
