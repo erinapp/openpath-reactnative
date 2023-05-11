@@ -2,12 +2,24 @@ import Foundation
 import OpenpathMobileAccessCore
 
 @objc(OpenpathReactnative)
-class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
+class OpenpathReactnative: RCTEventEmitter, OpenpathMobileAccessCoreDelegate {
+    public static var emitter: RCTEventEmitter!
+
+    open override func supportedEvents() -> [String] {
+      ["onProvisionResponse",
+      "onSwitchUserResponse", "onSyncUserResponse",
+      "onUnlockResponse", "onItemsSet",
+      "onItemsUpdated", "onUnprovisionResponse",
+      "onUserSettingsSet", "onLocationStatusChanged",
+      "onBluetoothStatusChanged", "onInternetStatusChanged"]
+    }
+
     var resolver: RCTPromiseResolveBlock? = nil
       
       override init() {
         super.init()
         
+        OpenpathReactnative.emitter = self
         OpenpathMobileAccessCore.shared.delegate = self
       }
       
@@ -86,6 +98,8 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
           self.resolver!(message)
           self.resolver = nil
         }
+          
+          OpenpathReactnative.emitter.sendEvent(withName: "onProvisionResponse", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onSwitchUserResponse message: [String : Any]) {
@@ -93,6 +107,8 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
           self.resolver!(message)
           self.resolver = nil
         }
+          
+          OpenpathReactnative.emitter.sendEvent(withName: "onSwitchUserResponse", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onSyncUserResponse message: [String : Any]) {
@@ -100,6 +116,8 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
           self.resolver!(message)
           self.resolver = nil
         }
+          
+          OpenpathReactnative.emitter.sendEvent(withName: "onSyncUserResponse", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onUnlockRequest message: [String : Any]) {
@@ -110,7 +128,7 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onItemsSet message: [String : Any]) {
-          
+          OpenpathReactnative.emitter.sendEvent(withName: "onItemsSet", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onItemsUpdated message: [String : Any]) {
@@ -118,6 +136,8 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
           self.resolver!(message)
           self.resolver = nil
         }
+          
+          OpenpathReactnative.emitter.sendEvent(withName: "onItemsUpdated", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onDebug message: [String : Any]) {
@@ -129,7 +149,7 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onUnlockResponse message: [String : Any]) {
-          
+          OpenpathReactnative.emitter.sendEvent(withName: "onUnlockResponse", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onOverrideResponse message: [String : Any]) {
@@ -137,6 +157,7 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onUnprovisionResponse message: [String : Any]) {
+          OpenpathReactnative.emitter.sendEvent(withName: "onUnprovisionResponse", body: message)
           
       }
       
@@ -145,7 +166,7 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onUserSettingsSet message: [String : Any]) {
-          
+          OpenpathReactnative.emitter.sendEvent(withName: "onUserSettingsSet", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onLockdownPlansSet messages: [String : [Any]]) {
@@ -173,15 +194,15 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onInternetStatusChanged message: [String : Any]) {
-          
+          OpenpathReactnative.emitter.sendEvent(withName: "onInternetStatusChanged", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onLocationStatusChanged message: [String : Any]) {
-          
+          OpenpathReactnative.emitter.sendEvent(withName: "onLocationStatusChanged", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onBluetoothStatusChanged message: [String : Any]) {
-          
+          OpenpathReactnative.emitter.sendEvent(withName: "onBluetoothStatusChanged", body: message)
       }
       
       func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onNotificationStatusChanged message: [String : Any]) {

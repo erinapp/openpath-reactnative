@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* OpenpathReactnativeExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OpenpathReactnativeExampleTests.m */; };
+		02841C4C318FCAD0AD7E9783 /* Pods_OpenpathReactnativeExample_OpenpathReactnativeExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC15A4AD547CEA661851EA9 /* Pods_OpenpathReactnativeExample_OpenpathReactnativeExampleTests.framework */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1A6823C18E094BE5D01AFD0F /* libPods-OpenpathReactnativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC25243721CE5DA4899546E /* libPods-OpenpathReactnativeExample.a */; };
 		2F8717F32912BA1200D631C4 /* OpenpathMobileAccessCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8717F22912BA1200D631C4 /* OpenpathMobileAccessCore.xcframework */; };
 		2F8717F42912BA1200D631C4 /* OpenpathMobileAccessCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8717F22912BA1200D631C4 /* OpenpathMobileAccessCore.xcframework */; };
-		367290F01DEB22EDB2E6686F /* libPods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D30A6882739F0941B2A62E /* libPods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9745FD9082583982C6F87D61 /* Pods_OpenpathReactnativeExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70781FC9DB7DA895A09852C /* Pods_OpenpathReactnativeExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +41,10 @@
 		2EEA144BD22738E91CAE5AC2 /* Pods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.release.xcconfig"; path = "Target Support Files/Pods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests/Pods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F8717F22912BA1200D631C4 /* OpenpathMobileAccessCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OpenpathMobileAccessCore.xcframework; sourceTree = "<group>"; };
 		724A8978D8B71EC84E506D31 /* Pods-OpenpathReactnativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenpathReactnativeExample.debug.xcconfig"; path = "Target Support Files/Pods-OpenpathReactnativeExample/Pods-OpenpathReactnativeExample.debug.xcconfig"; sourceTree = "<group>"; };
-		78D30A6882739F0941B2A62E /* libPods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1A621E859AF36D79A3C7FD /* Pods-OpenpathReactnativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenpathReactnativeExample.release.xcconfig"; path = "Target Support Files/Pods-OpenpathReactnativeExample/Pods-OpenpathReactnativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = OpenpathReactnativeExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9FC25243721CE5DA4899546E /* libPods-OpenpathReactnativeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenpathReactnativeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B70781FC9DB7DA895A09852C /* Pods_OpenpathReactnativeExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenpathReactnativeExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAC15A4AD547CEA661851EA9 /* Pods_OpenpathReactnativeExample_OpenpathReactnativeExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenpathReactnativeExample_OpenpathReactnativeExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79289BC7D9965B7269A3B4A /* Pods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests/Pods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -55,7 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F8717F42912BA1200D631C4 /* OpenpathMobileAccessCore.xcframework in Frameworks */,
-				367290F01DEB22EDB2E6686F /* libPods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.a in Frameworks */,
+				02841C4C318FCAD0AD7E9783 /* Pods_OpenpathReactnativeExample_OpenpathReactnativeExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F8717F32912BA1200D631C4 /* OpenpathMobileAccessCore.xcframework in Frameworks */,
-				1A6823C18E094BE5D01AFD0F /* libPods-OpenpathReactnativeExample.a in Frameworks */,
+				9745FD9082583982C6F87D61 /* Pods_OpenpathReactnativeExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +106,8 @@
 			children = (
 				2F8717F22912BA1200D631C4 /* OpenpathMobileAccessCore.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				9FC25243721CE5DA4899546E /* libPods-OpenpathReactnativeExample.a */,
-				78D30A6882739F0941B2A62E /* libPods-OpenpathReactnativeExample-OpenpathReactnativeExampleTests.a */,
+				B70781FC9DB7DA895A09852C /* Pods_OpenpathReactnativeExample.framework */,
+				BAC15A4AD547CEA661851EA9 /* Pods_OpenpathReactnativeExample_OpenpathReactnativeExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

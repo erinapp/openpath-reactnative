@@ -35,6 +35,7 @@ const App = () => {
 
   const startOpenpath = async () => {
     await openpathInit();
+
     await openpathLogin('account@email.com', 'yourPassword', true);
     await openpathGetMobileCredential();
   };
@@ -50,7 +51,7 @@ const App = () => {
   const provision = async () => {
     setIsProvisioning(true);
 
-    const response = await openpathProvision();
+    const response = await openpathProvision('');
 
     setIsProvisioning(false);
 

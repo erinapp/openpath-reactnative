@@ -1,4 +1,4 @@
-import { NativeModules, Platform } from 'react-native';
+import { NativeEventEmitter, NativeModules, Platform } from 'react-native';
 import axios from 'axios';
 
 const LINKING_ERROR =
@@ -23,6 +23,27 @@ let orgId: number | null = null;
 let userId: number | null = null;
 let mobileCredentialId: number | null = null;
 let bearerToken: string | number | boolean | null = null;
+
+export const OPENPATH_EVENT_NAMES = {
+  ON_INIT: 'onInit',
+  ON_PROVISION_RESPONSE: 'onProvisionResponse',
+  ON_SWITCH_USER_RESPONSE: 'onSwitchUserResponse',
+  ON_SYNC_USER_RESPONSE: 'onSyncUserResponse',
+  ON_UNLOCK_RESPONSE: 'onUnlockResponse',
+  ON_ITEMS_SET: 'onItemsSet',
+  ON_ITEMS_UPDATED: 'onItemsUpdated',
+  ON_UNPROVISION_RESPONSE: 'onUnprovisionResponse',
+  ON_USER_SETTINGS_SET: 'onUserSettingsSet',
+  ON_LOCATION_STATUS_CHANGED: 'onLocationStatusChanged',
+  ON_BLUETOOTH_STATUS_CHANGED: 'onBluetoothStatusChanged',
+  ON_INTERNET_STATUS_CHANGED: 'onInternetStatusChanged',
+  ON_NOTIFICATION_CLICKED: 'onNotificationClicked',
+  ON_BLUETOOTH_ERROR: 'onBluetoothError',
+};
+
+export const openpathEventEmitter = new NativeEventEmitter(
+  Platform.OS === 'ios' ? NativeModules.OpenpathReactnative : null
+);
 
 export async function init() {
   if (Platform.OS === 'ios') {
