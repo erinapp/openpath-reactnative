@@ -1,0 +1,42 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Allegion_Logging_iOS
+@_exported import Allegion_Logging_iOS
+import Foundation
+import Swift
+import _Concurrency
+public struct AlConsoleLogger : Allegion_Logging_iOS.AlLogger {
+  public init()
+  public func log(_ logLevel: Allegion_Logging_iOS.AlLogLevel, message: Swift.String)
+}
+public enum AlLogLevel {
+  case verbose
+  case debug
+  case info
+  case warning
+  case error
+  public static func == (a: Allegion_Logging_iOS.AlLogLevel, b: Allegion_Logging_iOS.AlLogLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Allegion_Logging_iOS.AlLogLevel : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+public protocol AlLogger {
+  func log(_ logLevel: Allegion_Logging_iOS.AlLogLevel, message: Swift.String)
+}
+public struct AlLogManager {
+  public static var currentLogger: Allegion_Logging_iOS.AlLogger?
+  public static func log(_ logLevel: Allegion_Logging_iOS.AlLogLevel, message: Swift.String)
+  public static func logDebug(_ message: Swift.String)
+  public static func logVerbose(_ message: Swift.String)
+  public static func logInfo(_ message: Swift.String)
+  public static func logWarning(_ message: Swift.String)
+  public static func logError(_ message: Swift.String)
+}
+extension Allegion_Logging_iOS.AlLogLevel : Swift.Equatable {}
+extension Allegion_Logging_iOS.AlLogLevel : Swift.Hashable {}

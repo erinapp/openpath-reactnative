@@ -1,0 +1,103 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Allegion_Translation_iOS
+import Allegion_Logging_iOS
+@_exported import Allegion_Translation_iOS
+import Foundation
+import Swift
+import SwiftCBOR
+import _Concurrency
+indirect public enum AlCBOR {
+  case unsignedInt(Swift.UInt)
+  case negativeInt(Swift.UInt)
+  case byteString([Swift.UInt8])
+  case utf8String(Swift.String)
+  case array([Allegion_Translation_iOS.AlCBOR])
+  case map([Allegion_Translation_iOS.AlCBOR : Allegion_Translation_iOS.AlCBOR])
+  case tagged(Swift.UInt8, Allegion_Translation_iOS.AlCBOR)
+  case simple(Swift.UInt8)
+  case boolean(Swift.Bool)
+  case null
+  case undefined
+  case half(Swift.Float32)
+  case float(Swift.Float32)
+  case double(Swift.Float64)
+  case `break`
+  case date(Foundation.Date)
+}
+extension Allegion_Translation_iOS.AlCBOR : Swift.ExpressibleByNilLiteral, Swift.ExpressibleByIntegerLiteral, Swift.ExpressibleByStringLiteral, Swift.ExpressibleByArrayLiteral, Swift.ExpressibleByDictionaryLiteral, Swift.ExpressibleByBooleanLiteral, Swift.ExpressibleByFloatLiteral {
+  public init(nilLiteral: ())
+  public init(integerLiteral value: Swift.Int)
+  public init(extendedGraphemeClusterLiteral value: Swift.String)
+  public init(unicodeScalarLiteral value: Swift.String)
+  public init(stringLiteral value: Swift.String)
+  public init(arrayLiteral elements: Allegion_Translation_iOS.AlCBOR...)
+  public init(dictionaryLiteral elements: (Allegion_Translation_iOS.AlCBOR, Allegion_Translation_iOS.AlCBOR)...)
+  public init(booleanLiteral value: Swift.Bool)
+  public init(floatLiteral value: Swift.Float32)
+  public init(dateLiteral value: Foundation.Date)
+  public typealias ArrayLiteralElement = Allegion_Translation_iOS.AlCBOR
+  public typealias BooleanLiteralType = Swift.Bool
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias FloatLiteralType = Swift.Float32
+  public typealias IntegerLiteralType = Swift.Int
+  public typealias Key = Allegion_Translation_iOS.AlCBOR
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+  public typealias Value = Allegion_Translation_iOS.AlCBOR
+}
+extension Allegion_Translation_iOS.AlCBOR {
+  public subscript(position: Allegion_Translation_iOS.AlCBOR) -> Allegion_Translation_iOS.AlCBOR? {
+    get
+    set
+  }
+}
+extension Allegion_Translation_iOS.AlCBOR : Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: Allegion_Translation_iOS.AlCBOR, b: Allegion_Translation_iOS.AlCBOR) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Allegion_Translation_iOS.AlCBOR : SwiftCBOR.CBOREncodable {
+  public func encode() -> [Swift.UInt8]
+  public static func toCBOR<T>(_ value: T) -> [Swift.UInt8] where T : SwiftCBOR.CBOREncodable
+  public static func toCBOR<T>(_ array: [T], asByteString: Swift.Bool = false) -> [Swift.UInt8] where T : SwiftCBOR.CBOREncodable
+  public static func toCBOR<A, B>(_ dict: [A : B]) -> [Swift.UInt8] where A : SwiftCBOR.CBOREncodable, B : SwiftCBOR.CBOREncodable
+  public static func toCBOR<A>(_ dict: [A : Any]) throws -> [Swift.UInt8] where A : SwiftCBOR.CBOREncodable
+  public static func fromCBOR(_ input: [Swift.UInt8]) throws -> Allegion_Translation_iOS.AlCBOR?
+}
+public protocol AlCBORProtocol {
+  func encode() -> [Swift.UInt8]
+  static func toCBOR<T>(_ value: T) -> [Swift.UInt8] where T : SwiftCBOR.CBOREncodable
+  static func toCBOR<T>(_ array: [T], asByteString: Swift.Bool) -> [Swift.UInt8] where T : SwiftCBOR.CBOREncodable
+  static func toCBOR<A, B>(_ dict: [A : B]) -> [Swift.UInt8] where A : SwiftCBOR.CBOREncodable, B : SwiftCBOR.CBOREncodable
+  static func toCBOR<A>(_ dict: [A : Any]) throws -> [Swift.UInt8] where A : SwiftCBOR.CBOREncodable
+  static func fromCBOR(_ input: [Swift.UInt8]) throws -> Allegion_Translation_iOS.AlCBOR?
+}
+@_hasMissingDesignatedInitializers public class AlJSON : Allegion_Translation_iOS.AlJSONProtocol {
+  public static func toJSON<T>(_ object: T) throws -> Swift.String where T : Swift.Encodable
+  public static func fromJSON<T>(_ json: Swift.String) throws -> T where T : Swift.Decodable
+  public static func toData<T>(_ object: T) throws -> Foundation.Data where T : Swift.Encodable
+  @objc deinit
+}
+public protocol AlJSONProtocol {
+  static func toJSON<T>(_ object: T) throws -> Swift.String where T : Swift.Encodable
+  static func fromJSON<T>(_ json: Swift.String) throws -> T where T : Swift.Decodable
+}
+public enum AlTranslationError : Swift.UInt, Swift.Error, Swift.Equatable {
+  case decodeError
+  case encodeError
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+extension Allegion_Translation_iOS.AlTranslationError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension Allegion_Translation_iOS.AlTranslationError : Swift.Hashable {}
+extension Allegion_Translation_iOS.AlTranslationError : Swift.RawRepresentable {}

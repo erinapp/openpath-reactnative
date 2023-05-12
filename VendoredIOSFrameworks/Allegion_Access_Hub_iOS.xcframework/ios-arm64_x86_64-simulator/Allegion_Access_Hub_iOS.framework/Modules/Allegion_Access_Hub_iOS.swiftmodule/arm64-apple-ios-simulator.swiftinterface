@@ -1,0 +1,361 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Allegion_Access_Hub_iOS
+@_exported import Allegion_Access_Hub_iOS
+import Allegion_Extensions_iOS
+import Allegion_Logging_iOS
+import Allegion_Security_iOS
+import Allegion_Translation_iOS
+import CommonCrypto
+import Foundation
+import PromiseKit
+import Swift
+import _Concurrency
+public protocol AlAPIDispatchable {
+  init(config: Allegion_Access_Hub_iOS.AlMAHConfigurable)
+  func execute<RequestType>(request: RequestType) -> Allegion_Access_Hub_iOS.AlWebCall<RequestType> where RequestType : Allegion_Access_Hub_iOS.AlWebRequest
+}
+public struct AlAuthenticationRequest : Allegion_Access_Hub_iOS.AlWebRequest {
+  public var subscriptionKey: Foundation.UUID?
+  public typealias ResponseType = Allegion_Access_Hub_iOS.AlAuthenticationResponse
+  public typealias RequestType = [Swift.String : Swift.String]
+  public var path: Swift.String {
+    get
+  }
+  public var method: Allegion_Access_Hub_iOS.AlHTTPMethod {
+    get
+  }
+  public var parameters: Allegion_Access_Hub_iOS.AlRequestParams<[Swift.String : Swift.String]?> {
+    get
+  }
+  public var headers: [Allegion_Access_Hub_iOS.AlHeader] {
+    get
+  }
+  public let inviteId: Swift.String
+  public let inviteSecret: Swift.String
+  public init(subscriptionKey: Foundation.UUID, inviteId: Swift.String, inviteSecret: Swift.String)
+  public typealias ErrorType = Swift.String
+}
+public struct AlAuthenticationResponse : Swift.Codable {
+  public var tokenID: Swift.String
+  public var accessTokenID: Swift.String
+  public var integrationID: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AlConnectedAccountResponse : Swift.Codable {
+  public var id: Foundation.UUID
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AlCreateAccountResponse : Swift.Codable {
+  public var id: Foundation.UUID
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AlEnrollConnectedAccountRequest : Allegion_Access_Hub_iOS.AlWebRequest {
+  public typealias ResponseType = Allegion_Access_Hub_iOS.AlConnectedAccountResponse
+  public typealias RequestType = [Swift.String : Swift.String]
+  public var path: Swift.String {
+    get
+  }
+  public var method: Allegion_Access_Hub_iOS.AlHTTPMethod {
+    get
+  }
+  public var parameters: Allegion_Access_Hub_iOS.AlRequestParams<[Swift.String : Swift.String]?> {
+    get
+  }
+  public var headers: [Allegion_Access_Hub_iOS.AlHeader] {
+    get
+  }
+  public let accountID: Foundation.UUID
+  public let integrationID: Foundation.UUID
+  public let idToken: Swift.String
+  public init(accountID: Foundation.UUID, integrationID: Foundation.UUID, idToken: Swift.String)
+  public typealias ErrorType = Swift.String
+}
+public struct AlEnrollCreateAccountRequest : Allegion_Access_Hub_iOS.AlWebRequest {
+  public typealias ResponseType = Allegion_Access_Hub_iOS.AlCreateAccountResponse
+  public typealias RequestType = [Swift.String : Swift.String]
+  public var path: Swift.String {
+    get
+  }
+  public var method: Allegion_Access_Hub_iOS.AlHTTPMethod {
+    get
+  }
+  public var parameters: Allegion_Access_Hub_iOS.AlRequestParams<[Swift.String : Swift.String]?> {
+    get
+  }
+  public var headers: [Allegion_Access_Hub_iOS.AlHeader] {
+    get
+  }
+  public init()
+  public typealias ErrorType = Swift.String
+}
+public struct AlEnrollRegisterDeviceRequest : Allegion_Access_Hub_iOS.AlWebRequest {
+  public typealias ResponseType = Allegion_Access_Hub_iOS.AlRegisterDeviceResponse
+  public typealias RequestType = [Swift.String : Swift.String]
+  public var path: Swift.String {
+    get
+  }
+  public var method: Allegion_Access_Hub_iOS.AlHTTPMethod {
+    get
+  }
+  public var parameters: Allegion_Access_Hub_iOS.AlRequestParams<[Swift.String : Swift.String]?> {
+    get
+  }
+  public var headers: [Allegion_Access_Hub_iOS.AlHeader] {
+    get
+  }
+  public let devicePublicKey: Swift.String
+  public init(devicePublicKey: Swift.String)
+  public typealias ErrorType = Swift.String
+}
+public enum AlEnvironment : Swift.String {
+  case dev
+  case test
+  case beta
+  case pilot
+  case production
+  case devAPIManagement
+  case productionAPIManagement
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct AlGetRightsRequest : Allegion_Access_Hub_iOS.AlWebRequest {
+  public typealias ResponseType = [Allegion_Access_Hub_iOS.AlGetRightsResponse]
+  public typealias RequestType = [Swift.String : Swift.String]
+  public var path: Swift.String {
+    get
+  }
+  public var method: Allegion_Access_Hub_iOS.AlHTTPMethod {
+    get
+  }
+  public var parameters: Allegion_Access_Hub_iOS.AlRequestParams<[Swift.String : Swift.String]?> {
+    get
+  }
+  public var headers: [Allegion_Access_Hub_iOS.AlHeader] {
+    get
+  }
+  public let accountID: Foundation.UUID
+  public init(accountID: Foundation.UUID)
+  public typealias ErrorType = Swift.String
+}
+public struct AlGetRightsResponse : Swift.Codable {
+  public var id: Foundation.UUID
+  public var payloadTypes: [Swift.String]
+  public var attributes: [Swift.String : Swift.String]
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum AlHeader : Swift.String {
+  case contentTypeJson
+  case subcriptionKey
+  case deviceSig
+  case auth
+  case automatedTest
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum AlHTTPMethod : Swift.String {
+  case post
+  case put
+  case get
+  case delete
+  case patch
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class AlMAHAPIDispatchable : Allegion_Access_Hub_iOS.AlAPIDispatchable {
+  required public init(config: Allegion_Access_Hub_iOS.AlMAHConfigurable)
+  public func execute<RequestType>(request: RequestType) -> Allegion_Access_Hub_iOS.AlWebCall<RequestType> where RequestType : Allegion_Access_Hub_iOS.AlWebRequest
+  @objc deinit
+}
+public protocol AlMAHConfigurable {
+  var subscriptionKey: Foundation.UUID { get }
+  var deviceKeyReference: Swift.String { get }
+  var deviceID: Foundation.UUID! { get }
+  var keyManager: Allegion_Security_iOS.AlKeyManagerDelegate { get }
+  var environment: Allegion_Access_Hub_iOS.AlEnvironment { get set }
+  var pinSetDictionary: [Swift.String : Swift.String]? { get }
+}
+public class AlMAHError : Swift.Error, Swift.Codable {
+  final public let errorCode: Swift.String
+  final public let details: [Swift.String : [Swift.String]]
+  final public let message: Swift.String
+  public init(errorCode: Swift.String, details: [Swift.String : [Swift.String]], message: Swift.String)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public enum AlNetworkError : Swift.Error, Swift.Equatable {
+  case badInput
+  case certificatePinFailed
+  case dataFormatError
+  case deserializationError
+  case deviceIDMissing
+  case encryptionKeysMissing
+  case genericError
+  case headerArrayEmpty
+  case invalidSignature
+  case invalidSubscriptionKey
+  case noData
+  case signatureGeneration
+  case signatureSetup
+  case signatureValidation
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: Allegion_Access_Hub_iOS.AlNetworkError, b: Allegion_Access_Hub_iOS.AlNetworkError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Allegion_Access_Hub_iOS.AlNetworkError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public struct AlPhoneVerificationRequest : Allegion_Access_Hub_iOS.AlWebRequest {
+  public typealias ResponseType = Allegion_Access_Hub_iOS.AlPhoneVerificationResponse
+  public typealias RequestType = [Swift.String : Swift.String]
+  public var path: Swift.String {
+    get
+  }
+  public var method: Allegion_Access_Hub_iOS.AlHTTPMethod {
+    get
+  }
+  public var parameters: Allegion_Access_Hub_iOS.AlRequestParams<[Swift.String : Swift.String]?> {
+    get
+  }
+  public var headers: [Allegion_Access_Hub_iOS.AlHeader] {
+    get
+  }
+  public let phoneNumber: Swift.String
+  public init(phoneNumber: Swift.String)
+  public typealias ErrorType = Swift.String
+}
+public struct AlPhoneVerificationResponse : Swift.Codable {
+  public var phoneNumber: Swift.String?
+  public var id: Swift.String?
+  public var createdTime: Swift.String?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AlPostPayloadsBody : Swift.Codable {
+  public let accessToken: Swift.String
+  public let payloadRequests: [Allegion_Access_Hub_iOS.AlPostPayloadsRequestData]?
+  public init(token: Swift.String, data: [Allegion_Access_Hub_iOS.AlPostPayloadsRequestData]?)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AlPostPayloadsRequest : Allegion_Access_Hub_iOS.AlWebRequest {
+  public typealias ResponseType = Allegion_Access_Hub_iOS.AlPostPayloadsResponse
+  public typealias RequestType = Allegion_Access_Hub_iOS.AlPostPayloadsBody
+  public var path: Swift.String {
+    get
+  }
+  public var method: Allegion_Access_Hub_iOS.AlHTTPMethod {
+    get
+  }
+  public var parameters: Allegion_Access_Hub_iOS.AlRequestParams<Allegion_Access_Hub_iOS.AlPostPayloadsRequest.RequestType?> {
+    get
+  }
+  public var headers: [Allegion_Access_Hub_iOS.AlHeader] {
+    get
+  }
+  public let accountID: Foundation.UUID
+  public let accessRightID: Foundation.UUID
+  public let accessToken: Swift.String
+  public let payloadBody: Allegion_Access_Hub_iOS.AlPostPayloadsBody
+  public init(accountID: Foundation.UUID, accessRightID: Foundation.UUID, accessToken: Swift.String, payloadRequests: [Allegion_Access_Hub_iOS.AlPostPayloadsRequestData])
+  public typealias ErrorType = Swift.String
+}
+public struct AlPostPayloadsRequestData : Swift.Codable {
+  public var payloadType: Swift.String
+  public var mobileDevicePropertyBag: Swift.String?
+  public var payloadArgs: [Swift.String : Swift.String]?
+  public init(payloadType: Swift.String, mobileDevicePropertyBag: Swift.String?, payloadArgs: [Swift.String : Swift.String]?)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AlPostPayloadsResponse : Swift.Codable {
+  public var accessRightID: Swift.String
+  public var payloads: [Allegion_Access_Hub_iOS.AlPostPayloadsResponseData]
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AlPostPayloadsResponseData : Swift.Codable {
+  public var payloadType: Swift.String
+  public var payload: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AlRegisterDeviceResponse : Swift.Codable {
+  public var id: Foundation.UUID
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum AlRequestParams<T> where T : Swift.Decodable, T : Swift.Encodable {
+  case body(T)
+  case url([Swift.String : Swift.Codable])
+}
+public enum AlResponseDataType {
+  case JSON
+  case Data
+  public static func == (a: Allegion_Access_Hub_iOS.AlResponseDataType, b: Allegion_Access_Hub_iOS.AlResponseDataType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class AlURLSessionProvidable : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
+  @objc public func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AlWebCall<RequestType> where RequestType : Allegion_Access_Hub_iOS.AlWebRequest {
+  public func success(_ onSuccess: @escaping (Swift.Int, RequestType.ResponseType) throws -> Swift.Void) -> Allegion_Access_Hub_iOS.AlWebCall<RequestType>
+  public func failure(_ onFailure: @escaping (Swift.Int, RequestType.ErrorType) throws -> Swift.Void) -> Allegion_Access_Hub_iOS.AlWebCall<RequestType>
+  public func error(_ onError: @escaping (Swift.Error) -> Swift.Void) -> Allegion_Access_Hub_iOS.AlWebCall<RequestType>
+  public func finally(_ onFinally: @escaping () -> Swift.Void) -> Allegion_Access_Hub_iOS.AlWebCall<RequestType>
+  @objc deinit
+}
+public protocol AlWebRequest {
+  associatedtype ResponseType : Swift.Decodable
+  associatedtype RequestType : Swift.Decodable, Swift.Encodable = [Swift.String : Swift.String]?
+  associatedtype ErrorType : Swift.Decodable = Swift.String
+  var path: Swift.String { get }
+  var method: Allegion_Access_Hub_iOS.AlHTTPMethod { get }
+  var parameters: Allegion_Access_Hub_iOS.AlRequestParams<Self.RequestType?> { get }
+  var headers: [Allegion_Access_Hub_iOS.AlHeader] { get }
+  var subscriptionKey: Foundation.UUID? { get }
+}
+extension Allegion_Access_Hub_iOS.AlWebRequest {
+  public var subscriptionKey: Foundation.UUID? {
+    get
+  }
+}
+public enum AlWebResponse<RequestType> where RequestType : Allegion_Access_Hub_iOS.AlWebRequest {
+  case success(Swift.Int, RequestType.ResponseType)
+  case failure(Swift.Int, RequestType.ErrorType)
+  case error(Swift.Error)
+}
+extension Allegion_Access_Hub_iOS.AlEnvironment : Swift.Equatable {}
+extension Allegion_Access_Hub_iOS.AlEnvironment : Swift.Hashable {}
+extension Allegion_Access_Hub_iOS.AlEnvironment : Swift.RawRepresentable {}
+extension Allegion_Access_Hub_iOS.AlHeader : Swift.Equatable {}
+extension Allegion_Access_Hub_iOS.AlHeader : Swift.Hashable {}
+extension Allegion_Access_Hub_iOS.AlHeader : Swift.RawRepresentable {}
+extension Allegion_Access_Hub_iOS.AlHTTPMethod : Swift.Equatable {}
+extension Allegion_Access_Hub_iOS.AlHTTPMethod : Swift.Hashable {}
+extension Allegion_Access_Hub_iOS.AlHTTPMethod : Swift.RawRepresentable {}
+extension Allegion_Access_Hub_iOS.AlNetworkError : Swift.Hashable {}
+extension Allegion_Access_Hub_iOS.AlResponseDataType : Swift.Equatable {}
+extension Allegion_Access_Hub_iOS.AlResponseDataType : Swift.Hashable {}

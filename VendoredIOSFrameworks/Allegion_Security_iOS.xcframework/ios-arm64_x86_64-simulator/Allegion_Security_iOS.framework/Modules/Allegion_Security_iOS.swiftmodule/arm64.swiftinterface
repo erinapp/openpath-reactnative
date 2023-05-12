@@ -1,0 +1,168 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Allegion_Security_iOS
+import Allegion_Extensions_iOS
+import Allegion_Logging_iOS
+@_exported import Allegion_Security_iOS
+import CommonCrypto
+import CryptoSwift
+import Foundation
+import Security
+import Swift
+import _Concurrency
+public class AlAES : Allegion_Security_iOS.AlAESProtocol {
+  public init()
+  public static func encrypt(_ key: Foundation.Data, data: Foundation.Data, paddingType: Allegion_Security_iOS.AlPaddingType, iv: Foundation.Data?) throws -> Foundation.Data
+  public static func decrypt(_ key: Foundation.Data, data: Foundation.Data, paddingType: Allegion_Security_iOS.AlPaddingType, iv: Foundation.Data?) throws -> Foundation.Data
+  @objc deinit
+}
+public protocol AlAESProtocol {
+  static func encrypt(_ key: Foundation.Data, data: Foundation.Data, paddingType: Allegion_Security_iOS.AlPaddingType, iv: Foundation.Data?) throws -> Foundation.Data
+  static func decrypt(_ key: Foundation.Data, data: Foundation.Data, paddingType: Allegion_Security_iOS.AlPaddingType, iv: Foundation.Data?) throws -> Foundation.Data
+}
+@_hasMissingDesignatedInitializers public class AlCRC {
+  public static func crc16XMODEM(_ data: Foundation.Data) -> Foundation.Data
+  @objc deinit
+}
+public class AlECC : Allegion_Security_iOS.AlECCProtocol {
+  public init()
+  public static func encrypt(key: Security.SecKey, data: Foundation.Data) throws -> Foundation.Data
+  public static func decrypt(key: Security.SecKey, data: Foundation.Data) throws -> Foundation.Data
+  public static func sign(key: Security.SecKey, data: Foundation.Data) throws -> Foundation.Data
+  public static func verify(key: Security.SecKey, data: Foundation.Data, signature: Foundation.Data) throws -> Swift.Bool
+  public static func createSharedSecret(privateKey: Security.SecKey, publicKey: Security.SecKey) throws -> Foundation.Data?
+  @objc deinit
+}
+public protocol AlECCProtocol {
+  static func encrypt(key: Security.SecKey, data: Foundation.Data) throws -> Foundation.Data
+  static func decrypt(key: Security.SecKey, data: Foundation.Data) throws -> Foundation.Data
+  static func sign(key: Security.SecKey, data: Foundation.Data) throws -> Foundation.Data
+  static func verify(key: Security.SecKey, data: Foundation.Data, signature: Foundation.Data) throws -> Swift.Bool
+}
+public enum AlECCType {
+  case spec256R1
+  case spec192R1
+  case spec128R1
+  public static func == (a: Allegion_Security_iOS.AlECCType, b: Allegion_Security_iOS.AlECCType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class AlHKDF {
+  public init()
+  public func expand(algorithm: Allegion_Security_iOS.HmacAlgorithm, key: Foundation.Data, info: Foundation.Data, outputSize: Swift.Int) -> Foundation.Data
+  @objc deinit
+}
+public class AlHMAC {
+  public init(algorithm: Allegion_Security_iOS.HmacAlgorithm, key: Foundation.NSData)
+  public func processHmacData(data: Foundation.Data) -> Foundation.Data
+  @objc deinit
+}
+public enum HmacAlgorithm {
+  case SHA1, SHA256, SHA384, SHA512
+  public var digestLength: Swift.Int {
+    get
+  }
+  public static func == (a: Allegion_Security_iOS.HmacAlgorithm, b: Allegion_Security_iOS.HmacAlgorithm) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum AlKey {
+  case data(Foundation.Data)
+  case secKey(Security.SecKey)
+  public var dataValue: Foundation.Data? {
+    get
+  }
+  public var secKeyValue: Security.SecKey? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class AlKeyManager : Allegion_Security_iOS.AlKeyManagerDelegate {
+  convenience public init()
+  public func generateKeyPairSecure(type: Allegion_Security_iOS.AlKeyType, tag: Swift.String) throws -> Swift.Bool
+  public func generateKeyPair(type: Allegion_Security_iOS.AlKeyType, tag: Swift.String) throws -> Swift.Bool
+  public func generateKey(type: Allegion_Security_iOS.AlKeyType, tag: Swift.String) throws -> Swift.Bool
+  public func removeKey(tag: Swift.String) throws -> Swift.Bool
+  public func storeKey(key: Foundation.Data, type: Allegion_Security_iOS.AlKeyType, tag: Swift.String) throws -> Swift.Bool
+  public func getKey(tag: Swift.String) throws -> Allegion_Security_iOS.AlKey?
+  public func getKeyPair(tag: Swift.String) throws -> (publicKey: Security.SecKey, privateKey: Security.SecKey)?
+  public func exportEcPublicKeyUncompressedFormat(publicKey: Security.SecKey) -> Foundation.Data?
+  public func compressPublicKey(rawUncompressedPublicKey: Foundation.Data) throws -> Foundation.Data?
+  @objc deinit
+}
+public protocol AlKeyManagerDelegate : AnyObject {
+  func generateKeyPairSecure(type: Allegion_Security_iOS.AlKeyType, tag: Swift.String) throws -> Swift.Bool
+  func generateKeyPair(type: Allegion_Security_iOS.AlKeyType, tag: Swift.String) throws -> Swift.Bool
+  func generateKey(type: Allegion_Security_iOS.AlKeyType, tag: Swift.String) throws -> Swift.Bool
+  func removeKey(tag: Swift.String) throws -> Swift.Bool
+  func storeKey(key: Foundation.Data, type: Allegion_Security_iOS.AlKeyType, tag: Swift.String) throws -> Swift.Bool
+  func getKey(tag: Swift.String) throws -> Allegion_Security_iOS.AlKey?
+  func getKeyPair(tag: Swift.String) throws -> (publicKey: Security.SecKey, privateKey: Security.SecKey)?
+  func exportEcPublicKeyUncompressedFormat(publicKey: Security.SecKey) -> Foundation.Data?
+}
+public enum AlKeyType : Swift.String {
+  case aesCBC256NoPadding
+  case aesCBC256PKCS7Padding
+  case eccECDSASpec256r1
+  case eccECDHSpec256r1
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum AlPaddingType {
+  case noPadding
+  case pkcs7Padding
+  public static func == (a: Allegion_Security_iOS.AlPaddingType, b: Allegion_Security_iOS.AlPaddingType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class AlSecureStorage : Allegion_Security_iOS.AlSecureStoring {
+  public init()
+  @discardableResult
+  public func store(tag: Swift.String, data: Foundation.Data) -> Swift.Bool
+  public func retrieve(tag: Swift.String) -> Foundation.Data?
+  public func contains(tag: Swift.String) -> Swift.Bool
+  @discardableResult
+  public func remove(tag: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+public protocol AlSecureStoring {
+  @discardableResult
+  func store(tag: Swift.String, data: Foundation.Data) -> Swift.Bool
+  func retrieve(tag: Swift.String) -> Foundation.Data?
+  func contains(tag: Swift.String) -> Swift.Bool
+  @discardableResult
+  func remove(tag: Swift.String) -> Swift.Bool
+}
+public enum AlSecurityError : Swift.Error {
+  case keyError(_: (Swift.String, Swift.Int))
+  case ivError(_: (Swift.String, Swift.Int))
+  case cryptorError(_: (Swift.String, Swift.Int))
+  case keychainError(_: (Swift.String, Swift.Int))
+  case keyGenerationError(_: (Swift.String, Swift.Int))
+  case keyRetrievalError(_: (Swift.String, Swift.Int))
+  case encryptionError(_: (Swift.String, Swift.Int))
+  case signingError(_: (Swift.String, Swift.Int))
+  case dataError(_: (Swift.String, Swift.Int))
+  case secureDeleteError(_: (Swift.String, Swift.Int))
+  case keyStorageError(_: (Swift.String, Swift.Int))
+}
+@_hasMissingDesignatedInitializers public class AlSHA {
+  @objc deinit
+}
+extension Allegion_Security_iOS.AlECCType : Swift.Equatable {}
+extension Allegion_Security_iOS.AlECCType : Swift.Hashable {}
+extension Allegion_Security_iOS.HmacAlgorithm : Swift.Equatable {}
+extension Allegion_Security_iOS.HmacAlgorithm : Swift.Hashable {}
+extension Allegion_Security_iOS.AlKeyType : Swift.Equatable {}
+extension Allegion_Security_iOS.AlKeyType : Swift.Hashable {}
+extension Allegion_Security_iOS.AlKeyType : Swift.RawRepresentable {}
+extension Allegion_Security_iOS.AlPaddingType : Swift.Equatable {}
+extension Allegion_Security_iOS.AlPaddingType : Swift.Hashable {}

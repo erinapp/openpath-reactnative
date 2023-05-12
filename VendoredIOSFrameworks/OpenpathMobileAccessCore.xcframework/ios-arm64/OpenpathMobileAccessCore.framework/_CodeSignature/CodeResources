@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yUSI3OiAM7kFSSVnk/nTafPAIW0=
+		EdItDykTfwLaWSpoWbub16Ei1Aw=
 		</data>
 		<key>Modules/OpenpathMobileAccessCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/OpenpathMobileAccessCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		HqC91+ZhMPzFhQO+JeWnv+qxAwk=
+		lCNsOeQYLpuT0wsBl+H+QiSS9nY=
 		</data>
 		<key>Modules/OpenpathMobileAccessCore.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/OpenpathMobileAccessCore.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		HqC91+ZhMPzFhQO+JeWnv+qxAwk=
+		lCNsOeQYLpuT0wsBl+H+QiSS9nY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -79,7 +79,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			izftNmjiiReZGqPjRGD+8CAT4LmV8LQEtI4aTvTNYvo=
+			p5hKbiB3DdOEOuN+V8hyvuc9JmhkChR6JnAno/PwYpc=
 			</data>
 		</dict>
 		<key>Modules/OpenpathMobileAccessCore.swiftmodule/arm64.swiftdoc</key>
@@ -100,7 +100,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			izftNmjiiReZGqPjRGD+8CAT4LmV8LQEtI4aTvTNYvo=
+			p5hKbiB3DdOEOuN+V8hyvuc9JmhkChR6JnAno/PwYpc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
