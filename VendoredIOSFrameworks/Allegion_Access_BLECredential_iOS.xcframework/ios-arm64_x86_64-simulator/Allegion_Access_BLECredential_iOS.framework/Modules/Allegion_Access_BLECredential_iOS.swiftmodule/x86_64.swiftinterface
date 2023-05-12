@@ -1,0 +1,256 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios11.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Allegion_Access_BLECredential_iOS
+@_exported import Allegion_Access_BLECredential_iOS
+import Allegion_BLECore_iOS
+import Allegion_Extensions_iOS
+import Allegion_Logging_iOS
+import Allegion_Security_iOS
+import Allegion_Translation_iOS
+import CoreBluetooth
+import Foundation
+import Swift
+import _Concurrency
+public protocol AlBLEConfigurable {
+  var deviceKeyReference: Swift.String { get }
+  var sessionKeyReference: Swift.String { get }
+  var keyManager: Allegion_Security_iOS.AlKeyManagerDelegate { get }
+}
+public class AlBLEController : Allegion_BLECore_iOS.AlCentralStateTrackable, Allegion_BLECore_iOS.AlDisconnectionTrackable {
+  public var scanDelegate: Allegion_Access_BLECredential_iOS.AlBLEScanable! {
+    get
+    set
+  }
+  public var scanning: Swift.Bool {
+    get
+  }
+  public init()
+  public func startScan(duration: Foundation.TimeInterval = 3.0) throws
+  public func stopScan()
+  public func stateChanged(state: Allegion_BLECore_iOS.AlCentralManagerState)
+  public func didDisconnect(peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc deinit
+}
+public protocol AlBLEScanable {
+  func onScanStateChanged(state: Allegion_BLECore_iOS.AlCentralManagerState)
+  func onNewDeviceFound(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice)
+}
+public enum AlCBORMessageError : Swift.UInt, Swift.Error, Swift.Equatable {
+  case credentialChallenge
+  case credentialReply
+  case devicePrivateKey
+  case generalMessageType
+  case keyVersion
+  case keyVersionLength
+  case messageParsing
+  case nonceLength
+  case publicKey
+  case publicKeyLength
+  case sessionKey
+  case sessionKeyLength
+  case tenantID
+  case tenantIDLength
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+extension Allegion_Access_BLECredential_iOS.AlCBORMessageError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum AlCBORTransmissionMessageError : Swift.UInt, Swift.Error, Swift.Equatable {
+  case cborData
+  case crcValidation
+  case groupNumber
+  case lastPacketNumber
+  case messageFormation
+  case messageParsing
+  case messageType
+  case packetNumber
+  case sessionKey
+  case cborChunkSize
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+extension Allegion_Access_BLECredential_iOS.AlCBORTransmissionMessageError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum AlKeyID : Swift.String {
+  case credKey
+  case origin0
+  case origin1
+  case serverKey
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers public class AlKeyRollMediator : Allegion_Access_BLECredential_iOS.AlSessionMediator {
+  public func sendKeyRollMessage(payload: Foundation.Data, tenantID: Foundation.Data, keyID: Allegion_Access_BLECredential_iOS.AlKeyID) throws
+  public func getKeyVersion(tenantID: Foundation.Data, keyID: Allegion_Access_BLECredential_iOS.AlKeyID) throws
+  override public init(mobileAccessDevice: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, config: Allegion_Access_BLECredential_iOS.AlBLEConfigurable)
+  @objc deinit
+}
+public protocol AlKeyRollTracking {
+  func didKeyRollSucceed(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, keyID: Allegion_Access_BLECredential_iOS.AlKeyID)
+  func didKeyRollFail(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, error: Swift.Error?)
+  func didReceiveKeyVersion(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, keyID: Allegion_Access_BLECredential_iOS.AlKeyID, tenantID: Foundation.Data, keyVersion: Foundation.Data)
+  func didFailKeyVersion(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, error: Swift.Error?)
+}
+@objc public class AlMobileAccessDevice : ObjectiveC.NSObject, Allegion_BLECore_iOS.AlPeripheralTrackable {
+  final public let adData: Allegion_BLECore_iOS.AlAdvertisement
+  public var bleCredentialCharacteristic: CoreBluetooth.CBCharacteristic?
+  public var mtuSize: Swift.Int {
+    get
+  }
+  public var name: Swift.String? {
+    get
+  }
+  final public let peripheral: Allegion_BLECore_iOS.AlPeripheral
+  final public let RSSI: Swift.Int
+  public var services: [CoreBluetooth.CBService]? {
+    get
+  }
+  public var serialNumber: Swift.String? {
+    get
+  }
+  public var state: CoreBluetooth.CBPeripheralState {
+    get
+  }
+  public var UUID: Foundation.UUID {
+    get
+  }
+  public var deviceType: Allegion_BLECore_iOS.AlBLEDeviceType? {
+    get
+  }
+  public init(peripheral: Allegion_BLECore_iOS.AlPeripheral, adData: Allegion_BLECore_iOS.AlAdvertisement, RSSI: Swift.Int)
+  public func connect(timeout: Foundation.TimeInterval = 10, options: [Swift.String : Any]? = nil)
+  public func connectAndSend(options: [Swift.String : Any]? = nil, data: Foundation.Data)
+  public func send(data: Foundation.Data)
+  public func disconnect()
+  public func discoverServices(serviceUUIDs: [CoreBluetooth.CBUUID]?)
+  public func discoverCharacteristics(characteristicUUIDs: [CoreBluetooth.CBUUID]?, for service: CoreBluetooth.CBService)
+  public func writeData(data: Foundation.Data, for characteristic: CoreBluetooth.CBCharacteristic)
+  public func readCharacteristic(characteristic: CoreBluetooth.CBCharacteristic)
+  public func setNotifyValue(enabled: Swift.Bool, for characteristic: CoreBluetooth.CBCharacteristic)
+  public func didDiscoverServices(peripheral: Allegion_BLECore_iOS.AlPeripheral, error: Swift.Error?)
+  public func didDiscoverCharacteristics(peripheral: Allegion_BLECore_iOS.AlPeripheral, for service: CoreBluetooth.CBService, error: Swift.Error?)
+  public func didWriteValue(peripheral: Allegion_BLECore_iOS.AlPeripheral, for characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  public func didUpdateValue(peripheral: Allegion_BLECore_iOS.AlPeripheral, for characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  public func didUpdateNotificationState(peripheral: Allegion_BLECore_iOS.AlPeripheral, for characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  @objc deinit
+}
+public enum AlMobileAccessDeviceError : Swift.UInt, Swift.Error, Swift.Equatable {
+  case ack
+  case characteristic
+  case connection
+  case keyRoll
+  case messageSend
+  case messageType
+  case nonce
+  case reply
+  case retryExceeded
+  case state
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+extension Allegion_Access_BLECredential_iOS.AlMobileAccessDeviceError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@_inheritsConvenienceInitializers public class AlPlatinumMediator : Allegion_Access_BLECredential_iOS.AlSessionMediator {
+  public func sendPayload(_ payload: Foundation.Data) throws
+  override public init(mobileAccessDevice: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, config: Allegion_Access_BLECredential_iOS.AlBLEConfigurable)
+  @objc deinit
+}
+public protocol AlPlatinumTracking : Allegion_Access_BLECredential_iOS.AlSessionTracking {
+  func didAccessSucceed(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, connectionTime: Swift.Double, unlockTime: Swift.Double)
+  func didAccessFail(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, error: Swift.Error?)
+}
+public class AlSessionMediator {
+  public var keyRollDelegate: Allegion_Access_BLECredential_iOS.AlKeyRollTracking!
+  public var platinumDelegate: Allegion_Access_BLECredential_iOS.AlPlatinumTracking!
+  public var sessionDelegate: Allegion_Access_BLECredential_iOS.AlSessionTracking!
+  public var tenantDelegate: Allegion_Access_BLECredential_iOS.AlTenantIDTracking!
+  public init(mobileAccessDevice: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, config: Allegion_Access_BLECredential_iOS.AlBLEConfigurable)
+  public func startSession() throws
+  public func endSession() throws
+  public func clearDeviceCache()
+  public func didReceiveData(data: Foundation.Data, characteristic: CoreBluetooth.CBCharacteristic?)
+  public func didConnect()
+  public func didConnectionFail()
+  public func didDisconnect()
+  public func didReceiveError(error: Swift.Error)
+  @objc deinit
+}
+public protocol AlSessionTracking {
+  func didConnectDevice(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, connectionTime: Swift.Double)
+  func didStartSession(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, sessionStartTime: Swift.Double)
+  func didDisconnectDevice(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice)
+  func didSendPayload(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice)
+}
+@_inheritsConvenienceInitializers public class AlTenantIDMediator : Allegion_Access_BLECredential_iOS.AlSessionMediator {
+  public func getTenantID(keyID: Allegion_Access_BLECredential_iOS.AlKeyID) throws
+  override public init(mobileAccessDevice: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, config: Allegion_Access_BLECredential_iOS.AlBLEConfigurable)
+  @objc deinit
+}
+public protocol AlTenantIDTracking : Allegion_Access_BLECredential_iOS.AlSessionTracking {
+  func didReceiveTenantIDs(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, keyID: Allegion_Access_BLECredential_iOS.AlKeyID, tenantIDs: [Foundation.Data])
+  func didFailTenantIDs(device: Allegion_Access_BLECredential_iOS.AlMobileAccessDevice, error: Swift.Error?)
+}
+public class AlTLVMessage {
+  final public let type: Allegion_Access_BLECredential_iOS.AlTLVMessageType
+  final public let length: Swift.Int
+  final public let messageBody: [Swift.UInt8]
+  public init(message: [Swift.UInt8])
+  @objc deinit
+}
+public enum AlTLVMessageType : Swift.Int {
+  case status
+  case pubAKey
+  case pubBReady
+  case pubBKey
+  case credRequest
+  case nonce
+  case credentialBlob
+  case pinRequest
+  case pin
+  case ecdhComplete
+  case cloudBlob
+  case cloudBlobSig
+  case credBlobSig
+  case cloudBlobHMAC
+  case uuid
+  case credBlobHMAC
+  case doorStatus
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension Allegion_Access_BLECredential_iOS.AlCBORMessageError : Swift.Hashable {}
+extension Allegion_Access_BLECredential_iOS.AlCBORMessageError : Swift.RawRepresentable {}
+extension Allegion_Access_BLECredential_iOS.AlCBORTransmissionMessageError : Swift.Hashable {}
+extension Allegion_Access_BLECredential_iOS.AlCBORTransmissionMessageError : Swift.RawRepresentable {}
+extension Allegion_Access_BLECredential_iOS.AlKeyID : Swift.Equatable {}
+extension Allegion_Access_BLECredential_iOS.AlKeyID : Swift.Hashable {}
+extension Allegion_Access_BLECredential_iOS.AlKeyID : Swift.RawRepresentable {}
+extension Allegion_Access_BLECredential_iOS.AlMobileAccessDeviceError : Swift.Hashable {}
+extension Allegion_Access_BLECredential_iOS.AlMobileAccessDeviceError : Swift.RawRepresentable {}
+extension Allegion_Access_BLECredential_iOS.AlTLVMessageType : Swift.Equatable {}
+extension Allegion_Access_BLECredential_iOS.AlTLVMessageType : Swift.Hashable {}
+extension Allegion_Access_BLECredential_iOS.AlTLVMessageType : Swift.RawRepresentable {}

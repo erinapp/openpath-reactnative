@@ -1,0 +1,32 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Allegion_Analytics_iOS
+@_exported import Allegion_Analytics_iOS
+import Allegion_Logging_iOS
+import Foundation
+import Swift
+import _Concurrency
+@objc public protocol AlAnalyticsManagerable {
+  @objc func initializeAppCenter(appSecretKey: Swift.String)
+  @objc func addAnalyticsProvider(analyticsProviders: [Allegion_Analytics_iOS.AlAnalyticsProvider])
+  @objc func enableLogger(enable: Swift.Bool)
+}
+@_hasMissingDesignatedInitializers public class AlAnalyticsManager : Allegion_Analytics_iOS.AlAnalyticsManagerable {
+  public static let shared: Allegion_Analytics_iOS.AlAnalyticsManager
+  @objc public func initializeAppCenter(appSecretKey: Swift.String)
+  @objc public func addAnalyticsProvider(analyticsProviders: [Allegion_Analytics_iOS.AlAnalyticsProvider])
+  @objc public func enableLogger(enable: Swift.Bool)
+  @objc deinit
+}
+extension Allegion_Analytics_iOS.AlAnalyticsManager : Allegion_Analytics_iOS.AlAnalyticsProvider {
+  @objc dynamic public func trackScreenName(_ screenName: Swift.String)
+  @objc dynamic public func trackSuccessEvent(category: Swift.String, action: Swift.String, params: [Swift.String : Any]?)
+  @objc dynamic public func trackFailureEvent(category: Swift.String, action: Swift.String, params: [Swift.String : Any]?)
+  @objc dynamic public func trackEvent(category: Swift.String, action: Swift.String, params: [Swift.String : Any]?)
+}
+@objc public protocol AlAnalyticsProvider {
+  @objc func trackScreenName(_ screenName: Swift.String)
+  @objc func trackSuccessEvent(category: Swift.String, action: Swift.String, params: [Swift.String : Any]?)
+  @objc func trackFailureEvent(category: Swift.String, action: Swift.String, params: [Swift.String : Any]?)
+  @objc func trackEvent(category: Swift.String, action: Swift.String, params: [Swift.String : Any]?)
+}

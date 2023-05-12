@@ -1,0 +1,475 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name XCGLogger
+import Dispatch
+import Foundation
+import ObjcExceptionBridging
+import Swift
+import UIKit
+@_exported import XCGLogger
+import _Concurrency
+open class ANSIColorLogFormatter : LogFormatterProtocol, Swift.CustomDebugStringConvertible {
+  public static let escape: Swift.String
+  public static let reset: Swift.String
+  public enum ANSIColor : Swift.CustomStringConvertible {
+    case black
+    case red
+    case green
+    case yellow
+    case blue
+    case magenta
+    case cyan
+    case lightGrey, lightGray
+    case darkGrey, darkGray
+    case lightRed
+    case lightGreen
+    case lightYellow
+    case lightBlue
+    case lightMagenta
+    case lightCyan
+    case white
+    case `default`
+    case rgb(red: Swift.Int, green: Swift.Int, blue: Swift.Int)
+    case colorIndex(number: Swift.Int)
+    public var foregroundCode: Swift.String {
+      get
+    }
+    public var backgroundCode: Swift.String {
+      get
+    }
+    public var description: Swift.String {
+      get
+    }
+  }
+  public enum ANSIOption : Swift.CustomStringConvertible {
+    case bold
+    case faint
+    case italic
+    case underline
+    case blink
+    case blinkFast
+    case strikethrough
+    public var code: Swift.String {
+      get
+    }
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: ANSIColorLogFormatter.ANSIOption, b: ANSIColorLogFormatter.ANSIOption) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init()
+  open func colorize(level: XCGLogger.Level, with foregroundColor: ANSIColorLogFormatter.ANSIColor = .default, on backgroundColor: ANSIColorLogFormatter.ANSIColor = .default, options: [ANSIColorLogFormatter.ANSIOption] = [])
+  open func colorize(level: XCGLogger.Level, custom: Swift.String)
+  open func resetFormatting()
+  open func clearFormatting()
+  @discardableResult
+  open func format(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.String
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class AppleSystemLogDestination : BaseQueuedDestination {
+  override open var showDate: Swift.Bool {
+    get
+    set
+  }
+  override open func write(message: Swift.String)
+  override public init(owner: XCGLogger? = nil, identifier: Swift.String = super)
+  @objc deinit
+}
+open class AutoRotatingFileDestination : FileDestination {
+  public static let autoRotatingFileDefaultMaxFileSize: Swift.UInt64
+  public static let autoRotatingFileDefaultMaxTimeInterval: Swift.Double
+  open var targetMaxFileSize: Swift.UInt64 {
+    get
+    set
+  }
+  open var targetMaxTimeInterval: Foundation.TimeInterval {
+    get
+    set
+  }
+  open var targetMaxLogFiles: Swift.UInt8 {
+    get
+    set
+  }
+  open var archiveFolderURL: Foundation.URL? {
+    get
+    set
+  }
+  open var autoRotationCompletion: ((_ success: Swift.Bool) -> Swift.Void)?
+  open var archiveSuffixDateFormatter: Foundation.DateFormatter! {
+    get
+    set
+  }
+  open class var defaultLogFolderURL: Foundation.URL {
+    get
+  }
+  public init(owner: XCGLogger? = nil, writeToFile: Any, identifier: Swift.String = "", shouldAppend: Swift.Bool = false, appendMarker: Swift.String? = "-- ** ** ** --", attributes: [Foundation.FileAttributeKey : Any]? = nil, maxFileSize: Swift.UInt64 = autoRotatingFileDefaultMaxFileSize, maxTimeInterval: Foundation.TimeInterval = autoRotatingFileDefaultMaxTimeInterval, archiveSuffixDateFormatter: Foundation.DateFormatter? = nil, targetMaxLogFiles: Swift.UInt8 = 10)
+  open func cleanUpLogFiles()
+  open func purgeArchivedLogFiles()
+  open func archivedFileURLs() -> [Foundation.URL]
+  open func rotateFile()
+  open func shouldRotate() -> Swift.Bool
+  override open func write(message: Swift.String)
+  @objc deinit
+}
+open class Base64LogFormatter : LogFormatterProtocol, Swift.CustomDebugStringConvertible {
+  @discardableResult
+  open func format(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.String
+  public init()
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+open class BaseDestination : DestinationProtocol, Swift.CustomDebugStringConvertible {
+  open var owner: XCGLogger?
+  open var identifier: Swift.String
+  open var outputLevel: XCGLogger.Level
+  open var haveLoggedAppDetails: Swift.Bool
+  open var formatters: [LogFormatterProtocol]?
+  open var filters: [FilterProtocol]?
+  open var showLogIdentifier: Swift.Bool
+  open var showFunctionName: Swift.Bool
+  open var showThreadName: Swift.Bool
+  open var showFileName: Swift.Bool
+  open var showLineNumber: Swift.Bool
+  open var showLevel: Swift.Bool
+  open var showDate: Swift.Bool
+  open var levelDescriptions: [XCGLogger.Level : Swift.String]
+  open var debugDescription: Swift.String {
+    get
+  }
+  public init(owner: XCGLogger? = nil, identifier: Swift.String = "")
+  open func process(logDetails: LogDetails)
+  open func processInternal(logDetails: LogDetails)
+  open func isEnabledFor(level: XCGLogger.Level) -> Swift.Bool
+  open func output(logDetails: LogDetails, message: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class BaseQueuedDestination : BaseDestination {
+  open var logQueue: Dispatch.DispatchQueue?
+  override open func output(logDetails: LogDetails, message: Swift.String)
+  open func write(message: Swift.String)
+  override public init(owner: XCGLogger? = nil, identifier: Swift.String = super)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class ConsoleDestination : BaseQueuedDestination {
+  override open func write(message: Swift.String)
+  override public init(owner: XCGLogger? = nil, identifier: Swift.String = super)
+  @objc deinit
+}
+public protocol DestinationProtocol : Swift.CustomDebugStringConvertible {
+  var owner: XCGLogger? { get set }
+  var identifier: Swift.String { get set }
+  var outputLevel: XCGLogger.Level { get set }
+  var haveLoggedAppDetails: Swift.Bool { get set }
+  var formatters: [LogFormatterProtocol]? { get set }
+  var filters: [FilterProtocol]? { get set }
+  func process(logDetails: LogDetails)
+  func processInternal(logDetails: LogDetails)
+  func isEnabledFor(level: XCGLogger.Level) -> Swift.Bool
+  func shouldExclude(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.Bool
+  func applyFormatters(logDetails: inout LogDetails, message: inout Swift.String)
+}
+extension DestinationProtocol {
+  public func shouldExclude(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.Bool
+  public func applyFormatters(logDetails: inout LogDetails, message: inout Swift.String)
+}
+@_inheritsConvenienceInitializers open class DevFilter : UserInfoFilter {
+  override public init<S>(includeFrom devs: S) where S : Swift.Sequence, S.Element == Swift.String
+  override public init<S>(excludeFrom devs: S) where S : Swift.Sequence, S.Element == Swift.String
+  @objc deinit
+}
+extension Dispatch.DispatchQueue {
+  public static var currentQueueLabel: Swift.String? {
+    get
+  }
+}
+open class FileDestination : BaseQueuedDestination {
+  override open var owner: XCGLogger? {
+    get
+    set
+  }
+  open var writeToFileURL: Foundation.URL? {
+    get
+    set
+  }
+  public init(owner: XCGLogger? = nil, writeToFile: Any, identifier: Swift.String = "", shouldAppend: Swift.Bool = false, appendMarker: Swift.String? = "-- ** ** ** --", attributes: [Foundation.FileAttributeKey : Any]? = nil)
+  @objc deinit
+  open func flush(closure: (() -> Swift.Void)? = nil)
+  @discardableResult
+  open func rotateFile(to archiveToFile: Any, closure: ((_ success: Swift.Bool) -> Swift.Void)? = nil) -> Swift.Bool
+  override open func write(message: Swift.String)
+}
+open class FileNameFilter : FilterProtocol {
+  open var inverse: Swift.Bool
+  public init<S>(includeFrom fileNames: S, excludePathWhenMatching: Swift.Bool = true) where S : Swift.Sequence, S.Element == Swift.String
+  public init<S>(excludeFrom fileNames: S, excludePathWhenMatching: Swift.Bool = true) where S : Swift.Sequence, S.Element == Swift.String
+  @discardableResult
+  open func add(fileName: Swift.String) -> Swift.Bool
+  open func add<S>(fileNames: S) where S : Swift.Sequence, S.Element == Swift.String
+  open func clear()
+  open func shouldExclude(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.Bool
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public protocol FilterProtocol : Swift.CustomDebugStringConvertible {
+  func shouldExclude(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.Bool
+}
+public struct LogDetails {
+  public var level: XCGLogger.Level
+  public var date: Foundation.Date
+  public var message: Swift.String
+  public var functionName: Swift.String
+  public var fileName: Swift.String
+  public var lineNumber: Swift.Int
+  public var userInfo: [Swift.String : Any]
+  public init(level: XCGLogger.Level, date: Foundation.Date, message: Swift.String, functionName: Swift.String, fileName: Swift.String, lineNumber: Swift.Int, userInfo: [Swift.String : Any] = [:])
+}
+public protocol LogFormatterProtocol : Swift.CustomDebugStringConvertible {
+  @discardableResult
+  func format(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.String
+}
+open class PrePostFixLogFormatter : LogFormatterProtocol, Swift.CustomDebugStringConvertible {
+  public init()
+  open func apply(prefix: Swift.String? = nil, postfix: Swift.String? = nil, to level: XCGLogger.Level? = nil)
+  open func clearFormatting()
+  @discardableResult
+  open func format(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.String
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class TagFilter : UserInfoFilter {
+  override public init<S>(includeFrom tags: S) where S : Swift.Sequence, S.Element == Swift.String
+  override public init<S>(excludeFrom tags: S) where S : Swift.Sequence, S.Element == Swift.String
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class TestDestination : BaseQueuedDestination {
+  open var expectedLogMessages: [Swift.String]
+  open var unexpectedLogMessages: [Swift.String]
+  open var remainingNumberOfExpectedLogMessages: Swift.Int {
+    get
+  }
+  open var numberOfUnexpectedLogMessages: Swift.Int {
+    get
+  }
+  open func add(expectedLogMessage message: Swift.String)
+  open func reset()
+  override open func output(logDetails: LogDetails, message: Swift.String)
+  override public init(owner: XCGLogger? = nil, identifier: Swift.String = super)
+  @objc deinit
+}
+open class UserInfoFilter : FilterProtocol {
+  open var userInfoKey: Swift.String
+  open var applyFilterToInternalMessages: Swift.Bool
+  open var inverse: Swift.Bool
+  public init<S>(includeFrom items: S) where S : Swift.Sequence, S.Element == Swift.String
+  public init<S>(excludeFrom items: S) where S : Swift.Sequence, S.Element == Swift.String
+  @discardableResult
+  open func add(item: Swift.String) -> Swift.Bool
+  open func add<S>(items: S) where S : Swift.Sequence, S.Element == Swift.String
+  open func clear()
+  open func shouldExclude(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.Bool
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+open class XCGLogger : Swift.CustomDebugStringConvertible {
+  public struct Constants {
+    public static let baseIdentifier: Swift.String
+    public static let defaultInstanceIdentifier: Swift.String
+    public static let baseConsoleDestinationIdentifier: Swift.String
+    public static let systemLogDestinationIdentifier: Swift.String
+    public static let fileDestinationIdentifier: Swift.String
+    public static let logQueueIdentifier: Swift.String
+    public static let userInfoKeyTags: Swift.String
+    public static let userInfoKeyDevs: Swift.String
+    public static let userInfoKeyInternal: Swift.String
+    public static let versionString: Swift.String
+    public static let extendedAttributeArchivedLogIdentifierKey: Swift.String
+    public static let extendedAttributeArchivedLogTimestampKey: Swift.String
+  }
+  public enum Level : Swift.Int, Swift.CaseIterable, Swift.Comparable, Swift.CustomStringConvertible {
+    case verbose
+    case debug
+    case info
+    case notice
+    case warning
+    case error
+    case severe
+    case alert
+    case emergency
+    case none
+    public var description: Swift.String {
+      get
+    }
+    @available(*, deprecated, renamed: "allCases")
+    public static let all: [XCGLogger.Level]
+    public init?(rawValue: Swift.Int)
+    public typealias AllCases = [XCGLogger.Level]
+    public typealias RawValue = Swift.Int
+    public static var allCases: [XCGLogger.Level] {
+      get
+    }
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public static let `default`: XCGLogger
+  open var identifier: Swift.String
+  open var outputLevel: XCGLogger.Level {
+    get
+    set
+  }
+  open var noMessageClosure: () -> Any?
+  open var levelDescriptions: [XCGLogger.Level : Swift.String]
+  open var formatters: [LogFormatterProtocol]?
+  open var filters: [FilterProtocol]?
+  public static let logQueue: Dispatch.DispatchQueue
+  open var dateFormatter: Foundation.DateFormatter? {
+    get
+    set
+  }
+  open var destinations: [DestinationProtocol]
+  public init(identifier: Swift.String = "", includeDefaultDestinations: Swift.Bool = true)
+  open class func setup(level: XCGLogger.Level = .debug, showLogIdentifier: Swift.Bool = false, showFunctionName: Swift.Bool = true, showThreadName: Swift.Bool = false, showLevel: Swift.Bool = true, showFileNames: Swift.Bool = true, showLineNumbers: Swift.Bool = true, showDate: Swift.Bool = true, writeToFile: Any? = nil, fileLevel: XCGLogger.Level? = nil)
+  open func setup(level: XCGLogger.Level = .debug, showLogIdentifier: Swift.Bool = false, showFunctionName: Swift.Bool = true, showThreadName: Swift.Bool = false, showLevel: Swift.Bool = true, showFileNames: Swift.Bool = true, showLineNumbers: Swift.Bool = true, showDate: Swift.Bool = true, writeToFile: Any? = nil, fileLevel: XCGLogger.Level? = nil)
+  open class func logln(_ closure: @autoclosure () -> Any?, level: XCGLogger.Level = .debug, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func logln(_ level: XCGLogger.Level = .debug, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func logln(_ level: XCGLogger.Level = .debug, functionName: Swift.String = #function, fileName: Swift.String = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func logln(_ closure: @autoclosure () -> Any?, level: XCGLogger.Level = .debug, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func logln(_ level: XCGLogger.Level = .debug, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func logln(_ level: XCGLogger.Level = .debug, functionName: Swift.String = #function, fileName: Swift.String = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func exec(_ level: XCGLogger.Level = .debug, closure: () -> () = {})
+  open func exec(_ level: XCGLogger.Level = .debug, closure: () -> () = {})
+  open func logAppDetails(selectedDestination: DestinationProtocol? = nil)
+  open class func verbose(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func verbose(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func verbose(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func verbose(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func verbose(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func verbose(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func debug(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func debug(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func debug(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func debug(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func debug(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func debug(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func info(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func info(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func info(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func info(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func info(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func info(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func warning(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func warning(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func warning(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func warning(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func warning(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func warning(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func error(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func error(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func error(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func error(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func error(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func error(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func severe(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func severe(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func severe(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func severe(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func severe(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func severe(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func verboseExec(_ closure: () -> () = {})
+  open func verboseExec(_ closure: () -> () = {})
+  open class func debugExec(_ closure: () -> () = {})
+  open func debugExec(_ closure: () -> () = {})
+  open class func infoExec(_ closure: () -> () = {})
+  open func infoExec(_ closure: () -> () = {})
+  open class func warningExec(_ closure: () -> () = {})
+  open func warningExec(_ closure: () -> () = {})
+  open class func errorExec(_ closure: () -> () = {})
+  open func errorExec(_ closure: () -> () = {})
+  open class func severeExec(_ closure: () -> () = {})
+  open func severeExec(_ closure: () -> () = {})
+  open func destination(withIdentifier identifier: Swift.String) -> DestinationProtocol?
+  @discardableResult
+  open func add(destination: DestinationProtocol) -> Swift.Bool
+  @discardableResult
+  open func remove(destination: DestinationProtocol) -> Swift.Bool
+  @discardableResult
+  open func remove(destinationWithIdentifier identifier: Swift.String) -> Swift.Bool
+  open func isEnabledFor(level: XCGLogger.Level) -> Swift.Bool
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public func < (lhs: XCGLogger.Level, rhs: XCGLogger.Level) -> Swift.Bool
+open class XcodeColorsLogFormatter : LogFormatterProtocol, Swift.CustomDebugStringConvertible {
+  public static let escape: Swift.String
+  public static let resetForeground: Swift.String
+  public static let resetBackground: Swift.String
+  public static let reset: Swift.String
+  public struct XcodeColor : Swift.CustomStringConvertible {
+    public var red: Swift.Int {
+      get
+      set
+    }
+    public var green: Swift.Int {
+      get
+      set
+    }
+    public var blue: Swift.Int {
+      get
+      set
+    }
+    public var foregroundCode: Swift.String {
+      get
+    }
+    public var backgroundCode: Swift.String {
+      get
+    }
+    public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int)
+    public init(_ red: Swift.Int, _ green: Swift.Int, _ blue: Swift.Int)
+    public init(color: UIKit.UIColor)
+    public var description: Swift.String {
+      get
+    }
+    public static let red: XcodeColorsLogFormatter.XcodeColor
+    public static let green: XcodeColorsLogFormatter.XcodeColor
+    public static let blue: XcodeColorsLogFormatter.XcodeColor
+    public static let black: XcodeColorsLogFormatter.XcodeColor
+    public static let white: XcodeColorsLogFormatter.XcodeColor
+    public static let lightGrey: XcodeColorsLogFormatter.XcodeColor
+    public static let darkGrey: XcodeColorsLogFormatter.XcodeColor
+    public static let orange: XcodeColorsLogFormatter.XcodeColor
+    public static let purple: XcodeColorsLogFormatter.XcodeColor
+    public static let darkGreen: XcodeColorsLogFormatter.XcodeColor
+    public static let cyan: XcodeColorsLogFormatter.XcodeColor
+  }
+  public init()
+  open func colorize(level: XCGLogger.Level, with foregroundColor: XcodeColorsLogFormatter.XcodeColor? = nil, on backgroundColor: XcodeColorsLogFormatter.XcodeColor? = nil)
+  open func resetFormatting()
+  open func clearFormatting()
+  @discardableResult
+  open func format(logDetails: inout LogDetails, message: inout Swift.String) -> Swift.String
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+extension ANSIColorLogFormatter.ANSIOption : Swift.Equatable {}
+extension ANSIColorLogFormatter.ANSIOption : Swift.Hashable {}
+extension XCGLogger.Level : Swift.Hashable {}
+extension XCGLogger.Level : Swift.RawRepresentable {}
