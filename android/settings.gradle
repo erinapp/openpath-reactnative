@@ -1,0 +1,3 @@
+
+include ':openpath'
+project(':openpath').projectDir = new File('./openpath')
