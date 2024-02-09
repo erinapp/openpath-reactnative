@@ -1,0 +1,2847 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftCBOR",
+        "printedName": "SwiftCBOR",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation"
+      },
+      {
+        "kind": "Import",
+        "name": "AllegionLogging",
+        "printedName": "AllegionLogging",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlCBOR",
+        "printedName": "AlCBOR",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "unsignedInt",
+            "printedName": "unsignedInt",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.UInt) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.UInt) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt",
+                        "printedName": "Swift.UInt",
+                        "usr": "s:Su"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO11unsignedIntyACSucACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO11unsignedIntyACSucACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "negativeInt",
+            "printedName": "negativeInt",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.UInt) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.UInt) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt",
+                        "printedName": "Swift.UInt",
+                        "usr": "s:Su"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO11negativeIntyACSucACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO11negativeIntyACSucACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "byteString",
+            "printedName": "byteString",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> ([Swift.UInt8]) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([Swift.UInt8]) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.UInt8]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO10byteStringyACSays5UInt8VGcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO10byteStringyACSays5UInt8VGcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "utf8String",
+            "printedName": "utf8String",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.String) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO10utf8StringyACSScACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO10utf8StringyACSScACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "array",
+            "printedName": "array",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> ([AllegionTranslation.AlCBOR]) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([AllegionTranslation.AlCBOR]) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[AllegionTranslation.AlCBOR]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AlCBOR",
+                            "printedName": "AllegionTranslation.AlCBOR",
+                            "usr": "s:19AllegionTranslation6AlCBORO"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO5arrayyACSayACGcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO5arrayyACSayACGcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "map",
+            "printedName": "map",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> ([AllegionTranslation.AlCBOR : AllegionTranslation.AlCBOR]) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([AllegionTranslation.AlCBOR : AllegionTranslation.AlCBOR]) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[AllegionTranslation.AlCBOR : AllegionTranslation.AlCBOR]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AlCBOR",
+                            "printedName": "AllegionTranslation.AlCBOR",
+                            "usr": "s:19AllegionTranslation6AlCBORO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AlCBOR",
+                            "printedName": "AllegionTranslation.AlCBOR",
+                            "usr": "s:19AllegionTranslation6AlCBORO"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO3mapyACSDyA2CGcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO3mapyACSDyA2CGcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "tagged",
+            "printedName": "tagged",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.UInt8, AllegionTranslation.AlCBOR) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.UInt8, AllegionTranslation.AlCBOR) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Swift.UInt8, AllegionTranslation.AlCBOR)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AlCBOR",
+                            "printedName": "AllegionTranslation.AlCBOR",
+                            "usr": "s:19AllegionTranslation6AlCBORO"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO6taggedyACs5UInt8V_ACtcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO6taggedyACs5UInt8V_ACtcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "simple",
+            "printedName": "simple",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.UInt8) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.UInt8) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO6simpleyACs5UInt8VcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO6simpleyACs5UInt8VcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "boolean",
+            "printedName": "boolean",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.Bool) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Bool) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO7booleanyACSbcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO7booleanyACSbcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "null",
+            "printedName": "null",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO4nullyA2CmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO4nullyA2CmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "undefined",
+            "printedName": "undefined",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO9undefinedyA2CmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO9undefinedyA2CmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "half",
+            "printedName": "half",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.Float) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Float) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Float",
+                        "printedName": "Swift.Float",
+                        "usr": "s:Sf"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO4halfyACSfcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO4halfyACSfcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "float",
+            "printedName": "float",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.Float) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Float) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Float",
+                        "printedName": "Swift.Float",
+                        "usr": "s:Sf"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO5floatyACSfcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO5floatyACSfcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "double",
+            "printedName": "double",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Swift.Double) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Double) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO6doubleyACSdcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO6doubleyACSdcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "break",
+            "printedName": "break",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO5breakyA2CmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO5breakyA2CmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Var",
+            "name": "date",
+            "printedName": "date",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlCBOR.Type) -> (Foundation.Date) -> AllegionTranslation.AlCBOR",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.Date) -> AllegionTranslation.AlCBOR",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlCBOR.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation6AlCBORO4dateyAC10Foundation4DateVcACmF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO4dateyAC10Foundation4DateVcACmF",
+            "moduleName": "AllegionTranslation"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nilLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO10nilLiteralACyt_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO10nilLiteralACyt_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(integerLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO14integerLiteralACSi_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO14integerLiteralACSi_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(extendedGraphemeClusterLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO30extendedGraphemeClusterLiteralACSS_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO30extendedGraphemeClusterLiteralACSS_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(unicodeScalarLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO20unicodeScalarLiteralACSS_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO20unicodeScalarLiteralACSS_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(stringLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO13stringLiteralACSS_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO13stringLiteralACSS_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(arrayLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[AllegionTranslation.AlCBOR]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO12arrayLiteralA2Cd_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO12arrayLiteralA2Cd_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(dictionaryLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[(AllegionTranslation.AlCBOR, AllegionTranslation.AlCBOR)]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(AllegionTranslation.AlCBOR, AllegionTranslation.AlCBOR)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO17dictionaryLiteralA2C_ACtd_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO17dictionaryLiteralA2C_ACtd_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(booleanLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO14booleanLiteralACSb_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO14booleanLiteralACSb_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(floatLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO12floatLiteralACSf_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO12floatLiteralACSf_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(dateLiteral:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation6AlCBORO11dateLiteralAC10Foundation4DateV_tcfc",
+            "mangledName": "$s19AllegionTranslation6AlCBORO11dateLiteralAC10Foundation4DateV_tcfc",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AllegionTranslation.AlCBOR?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:19AllegionTranslation6AlCBOROyACSgACcip",
+            "mangledName": "$s19AllegionTranslation6AlCBOROyACSgACcip",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AllegionTranslation.AlCBOR?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AllegionTranslation6AlCBOROyACSgACcig",
+                "mangledName": "$s19AllegionTranslation6AlCBOROyACSgACcig",
+                "moduleName": "AllegionTranslation",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AllegionTranslation.AlCBOR?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlCBOR",
+                        "printedName": "AllegionTranslation.AlCBOR",
+                        "usr": "s:19AllegionTranslation6AlCBORO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AllegionTranslation6AlCBOROyACSgACcis",
+                "mangledName": "$s19AllegionTranslation6AlCBOROyACSgACcis",
+                "moduleName": "AllegionTranslation",
+                "isFromExtension": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AllegionTranslation6AlCBOROyACSgACciM",
+                "mangledName": "$s19AllegionTranslation6AlCBOROyACSgACciM",
+                "moduleName": "AllegionTranslation",
+                "implicit": true,
+                "isFromExtension": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlCBORO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO4hash4intoys6HasherVz_tF",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AllegionTranslation6AlCBORO9hashValueSivp",
+            "mangledName": "$s19AllegionTranslation6AlCBORO9hashValueSivp",
+            "moduleName": "AllegionTranslation",
+            "implicit": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AllegionTranslation6AlCBORO9hashValueSivg",
+                "mangledName": "$s19AllegionTranslation6AlCBORO9hashValueSivg",
+                "moduleName": "AllegionTranslation",
+                "implicit": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AlCBOR",
+                "printedName": "AllegionTranslation.AlCBOR",
+                "usr": "s:19AllegionTranslation6AlCBORO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlCBORO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19AllegionTranslation6AlCBORO2eeoiySbAC_ACtFZ",
+            "moduleName": "AllegionTranslation",
+            "static": true,
+            "implicit": true,
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlCBORO6encodeSays5UInt8VGyF",
+            "mangledName": "$s19AllegionTranslation6AlCBORO6encodeSays5UInt8VGyF",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCBOR",
+            "printedName": "toCBOR(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlCBORO02toD0ySays5UInt8VGx05SwiftD013CBOREncodableRzlFZ",
+            "mangledName": "$s19AllegionTranslation6AlCBORO02toD0ySays5UInt8VGx05SwiftD013CBOREncodableRzlFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0 where τ_0_0 : SwiftCBOR.CBOREncodable>",
+            "sugared_genericSig": "<T where T : SwiftCBOR.CBOREncodable>",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCBOR",
+            "printedName": "toCBOR(_:asByteString:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[τ_0_0]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlCBORO02toD0_12asByteStringSays5UInt8VGSayxG_Sbt05SwiftD013CBOREncodableRzlFZ",
+            "mangledName": "$s19AllegionTranslation6AlCBORO02toD0_12asByteStringSays5UInt8VGSayxG_Sbt05SwiftD013CBOREncodableRzlFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0 where τ_0_0 : SwiftCBOR.CBOREncodable>",
+            "sugared_genericSig": "<T where T : SwiftCBOR.CBOREncodable>",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCBOR",
+            "printedName": "toCBOR(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[τ_0_0 : τ_0_1]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_1"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlCBORO02toD0ySays5UInt8VGSDyxq_GSHRz05SwiftD013CBOREncodableRzAiJR_r0_lFZ",
+            "mangledName": "$s19AllegionTranslation6AlCBORO02toD0ySays5UInt8VGSDyxq_GSHRz05SwiftD013CBOREncodableRzAiJR_r0_lFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : Swift.Hashable, τ_0_0 : SwiftCBOR.CBOREncodable, τ_0_1 : SwiftCBOR.CBOREncodable>",
+            "sugared_genericSig": "<A, B where A : Swift.Hashable, A : SwiftCBOR.CBOREncodable, B : SwiftCBOR.CBOREncodable>",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCBOR",
+            "printedName": "toCBOR(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[τ_0_0 : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlCBORO02toD0ySays5UInt8VGSDyxypGKSHRz05SwiftD013CBOREncodableRzlFZ",
+            "mangledName": "$s19AllegionTranslation6AlCBORO02toD0ySays5UInt8VGSDyxypGKSHRz05SwiftD013CBOREncodableRzlFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Hashable, τ_0_0 : SwiftCBOR.CBOREncodable>",
+            "sugared_genericSig": "<A where A : Swift.Hashable, A : SwiftCBOR.CBOREncodable>",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromCBOR",
+            "printedName": "fromCBOR(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AllegionTranslation.AlCBOR?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlCBORO04fromD0yACSgSays5UInt8VGKFZ",
+            "mangledName": "$s19AllegionTranslation6AlCBORO04fromD0yACSgSays5UInt8VGKFZ",
+            "moduleName": "AllegionTranslation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19AllegionTranslation6AlCBORO",
+        "mangledName": "$s19AllegionTranslation6AlCBORO",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "Indirect",
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByNilLiteral",
+            "printedName": "ExpressibleByNilLiteral",
+            "usr": "s:s23ExpressibleByNilLiteralP",
+            "mangledName": "$ss23ExpressibleByNilLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByIntegerLiteral",
+            "printedName": "ExpressibleByIntegerLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "IntegerLiteralType",
+                "printedName": "IntegerLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s27ExpressibleByIntegerLiteralP",
+            "mangledName": "$ss27ExpressibleByIntegerLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringLiteral",
+            "printedName": "ExpressibleByStringLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringLiteralType",
+                "printedName": "StringLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s26ExpressibleByStringLiteralP",
+            "mangledName": "$ss26ExpressibleByStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByArrayLiteral",
+            "printedName": "ExpressibleByArrayLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ArrayLiteralElement",
+                "printedName": "ArrayLiteralElement",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s25ExpressibleByArrayLiteralP",
+            "mangledName": "$ss25ExpressibleByArrayLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByDictionaryLiteral",
+            "printedName": "ExpressibleByDictionaryLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Key",
+                "printedName": "Key",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Value",
+                "printedName": "Value",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s30ExpressibleByDictionaryLiteralP",
+            "mangledName": "$ss30ExpressibleByDictionaryLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByBooleanLiteral",
+            "printedName": "ExpressibleByBooleanLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "BooleanLiteralType",
+                "printedName": "BooleanLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s27ExpressibleByBooleanLiteralP",
+            "mangledName": "$ss27ExpressibleByBooleanLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByFloatLiteral",
+            "printedName": "ExpressibleByFloatLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "FloatLiteralType",
+                "printedName": "FloatLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s25ExpressibleByFloatLiteralP",
+            "mangledName": "$ss25ExpressibleByFloatLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "printedName": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ExtendedGraphemeClusterLiteralType",
+                "printedName": "ExtendedGraphemeClusterLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s43ExpressibleByExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss43ExpressibleByExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByUnicodeScalarLiteral",
+            "printedName": "ExpressibleByUnicodeScalarLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarLiteralType",
+                "printedName": "UnicodeScalarLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s33ExpressibleByUnicodeScalarLiteralP",
+            "mangledName": "$ss33ExpressibleByUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CBOREncodable",
+            "printedName": "CBOREncodable",
+            "usr": "s:9SwiftCBOR13CBOREncodableP",
+            "mangledName": "$s9SwiftCBOR13CBOREncodableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftCBOR",
+        "printedName": "SwiftCBOR",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftCBOR",
+        "printedName": "SwiftCBOR",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlCBORProtocol",
+        "printedName": "AlCBORProtocol",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation14AlCBORProtocolP6encodeSays5UInt8VGyF",
+            "mangledName": "$s19AllegionTranslation14AlCBORProtocolP6encodeSays5UInt8VGyF",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionTranslation.AlCBORProtocol>",
+            "sugared_genericSig": "<Self where Self : AllegionTranslation.AlCBORProtocol>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCBOR",
+            "printedName": "toCBOR(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_1_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation14AlCBORProtocolP6toCBORySays5UInt8VGqd__05SwiftF013CBOREncodableRd__lFZ",
+            "mangledName": "$s19AllegionTranslation14AlCBORProtocolP6toCBORySays5UInt8VGqd__05SwiftF013CBOREncodableRd__lFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : AllegionTranslation.AlCBORProtocol, τ_1_0 : SwiftCBOR.CBOREncodable>",
+            "sugared_genericSig": "<Self, T where Self : AllegionTranslation.AlCBORProtocol, T : SwiftCBOR.CBOREncodable>",
+            "static": true,
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCBOR",
+            "printedName": "toCBOR(_:asByteString:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[τ_1_0]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_1_0"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation14AlCBORProtocolP6toCBOR_12asByteStringSays5UInt8VGSayqd__G_Sbt05SwiftF013CBOREncodableRd__lFZ",
+            "mangledName": "$s19AllegionTranslation14AlCBORProtocolP6toCBOR_12asByteStringSays5UInt8VGSayqd__G_Sbt05SwiftF013CBOREncodableRd__lFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : AllegionTranslation.AlCBORProtocol, τ_1_0 : SwiftCBOR.CBOREncodable>",
+            "sugared_genericSig": "<Self, T where Self : AllegionTranslation.AlCBORProtocol, T : SwiftCBOR.CBOREncodable>",
+            "static": true,
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCBOR",
+            "printedName": "toCBOR(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[τ_1_0 : τ_1_1]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_1_0"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_1_1"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation14AlCBORProtocolP6toCBORySays5UInt8VGSDyqd__qd_0_GSHRd__05SwiftF013CBOREncodableRd__AiJRd_0_r0_lFZ",
+            "mangledName": "$s19AllegionTranslation14AlCBORProtocolP6toCBORySays5UInt8VGSDyqd__qd_0_GSHRd__05SwiftF013CBOREncodableRd__AiJRd_0_r0_lFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0, τ_1_0, τ_1_1 where τ_0_0 : AllegionTranslation.AlCBORProtocol, τ_1_0 : Swift.Hashable, τ_1_0 : SwiftCBOR.CBOREncodable, τ_1_1 : SwiftCBOR.CBOREncodable>",
+            "sugared_genericSig": "<Self, A, B where Self : AllegionTranslation.AlCBORProtocol, A : Swift.Hashable, A : SwiftCBOR.CBOREncodable, B : SwiftCBOR.CBOREncodable>",
+            "static": true,
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toCBOR",
+            "printedName": "toCBOR(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[τ_1_0 : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_1_0"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation14AlCBORProtocolP6toCBORySays5UInt8VGSDyqd__ypGKSHRd__05SwiftF013CBOREncodableRd__lFZ",
+            "mangledName": "$s19AllegionTranslation14AlCBORProtocolP6toCBORySays5UInt8VGSDyqd__ypGKSHRd__05SwiftF013CBOREncodableRd__lFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : AllegionTranslation.AlCBORProtocol, τ_1_0 : Swift.Hashable, τ_1_0 : SwiftCBOR.CBOREncodable>",
+            "sugared_genericSig": "<Self, A where Self : AllegionTranslation.AlCBORProtocol, A : Swift.Hashable, A : SwiftCBOR.CBOREncodable>",
+            "static": true,
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromCBOR",
+            "printedName": "fromCBOR(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AllegionTranslation.AlCBOR?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlCBOR",
+                    "printedName": "AllegionTranslation.AlCBOR",
+                    "usr": "s:19AllegionTranslation6AlCBORO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation14AlCBORProtocolP8fromCBORyAA0cF0OSgSays5UInt8VGKFZ",
+            "mangledName": "$s19AllegionTranslation14AlCBORProtocolP8fromCBORyAA0cF0OSgSays5UInt8VGKFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionTranslation.AlCBORProtocol>",
+            "sugared_genericSig": "<Self where Self : AllegionTranslation.AlCBORProtocol>",
+            "static": true,
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19AllegionTranslation14AlCBORProtocolP",
+        "mangledName": "$s19AllegionTranslation14AlCBORProtocolP",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AllegionLogging",
+        "printedName": "AllegionLogging",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlJSON",
+        "printedName": "AlJSON",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "toJSON",
+            "printedName": "toJSON(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlJSONC02toD0ySSxKSERzlFZ",
+            "mangledName": "$s19AllegionTranslation6AlJSONC02toD0ySSxKSERzlFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Encodable>",
+            "sugared_genericSig": "<T where T : Swift.Encodable>",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromJSON",
+            "printedName": "fromJSON(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlJSONC04fromD0yxSSKSeRzlFZ",
+            "mangledName": "$s19AllegionTranslation6AlJSONC04fromD0yxSSKSeRzlFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<T where T : Swift.Decodable>",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toData",
+            "printedName": "toData(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation6AlJSONC6toDatay10Foundation0F0VxKSERzlFZ",
+            "mangledName": "$s19AllegionTranslation6AlJSONC6toDatay10Foundation0F0VxKSERzlFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Encodable>",
+            "sugared_genericSig": "<T where T : Swift.Encodable>",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19AllegionTranslation6AlJSONC",
+        "mangledName": "$s19AllegionTranslation6AlJSONC",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "AlJSONProtocol",
+            "printedName": "AlJSONProtocol",
+            "usr": "s:19AllegionTranslation14AlJSONProtocolP",
+            "mangledName": "$s19AllegionTranslation14AlJSONProtocolP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlJSONProtocol",
+        "printedName": "AlJSONProtocol",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "toJSON",
+            "printedName": "toJSON(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_1_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation14AlJSONProtocolP6toJSONySSqd__KSERd__lFZ",
+            "mangledName": "$s19AllegionTranslation14AlJSONProtocolP6toJSONySSqd__KSERd__lFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : AllegionTranslation.AlJSONProtocol, τ_1_0 : Swift.Encodable>",
+            "sugared_genericSig": "<Self, T where Self : AllegionTranslation.AlJSONProtocol, T : Swift.Encodable>",
+            "static": true,
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromJSON",
+            "printedName": "fromJSON(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_1_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AllegionTranslation14AlJSONProtocolP8fromJSONyqd__SSKSeRd__lFZ",
+            "mangledName": "$s19AllegionTranslation14AlJSONProtocolP8fromJSONyqd__SSKSeRd__lFZ",
+            "moduleName": "AllegionTranslation",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : AllegionTranslation.AlJSONProtocol, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : AllegionTranslation.AlJSONProtocol, T : Swift.Decodable>",
+            "static": true,
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19AllegionTranslation14AlJSONProtocolP",
+        "mangledName": "$s19AllegionTranslation14AlJSONProtocolP",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlTranslationError",
+        "printedName": "AlTranslationError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "decodeError",
+            "printedName": "decodeError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlTranslationError.Type) -> AllegionTranslation.AlTranslationError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlTranslationError",
+                    "printedName": "AllegionTranslation.AlTranslationError",
+                    "usr": "s:19AllegionTranslation02AlB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlTranslationError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlTranslationError",
+                        "printedName": "AllegionTranslation.AlTranslationError",
+                        "usr": "s:19AllegionTranslation02AlB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation02AlB5ErrorO06decodeD0yA2CmF",
+            "mangledName": "$s19AllegionTranslation02AlB5ErrorO06decodeD0yA2CmF",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encodeError",
+            "printedName": "encodeError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AllegionTranslation.AlTranslationError.Type) -> AllegionTranslation.AlTranslationError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlTranslationError",
+                    "printedName": "AllegionTranslation.AlTranslationError",
+                    "usr": "s:19AllegionTranslation02AlB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AllegionTranslation.AlTranslationError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlTranslationError",
+                        "printedName": "AllegionTranslation.AlTranslationError",
+                        "usr": "s:19AllegionTranslation02AlB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AllegionTranslation02AlB5ErrorO06encodeD0yA2CmF",
+            "mangledName": "$s19AllegionTranslation02AlB5ErrorO06encodeD0yA2CmF",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AllegionTranslation.AlTranslationError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlTranslationError",
+                    "printedName": "AllegionTranslation.AlTranslationError",
+                    "usr": "s:19AllegionTranslation02AlB5ErrorO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AllegionTranslation02AlB5ErrorO8rawValueACSgSu_tcfc",
+            "mangledName": "$s19AllegionTranslation02AlB5ErrorO8rawValueACSgSu_tcfc",
+            "moduleName": "AllegionTranslation",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AllegionTranslation02AlB5ErrorO8rawValueSuvp",
+            "mangledName": "$s19AllegionTranslation02AlB5ErrorO8rawValueSuvp",
+            "moduleName": "AllegionTranslation",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt",
+                    "printedName": "Swift.UInt",
+                    "usr": "s:Su"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AllegionTranslation02AlB5ErrorO8rawValueSuvg",
+                "mangledName": "$s19AllegionTranslation02AlB5ErrorO8rawValueSuvg",
+                "moduleName": "AllegionTranslation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AllegionTranslation02AlB5ErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s19AllegionTranslation02AlB5ErrorO16errorDescriptionSSSgvp",
+            "moduleName": "AllegionTranslation",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AllegionTranslation02AlB5ErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s19AllegionTranslation02AlB5ErrorO16errorDescriptionSSSgvg",
+                "moduleName": "AllegionTranslation",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19AllegionTranslation02AlB5ErrorO",
+        "mangledName": "$s19AllegionTranslation02AlB5ErrorO",
+        "moduleName": "AllegionTranslation",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "UInt",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt",
+                    "printedName": "Swift.UInt",
+                    "usr": "s:Su"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/CBOR\/AlCBOR.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1125,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/CBOR\/AlCBOR.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1176,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/CBOR\/AlCBOR.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3943,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/CBOR\/AlCBOR.swift",
+      "kind": "StringLiteral",
+      "offset": 4976,
+      "length": 35,
+      "value": "\"Failed to translate Data TO CBOR.\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/CBOR\/AlCBOR.swift",
+      "kind": "StringLiteral",
+      "offset": 5710,
+      "length": 37,
+      "value": "\"Failed to translate Data FROM CBOR.\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/JSON\/AlJSON.swift",
+      "kind": "StringLiteral",
+      "offset": 884,
+      "length": 35,
+      "value": "\"Failed to translate Data TO JSON.\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/JSON\/AlJSON.swift",
+      "kind": "StringLiteral",
+      "offset": 1493,
+      "length": 37,
+      "value": "\"Failed to translate Data FROM JSON.\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/JSON\/AlJSON.swift",
+      "kind": "StringLiteral",
+      "offset": 2164,
+      "length": 40,
+      "value": "\"Failed to translate Encodable to Data.\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/Errors\/AlTranslationError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 507,
+      "length": 11,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/Errors\/AlTranslationError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 507,
+      "length": 11,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/Errors\/AlTranslationError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 507,
+      "length": 11,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/Errors\/AlTranslationError.swift",
+      "kind": "StringLiteral",
+      "offset": 868,
+      "length": 23,
+      "value": "\"Failed to decode data\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/Errors\/AlTranslationError.swift",
+      "kind": "StringLiteral",
+      "offset": 902,
+      "length": 13,
+      "value": "\"decodeError\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/Errors\/AlTranslationError.swift",
+      "kind": "StringLiteral",
+      "offset": 989,
+      "length": 23,
+      "value": "\"Failed to encode data\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionTranslation\/Sources\/AllegionTranslation\/Errors\/AlTranslationError.swift",
+      "kind": "StringLiteral",
+      "offset": 1023,
+      "length": 13,
+      "value": "\"encodeError\""
+    }
+  ]
+}

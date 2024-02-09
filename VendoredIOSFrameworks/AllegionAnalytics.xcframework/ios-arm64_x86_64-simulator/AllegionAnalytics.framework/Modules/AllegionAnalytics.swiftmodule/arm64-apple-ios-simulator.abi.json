@@ -1,0 +1,978 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionAnalytics",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlAnalyticsManageable",
+        "printedName": "AlAnalyticsManageable",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "initializeAppCenter",
+            "printedName": "initializeAppCenter(appSecretKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB10ManageableP19initializeAppCenter12appSecretKeyySS_tF",
+            "mangledName": "$s17AllegionAnalytics02AlB10ManageableP19initializeAppCenter12appSecretKeyySS_tF",
+            "moduleName": "AllegionAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionAnalytics.AlAnalyticsManageable>",
+            "sugared_genericSig": "<Self where Self : AllegionAnalytics.AlAnalyticsManageable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addAnalyticsProvider",
+            "printedName": "addAnalyticsProvider(analyticsProviders:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[AllegionAnalytics.AlAnalyticsProvider]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlAnalyticsProvider",
+                    "printedName": "AllegionAnalytics.AlAnalyticsProvider",
+                    "usr": "s:17AllegionAnalytics02AlB8ProviderP"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB10ManageableP03addB8Provider18analyticsProvidersySayAA0cbF0_pG_tF",
+            "mangledName": "$s17AllegionAnalytics02AlB10ManageableP03addB8Provider18analyticsProvidersySayAA0cbF0_pG_tF",
+            "moduleName": "AllegionAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionAnalytics.AlAnalyticsManageable>",
+            "sugared_genericSig": "<Self where Self : AllegionAnalytics.AlAnalyticsManageable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enableLogger",
+            "printedName": "enableLogger(enable:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB10ManageableP12enableLogger0E0ySb_tF",
+            "mangledName": "$s17AllegionAnalytics02AlB10ManageableP12enableLogger0E0ySb_tF",
+            "moduleName": "AllegionAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionAnalytics.AlAnalyticsManageable>",
+            "sugared_genericSig": "<Self where Self : AllegionAnalytics.AlAnalyticsManageable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17AllegionAnalytics02AlB10ManageableP",
+        "mangledName": "$s17AllegionAnalytics02AlB10ManageableP",
+        "moduleName": "AllegionAnalytics",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionAnalytics",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AllegionLogging",
+        "printedName": "AllegionLogging",
+        "declKind": "Import",
+        "moduleName": "AllegionAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlAnalyticsManager",
+        "printedName": "AlAnalyticsManager",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlAnalyticsManager",
+                "printedName": "AllegionAnalytics.AlAnalyticsManager",
+                "usr": "s:17AllegionAnalytics02AlB7ManagerC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17AllegionAnalytics02AlB7ManagerC6sharedACvpZ",
+            "mangledName": "$s17AllegionAnalytics02AlB7ManagerC6sharedACvpZ",
+            "moduleName": "AllegionAnalytics",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlAnalyticsManager",
+                    "printedName": "AllegionAnalytics.AlAnalyticsManager",
+                    "usr": "s:17AllegionAnalytics02AlB7ManagerC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17AllegionAnalytics02AlB7ManagerC6sharedACvgZ",
+                "mangledName": "$s17AllegionAnalytics02AlB7ManagerC6sharedACvgZ",
+                "moduleName": "AllegionAnalytics",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "initializeAppCenter",
+            "printedName": "initializeAppCenter(appSecretKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB7ManagerC19initializeAppCenter12appSecretKeyySS_tF",
+            "mangledName": "$s17AllegionAnalytics02AlB7ManagerC19initializeAppCenter12appSecretKeyySS_tF",
+            "moduleName": "AllegionAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addAnalyticsProvider",
+            "printedName": "addAnalyticsProvider(analyticsProviders:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[AllegionAnalytics.AlAnalyticsProvider]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlAnalyticsProvider",
+                    "printedName": "AllegionAnalytics.AlAnalyticsProvider",
+                    "usr": "s:17AllegionAnalytics02AlB8ProviderP"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB7ManagerC03addB8Provider18analyticsProvidersySayAA0cbF0_pG_tF",
+            "mangledName": "$s17AllegionAnalytics02AlB7ManagerC03addB8Provider18analyticsProvidersySayAA0cbF0_pG_tF",
+            "moduleName": "AllegionAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enableLogger",
+            "printedName": "enableLogger(enable:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB7ManagerC12enableLogger0E0ySb_tF",
+            "mangledName": "$s17AllegionAnalytics02AlB7ManagerC12enableLogger0E0ySb_tF",
+            "moduleName": "AllegionAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackScreenName",
+            "printedName": "trackScreenName(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB7ManagerC15trackScreenNameyySSF",
+            "mangledName": "$s17AllegionAnalytics02AlB7ManagerC15trackScreenNameyySSF",
+            "moduleName": "AllegionAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackSuccessEvent",
+            "printedName": "trackSuccessEvent(category:action:params:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB7ManagerC17trackSuccessEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "mangledName": "$s17AllegionAnalytics02AlB7ManagerC17trackSuccessEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "moduleName": "AllegionAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackFailureEvent",
+            "printedName": "trackFailureEvent(category:action:params:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB7ManagerC17trackFailureEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "mangledName": "$s17AllegionAnalytics02AlB7ManagerC17trackFailureEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "moduleName": "AllegionAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackEvent",
+            "printedName": "trackEvent(category:action:params:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB7ManagerC10trackEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "mangledName": "$s17AllegionAnalytics02AlB7ManagerC10trackEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "moduleName": "AllegionAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:17AllegionAnalytics02AlB7ManagerC",
+        "mangledName": "$s17AllegionAnalytics02AlB7ManagerC",
+        "moduleName": "AllegionAnalytics",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "AlAnalyticsManageable",
+            "printedName": "AlAnalyticsManageable",
+            "usr": "s:17AllegionAnalytics02AlB10ManageableP",
+            "mangledName": "$s17AllegionAnalytics02AlB10ManageableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AlAnalyticsProvider",
+            "printedName": "AlAnalyticsProvider",
+            "usr": "s:17AllegionAnalytics02AlB8ProviderP",
+            "mangledName": "$s17AllegionAnalytics02AlB8ProviderP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionAnalytics",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionAnalytics",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlAnalyticsProvider",
+        "printedName": "AlAnalyticsProvider",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "trackScreenName",
+            "printedName": "trackScreenName(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB8ProviderP15trackScreenNameyySSF",
+            "mangledName": "$s17AllegionAnalytics02AlB8ProviderP15trackScreenNameyySSF",
+            "moduleName": "AllegionAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionAnalytics.AlAnalyticsProvider>",
+            "sugared_genericSig": "<Self where Self : AllegionAnalytics.AlAnalyticsProvider>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackSuccessEvent",
+            "printedName": "trackSuccessEvent(category:action:params:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB8ProviderP17trackSuccessEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "mangledName": "$s17AllegionAnalytics02AlB8ProviderP17trackSuccessEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "moduleName": "AllegionAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionAnalytics.AlAnalyticsProvider>",
+            "sugared_genericSig": "<Self where Self : AllegionAnalytics.AlAnalyticsProvider>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackFailureEvent",
+            "printedName": "trackFailureEvent(category:action:params:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB8ProviderP17trackFailureEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "mangledName": "$s17AllegionAnalytics02AlB8ProviderP17trackFailureEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "moduleName": "AllegionAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionAnalytics.AlAnalyticsProvider>",
+            "sugared_genericSig": "<Self where Self : AllegionAnalytics.AlAnalyticsProvider>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackEvent",
+            "printedName": "trackEvent(category:action:params:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17AllegionAnalytics02AlB8ProviderP10trackEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "mangledName": "$s17AllegionAnalytics02AlB8ProviderP10trackEvent8category6action6paramsySS_SSSDySSypGSgtF",
+            "moduleName": "AllegionAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : AllegionAnalytics.AlAnalyticsProvider>",
+            "sugared_genericSig": "<Self where Self : AllegionAnalytics.AlAnalyticsProvider>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17AllegionAnalytics02AlB8ProviderP",
+        "mangledName": "$s17AllegionAnalytics02AlB8ProviderP",
+        "moduleName": "AllegionAnalytics",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AllegionAnalytics",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "Array",
+      "offset": 487,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "Array",
+      "offset": 574,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 654,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1326,
+      "length": 27,
+      "value": "\"ScreenName: \""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1352,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1561,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1785,
+      "length": 80,
+      "value": "\"Category: \""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1807,
+      "length": 1,
+      "value": "\", Action: \""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1826,
+      "length": 1,
+      "value": "\",Params:\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1864,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2073,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2298,
+      "length": 80,
+      "value": "\"Category: \""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2320,
+      "length": 1,
+      "value": "\", Action: \""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2339,
+      "length": 1,
+      "value": "\",Params:\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2377,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2700,
+      "length": 79,
+      "value": "\"Category: \""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2722,
+      "length": 1,
+      "value": "\", Action: \""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2741,
+      "length": 1,
+      "value": "\",Params:\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/AlAnalyticsManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2778,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/Enums\/AlAnalyticsParameter.swift",
+      "kind": "StringLiteral",
+      "offset": 228,
+      "length": 12,
+      "value": "\"Successful\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/Enums\/AlAnalyticsParameter.swift",
+      "kind": "StringLiteral",
+      "offset": 228,
+      "length": 12,
+      "value": "\"Successful\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/Providers\/AlAppCenterProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 552,
+      "length": 172,
+      "value": "\"Attempted to use AppCenter in AllegionAnalytics, but AppCenter support was not included\n\nSuggested fix: Add the following to Podfile:\n\n   pod 'AppCenter', '~> 4.4'\n\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/Providers\/AlAppCenterProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 818,
+      "length": 8,
+      "value": "\"Screen\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/Providers\/AlAppCenterProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1498,
+      "length": 6,
+      "value": "\"True\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/Providers\/AlAppCenterProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1507,
+      "length": 7,
+      "value": "\"False\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/Providers\/AlAppCenterProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1578,
+      "length": 10,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/eddie\/src\/Titanium\/OpenpathMobileAccessCore\/ios\/build\/files\/OpenpathMobile\/0.4.1\/sandbox\/ios\/Pods\/AllegionAnalytics\/Sources\/AllegionAnalytics\/Providers\/AlAppCenterProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1587,
+      "length": 1,
+      "value": "\"\""
+    }
+  ]
+}

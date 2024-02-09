@@ -17,8 +17,20 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
-  s.dependency 'OpenSSL-Universal', '1.1.180'
-  s.vendored_frameworks = 'VendoredIOSFrameworks/AWSCore.xcframework', 'VendoredIOSFrameworks/AWSLogs.xcframework', 'VendoredIOSFrameworks/Allegion_Access_BLECredential_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Access_Hub_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Access_MobileAccessSDK_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Analytics_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_BLECore_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Extensions_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Logging_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Security_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Translation_iOS.xcframework', 'VendoredIOSFrameworks/BCryptSwift.xcframework', 'VendoredIOSFrameworks/CryptoSwift.xcframework', 'VendoredIOSFrameworks/GMEllipticCurveCrypto.xcframework', 'VendoredIOSFrameworks/JOSESwift.xcframework', 'VendoredIOSFrameworks/JWTDecode.xcframework', 'VendoredIOSFrameworks/MQTTClient.xcframework', 'VendoredIOSFrameworks/ObjcExceptionBridging.xcframework', 'VendoredIOSFrameworks/OpenpathMobileAccessCore.xcframework', 'VendoredIOSFrameworks/PromiseKit.xcframework', 'VendoredIOSFrameworks/Reachability.xcframework', 'VendoredIOSFrameworks/SocketRocket.xcframework', 'VendoredIOSFrameworks/SwiftCBOR.xcframework', 'VendoredIOSFrameworks/SwiftSocket.xcframework', 'VendoredIOSFrameworks/XCGLogger.xcframework',
+  s.dependency "AWSCore"
+  s.dependency "AWSIoT"
+  s.dependency "AWSLogs"
+  s.dependency "PromiseKit"
+  s.dependency "CryptoSwift"
+  s.dependency "SwiftCBOR"
+  s.dependency "IOSSecuritySuite"
+  s.dependency "DictionaryCoder"
+  s.dependency "JOSESwift"
+  s.dependency "JWTDecode"
+  s.dependency "OpenSSL-Universal"
+  s.dependency "Reachability"
+  s.dependency "XCGLogger"
+  s.vendored_frameworks = 'VendoredIOSFrameworks/AllegionAnalytics.xcframework', 'VendoredIOSFrameworks/AllegionBLECore.xcframework', 'VendoredIOSFrameworks/AllegionExtensions.xcframework', 'VendoredIOSFrameworks/AllegionLogging.xcframework', 'VendoredIOSFrameworks/AllegionSecurity.xcframework', 'VendoredIOSFrameworks/AllegionTranslation.xcframework', 'VendoredIOSFrameworks/Allegion_Access_BLECredential_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Access_Hub_iOS.xcframework', 'VendoredIOSFrameworks/Allegion_Access_MobileAccessSDK_iOS.xcframework', 'VendoredIOSFrameworks/OpenpathMobile.xcframework',
   
   # s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   # s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }

@@ -6,6 +6,6 @@ framework module Allegion_Access_BLECredential_iOS {
 }
 
 module Allegion_Access_BLECredential_iOS.Swift {
-    header "Allegion_Access_BLECredential_iOS-Swift.h"
-    requires objc
+  header "Allegion_Access_BLECredential_iOS-Swift.h"
+  requires objc
 }

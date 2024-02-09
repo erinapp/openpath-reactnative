@@ -1,5 +1,5 @@
 import Foundation
-import OpenpathMobileAccessCore
+import OpenpathMobile
 
 @objc(OpenpathReactnative)
 class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
@@ -77,11 +77,11 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
       @objc(openpathEnableErrorNotificationsForItem:withItemType:withItemId:withResolver:withRejecter:)
       func openpathEnableErrorNotificationsForItem(enabled: Bool, itemType: String, itemId: Int, resolve:@escaping RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock) -> Void {
         self.resolver = resolve
-        
-        OpenpathMobileAccessCore.shared.enableNotificationsForItem(enabled: enabled, itemType: itemType, itemId: itemId)
+          
+          OpenpathMobileAccessCore.shared._enableNotificationsForItem(enabled: enabled, itemType: itemType, itemId: itemId)
       }
       
-      func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onProvisionResponse message: [String : Any]) {
+    @objc(openpathMobileAccessCore:onProvisionResponse:) func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onProvisionResponse message: [String : Any]) {
         if (self.resolver != nil) {
           self.resolver!(message)
           self.resolver = nil
@@ -204,7 +204,7 @@ class OpenpathReactnative: NSObject, OpenpathMobileAccessCoreDelegate {
           
       }
       
-      func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onUnlockByConnectionTypeResponse message: [String : Any]) {
+    @objc(openpathMobileAccessCore:onItemStatesUpdated:) func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobileAccessCore, onItemStatesUpdated message: [String : Any]) {
           
       }
 }

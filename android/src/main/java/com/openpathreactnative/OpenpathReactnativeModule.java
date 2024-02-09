@@ -155,7 +155,92 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         }
     }
 
-    @Override
+  @Override
+  public void onLocationStatusChanged(OpenpathLocationStatus openpathLocationStatus) {
+
+  }
+
+  @Override
+  public void onBatteryOptimizationStatusChanged(boolean b) {
+
+  }
+
+  @Override
+  public void onBluetoothStatusChanged(OpenpathBluetoothStatus openpathBluetoothStatus) {
+
+  }
+
+  @Override
+  public void onInternetStatusChanged(boolean b) {
+
+  }
+
+  @Override
+  public void onSoundStatusChanged(OpenpathSoundStatus openpathSoundStatus) {
+
+  }
+
+  @Override
+  public void onNotificationStatusChanged(OpenpathNotificationStatus openpathNotificationStatus) {
+
+  }
+
+  @Override
+  public void onAudioDeviceStatusChanged(OpenpathAudioDeviceStatus openpathAudioDeviceStatus) {
+
+  }
+
+  @Override
+  public void onFeedbackResponse(OpenpathResponse openpathResponse) {
+
+  }
+
+  @Override
+  public void onRevertResponse(OpenpathRequestResponse openpathRequestResponse) {
+
+  }
+
+  @Override
+  public void onOverrideResponse(OpenpathRequestResponse openpathRequestResponse) {
+
+  }
+
+  @Override
+  public void onTriggerLockdownPlanResponse(OpenpathRequestResponse openpathRequestResponse) {
+
+  }
+
+  @Override
+  public void onRevertLockdownPlanResponse(OpenpathRequestResponse openpathRequestResponse) {
+
+  }
+
+  @Override
+  public void onItemUnlockRequest(String s, int i, String s1) {
+
+  }
+
+  @Override
+  public void onNotificationActionClicked(String s) {
+
+  }
+
+  @Override
+  public void onBluetoothError(OpenpathResponse openpathResponse) {
+
+  }
+
+  @Override
+  public void onLockdownPlansSet(ArrayList<OpenpathLockdownPlan> arrayList) {
+
+  }
+
+  @Override
+  public void onEvent(JSONObject jsonObject) {
+
+  }
+
+  @Override
     public void onProvisionResponse(OpenpathProvisionResponse openpathProvisionResponse) {
         Gson gson = new Gson();
         String json = gson.toJson(openpathProvisionResponse);
@@ -166,7 +251,12 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         }
     }
 
-    @Override
+  @Override
+  public void onUnprovisionResponse(OpenpathUnprovisionResponse openpathUnprovisionResponse) {
+
+  }
+
+  @Override
     public void onSwitchUserResponse(OpenpathSwitchUserResponse openpathSwitchUserResponse) {
         Gson gson = new Gson();
         String json = gson.toJson(openpathSwitchUserResponse);
@@ -199,12 +289,17 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         }
     }
 
-    @Override
-    public void onItemsSet(ArrayList<OpenpathItem> arrayList, ArrayList<OpenpathOrderingItem> arrayList1) {
+  @Override
+  public void onUserSettingsSet(OpenpathUserSettings openpathUserSettings) {
 
-    }
+  }
 
-    @Override
+  @Override
+  public void onItemsSet(ArrayList<OpenpathItem> arrayList, ArrayList<OpenpathOrderingItem> arrayList1, ArrayList<OpenpathCamera> arrayList2) {
+
+  }
+
+  @Override
     public void onItemsUpdated(ArrayList<OpenpathItem> arrayList) {
         Gson gson = new Gson();
         String json = gson.toJson(arrayList);
@@ -215,78 +310,8 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         }
     }
 
-    @Override
-    public void onUnprovisionResponse(OpenpathUnprovisionResponse openpathUnprovisionResponse) {
+  @Override
+  public void onItemStatesUpdated(OpenpathItemState openpathItemState) {
 
-    }
-
-    @Override
-    public void onUserSettingsSet(OpenpathUserSettings openpathUserSettings) {
-
-    }
-
-    @Override
-    public void onLocationStatusChanged(OpenpathLocationStatus openpathLocationStatus) {
-
-    }
-
-    @Override
-    public void onBatteryOptimizationStatusChanged(boolean b) {
-
-    }
-
-    @Override
-    public void onBluetoothStatusChanged(boolean b, boolean b1) {
-
-    }
-
-    @Override
-    public void onInternetStatusChanged(boolean b) {
-
-    }
-
-    @Override
-    public void onFeedbackResponse(OpenpathResponse openpathResponse) {
-
-    }
-
-    @Override
-    public void onRevertResponse(OpenpathRequestResponse openpathRequestResponse) {
-
-    }
-
-    @Override
-    public void onOverrideResponse(OpenpathRequestResponse openpathRequestResponse) {
-
-    }
-
-    @Override
-    public void onTriggerLockdownPlanResponse(OpenpathRequestResponse openpathRequestResponse) {
-
-    }
-
-    @Override
-    public void onRevertLockdownPlanResponse(OpenpathRequestResponse openpathRequestResponse) {
-
-    }
-
-    @Override
-    public void onNotificationClicked(String s, int i) {
-
-    }
-
-    @Override
-    public void onBluetoothError(int i, String s) {
-
-    }
-
-    @Override
-    public void onLockdownPlansSet(ArrayList<OpenpathLockdownPlan> arrayList) {
-
-    }
-
-    @Override
-    public void onEvent(JSONObject jsonObject) {
-
-    }
+  }
 }

@@ -1,0 +1,53 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/eddie/src/Titanium/OpenpathMobileAccessCore/ios/build/files/OpenpathMobile/0.4.1/sandbox/ios/Pods/DerivedData/Pods/ArchiveIntermediates/OpenpathMobile/InstallationBuildProductsLocation/Library/Frameworks/AllegionAnalytics.framework/AllegionAnalytics'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x72C, size: 0x8, addend: 0x0, symName: _AllegionAnalyticsVersionString, symObjAddr: 0x0, symBinAddr: 0x7A50, symSize: 0x0 }
+  - { offsetInCU: 0x67, offset: 0x760, size: 0x8, addend: 0x0, symName: _AllegionAnalyticsVersionNumber, symObjAddr: 0x30, symBinAddr: 0x7A80, symSize: 0x0 }
+  - { offsetInCU: 0x49, offset: 0x7BE, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC6sharedACvpZ', symObjAddr: 0x1510, symBinAddr: 0xC490, symSize: 0x0 }
+  - { offsetInCU: 0xCE, offset: 0x843, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC6sharedACvgZ', symObjAddr: 0x3C, symBinAddr: 0x4054, symSize: 0x40 }
+  - { offsetInCU: 0x102, offset: 0x877, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC19initializeAppCenter12appSecretKeyySS_tF', symObjAddr: 0x7C, symBinAddr: 0x4094, symSize: 0x58 }
+  - { offsetInCU: 0x165, offset: 0x8DA, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC03addB8Provider18analyticsProvidersySayAA0cbF0_pG_tF', symObjAddr: 0xD4, symBinAddr: 0x40EC, symSize: 0x24 }
+  - { offsetInCU: 0x1CE, offset: 0x943, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC12enableLogger0E0ySb_tF', symObjAddr: 0x1E8, symBinAddr: 0x4200, symSize: 0x8 }
+  - { offsetInCU: 0x1F1, offset: 0x966, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC12enableLogger0E0ySb_tF', symObjAddr: 0x1E8, symBinAddr: 0x4200, symSize: 0x8 }
+  - { offsetInCU: 0x20A, offset: 0x97F, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCfd', symObjAddr: 0x1F0, symBinAddr: 0x4208, symSize: 0x1C }
+  - { offsetInCU: 0x241, offset: 0x9B6, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCfD', symObjAddr: 0x20C, symBinAddr: 0x4224, symSize: 0x24 }
+  - { offsetInCU: 0x2AF, offset: 0xA24, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCAA0cB10ManageableA2aDP19initializeAppCenter12appSecretKeyySS_tFTW', symObjAddr: 0x230, symBinAddr: 0x4248, symSize: 0x58 }
+  - { offsetInCU: 0x343, offset: 0xAB8, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCAA0cB10ManageableA2aDP03addB8Provider18analyticsProvidersySayAA0cbG0_pG_tFTW', symObjAddr: 0x288, symBinAddr: 0x42A0, symSize: 0x28 }
+  - { offsetInCU: 0x3C7, offset: 0xB3C, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCAA0cB10ManageableA2aDP12enableLogger0F0ySb_tFTW', symObjAddr: 0x2B0, symBinAddr: 0x42C8, symSize: 0xC }
+  - { offsetInCU: 0x45F, offset: 0xBD4, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC6shared_WZ', symObjAddr: 0x0, symBinAddr: 0x4018, symSize: 0x3C }
+  - { offsetInCU: 0x65E, offset: 0xDD3, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC15trackScreenNameyySSF', symObjAddr: 0x2BC, symBinAddr: 0x42D4, symSize: 0x144 }
+  - { offsetInCU: 0x7D8, offset: 0xF4D, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB8Provider_pWOc', symObjAddr: 0x400, symBinAddr: 0x4418, symSize: 0x44 }
+  - { offsetInCU: 0x7EB, offset: 0xF60, size: 0x8, addend: 0x0, symName: ___swift_project_boxed_opaque_existential_1, symObjAddr: 0x444, symBinAddr: 0x445C, symSize: 0x24 }
+  - { offsetInCU: 0x882, offset: 0xFF7, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC17trackSuccessEvent8category6action6paramsySS_SSSDySSypGSgtF', symObjAddr: 0x468, symBinAddr: 0x4480, symSize: 0x31C }
+  - { offsetInCU: 0xC55, offset: 0x13CA, size: 0x8, addend: 0x0, symName: ___swift_instantiateConcreteTypeFromMangledName, symObjAddr: 0x784, symBinAddr: 0x479C, symSize: 0x40 }
+  - { offsetInCU: 0xC68, offset: 0x13DD, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC17trackFailureEvent8category6action6paramsySS_SSSDySSypGSgtF', symObjAddr: 0x7C4, symBinAddr: 0x47DC, symSize: 0x318 }
+  - { offsetInCU: 0x103B, offset: 0x17B0, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerC10trackEvent8category6action6paramsySS_SSSDySSypGSgtF', symObjAddr: 0xADC, symBinAddr: 0x4AF4, symSize: 0x1F4 }
+  - { offsetInCU: 0x1300, offset: 0x1A75, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCAA0cB8ProviderA2aDP15trackScreenNameyySSFTW', symObjAddr: 0xCD0, symBinAddr: 0x4CE8, symSize: 0x20 }
+  - { offsetInCU: 0x131B, offset: 0x1A90, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCAA0cB8ProviderA2aDP17trackSuccessEvent8category6action6paramsySS_SSSDySSypGSgtFTW', symObjAddr: 0xCF0, symBinAddr: 0x4D08, symSize: 0x20 }
+  - { offsetInCU: 0x1336, offset: 0x1AAB, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCAA0cB8ProviderA2aDP17trackFailureEvent8category6action6paramsySS_SSSDySSypGSgtFTW', symObjAddr: 0xD10, symBinAddr: 0x4D28, symSize: 0x20 }
+  - { offsetInCU: 0x1351, offset: 0x1AC6, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCAA0cB8ProviderA2aDP10trackEvent8category6action6paramsySS_SSSDySSypGSgtFTW', symObjAddr: 0xD30, symBinAddr: 0x4D48, symSize: 0x20 }
+  - { offsetInCU: 0x13A8, offset: 0x1B1D, size: 0x8, addend: 0x0, symName: '_$ss12_ArrayBufferV20_consumeAndCreateNew14bufferIsUnique15minimumCapacity13growForAppendAByxGSb_SiSbtF17AllegionAnalytics02AlP8Provider_p_Tg5', symObjAddr: 0xD50, symBinAddr: 0x4D68, symSize: 0xE4 }
+  - { offsetInCU: 0x14CF, offset: 0x1C44, size: 0x8, addend: 0x0, symName: '_$sxq_xq_Iegnnrr_x3key_q_5valuetx_q_tIegnr_SHRzr0_lTRSS_ypTg575$sSD5merge_16uniquingKeysWithySDyxq_Gn_q_q__q_tKXEtKFx_q_tx_q_tcfU_SS_ypTG5Tf3nnpf_n', symObjAddr: 0xE34, symBinAddr: 0x4E4C, symSize: 0x40 }
+  - { offsetInCU: 0x1522, offset: 0x1C97, size: 0x8, addend: 0x0, symName: '_$ss22_ContiguousArrayBufferV19_uninitializedCount15minimumCapacityAByxGSi_SitcfC17AllegionAnalytics02AlI8Provider_p_Tg5Tf4nnd_n', symObjAddr: 0x1218, symBinAddr: 0x5230, symSize: 0x84 }
+  - { offsetInCU: 0x15E9, offset: 0x1D5E, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics02AlB7ManagerCMa', symObjAddr: 0x13B4, symBinAddr: 0x53CC, symSize: 0x20 }
+  - { offsetInCU: 0x15FC, offset: 0x1D71, size: 0x8, addend: 0x0, symName: '_$sypWOc', symObjAddr: 0x1404, symBinAddr: 0x541C, symSize: 0x3C }
+  - { offsetInCU: 0x160F, offset: 0x1D84, size: 0x8, addend: 0x0, symName: '_$sypWOb', symObjAddr: 0x1440, symBinAddr: 0x5458, symSize: 0x10 }
+  - { offsetInCU: 0x1678, offset: 0x1DED, size: 0x8, addend: 0x0, symName: '_$sSa6append10contentsOfyqd__n_t7ElementQyd__RszSTRd__lF17AllegionAnalytics02AlF8Provider_p_SayAeF_pGTg5', symObjAddr: 0xF8, symBinAddr: 0x4110, symSize: 0xF0 }
+  - { offsetInCU: 0x1954, offset: 0x20C9, size: 0x8, addend: 0x0, symName: '_$sSD17dictionaryLiteralSDyxq_Gx_q_td_tcfCSS_ypTg5Tf4gd_n', symObjAddr: 0x129C, symBinAddr: 0x52B4, symSize: 0x118 }
+  - { offsetInCU: 0x27, offset: 0x235F, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics19AlAppCenterProviderCfD', symObjAddr: 0x0, symBinAddr: 0x5528, symSize: 0x10 }
+  - { offsetInCU: 0x48, offset: 0x2380, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics19AlAppCenterProviderCfD', symObjAddr: 0x0, symBinAddr: 0x5528, symSize: 0x10 }
+  - { offsetInCU: 0x75, offset: 0x23AD, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics19AlAppCenterProviderCAA0cbF0A2aDP15trackScreenNameyySSFTW', symObjAddr: 0x30, symBinAddr: 0x5558, symSize: 0x4 }
+  - { offsetInCU: 0xDC, offset: 0x2414, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics19AlAppCenterProviderCAA0cbF0A2aDP17trackFailureEvent8category6action6paramsySS_SSSDySSypGSgtFTW', symObjAddr: 0x34, symBinAddr: 0x555C, symSize: 0x8 }
+  - { offsetInCU: 0x13C, offset: 0x2474, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics19AlAppCenterProviderCAA0cbF0A2aDP10trackEvent8category6action6paramsySS_SSSDySSypGSgtFTW', symObjAddr: 0x3C, symBinAddr: 0x5564, symSize: 0x8 }
+  - { offsetInCU: 0x16C, offset: 0x24A4, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics19AlAppCenterProviderC10trackEvent8category6action6paramsySS_SSSDySSypGSgtFTf4ddnd_n', symObjAddr: 0xC90, symBinAddr: 0x61B8, symSize: 0x540 }
+  - { offsetInCU: 0x3FF, offset: 0x2737, size: 0x8, addend: 0x0, symName: '_$s17AllegionAnalytics19AlAppCenterProviderCMa', symObjAddr: 0x10, symBinAddr: 0x5538, symSize: 0x20 }
+  - { offsetInCU: 0x426, offset: 0x275E, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4findys10_HashTableV6BucketV6bucket_Sb5foundtxSHRzlFSS_Tg5', symObjAddr: 0x44, symBinAddr: 0x556C, symSize: 0x64 }
+  - { offsetInCU: 0x483, offset: 0x27BB, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4find_9hashValues10_HashTableV6BucketV6bucket_Sb5foundtx_SitSHRzlFSS_Tg5', symObjAddr: 0xA8, symBinAddr: 0x55D0, symSize: 0xE0 }
+  - { offsetInCU: 0x4E6, offset: 0x281E, size: 0x8, addend: 0x0, symName: '_$ss17_NativeDictionaryV4copyyyFSS_SSTg5', symObjAddr: 0x188, symBinAddr: 0x56B0, symSize: 0x1C8 }
+  - { offsetInCU: 0x563, offset: 0x289B, size: 0x8, addend: 0x0, symName: '_$ss17_NativeDictionaryV4copyyyFSS_ypTg5', symObjAddr: 0x350, symBinAddr: 0x5878, symSize: 0x1F4 }
+  - { offsetInCU: 0x5FB, offset: 0x2933, size: 0x8, addend: 0x0, symName: '_$ss17_NativeDictionaryV20_copyOrMoveAndResize8capacity12moveElementsySi_SbtFSS_SSTg5', symObjAddr: 0x544, symBinAddr: 0x5A6C, symSize: 0x3AC }
+  - { offsetInCU: 0x6E7, offset: 0x2A1F, size: 0x8, addend: 0x0, symName: '_$ss17_NativeDictionaryV20_copyOrMoveAndResize8capacity12moveElementsySi_SbtFSS_ypTg5', symObjAddr: 0x8F0, symBinAddr: 0x5E18, symSize: 0x3A0 }
+  - { offsetInCU: 0x847, offset: 0x2B7F, size: 0x8, addend: 0x0, symName: '_$sSS3key_yp5valuetSgWOb', symObjAddr: 0x120C, symBinAddr: 0x66F8, symSize: 0x48 }
+  - { offsetInCU: 0x85A, offset: 0x2B92, size: 0x8, addend: 0x0, symName: ___swift_destroy_boxed_opaque_existential_0, symObjAddr: 0x12A4, symBinAddr: 0x6740, symSize: 0x20 }
+...

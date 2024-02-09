@@ -1,0 +1,7 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/eddie/src/Titanium/OpenpathMobileAccessCore/ios/build/files/OpenpathMobile/0.4.1/sandbox/ios/Pods/DerivedData/Pods/ArchiveIntermediates/OpenpathMobile/InstallationBuildProductsLocation/Library/Frameworks/ObjcExceptionBridging.framework/ObjcExceptionBridging'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x33, size: 0x8, addend: 0x0, symName: _ObjcExceptionBridgingVersionString, symObjAddr: 0x0, symBinAddr: 0x3FC0, symSize: 0x0 }
+  - { offsetInCU: 0x67, offset: 0x67, size: 0x8, addend: 0x0, symName: _ObjcExceptionBridgingVersionNumber, symObjAddr: 0x38, symBinAddr: 0x3FF8, symSize: 0x0 }
+...

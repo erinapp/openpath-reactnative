@@ -1,0 +1,1289 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios12.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OpenpathMobile
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AWSCore
+import AWSIoT
+import AWSLogs
+import AllegionBLECore
+import AllegionLogging
+import AllegionSecurity
+import Allegion_Access_BLECredential_iOS
+import Allegion_Access_MobileAccessSDK_iOS
+import CommonCrypto
+import CoreBluetooth
+import CoreLocation
+import CoreMotion
+import DictionaryCoder
+import Dispatch
+import Foundation
+import JOSESwift
+import JWTDecode
+import LocalAuthentication
+import Network
+import OpenSSL
+@_exported import OpenpathMobile
+import Reachability
+import Security
+import Swift
+import SystemConfiguration
+import UserNotifications
+import XCGLogger
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum AuthorizationStatusType : Swift.Int {
+  case notDetermined, denied, granted
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CoreLocation.CLLocationCoordinate2D : Swift.Equatable {
+  public static func == (lhs: CoreLocation.CLLocationCoordinate2D, rhs: CoreLocation.CLLocationCoordinate2D) -> Swift.Bool
+}
+extension Swift.String : Swift.Error {
+}
+extension Swift.Array {
+  public func peek() -> Element?
+  public func size() -> Swift.Int
+  public mutating func clean()
+  public mutating func enque(_ elm: Element)
+  public mutating func deque() -> Element?
+}
+extension Swift.Array where Element : Swift.Hashable {
+  public mutating func dequeUntilUnsedAndPeek(_ used: Swift.Set<Element>) -> Element?
+}
+public struct GetAcuConfig200ResponseDataTriggerMethodsInnerCredentialType : Swift.Codable {
+  public var modelName: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case modelName
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.GetAcuConfig200ResponseDataTriggerMethodsInnerCredentialType.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.GetAcuConfig200ResponseDataTriggerMethodsInnerCredentialType.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GetOrgCaChain200ResponseDataCertChainInner : Swift.Codable {
+  public var caOpal: Swift.String?
+  public var certOpal: Swift.String?
+  public var pem: Swift.String?
+  public init(caOpal: Swift.String? = nil, certOpal: Swift.String? = nil, pem: Swift.String? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case caOpal
+    case certOpal
+    case pem
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.GetOrgCaChain200ResponseDataCertChainInner.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.GetOrgCaChain200ResponseDataCertChainInner.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ListAcuDeployTags200ResponseMeta : Swift.Codable {
+  public var accessToken: OpenpathMobile.ListAcuDeployTags200ResponseMetaAccessToken?
+  public var siteSpecificAccess: OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccess?
+  public init(accessToken: OpenpathMobile.ListAcuDeployTags200ResponseMetaAccessToken? = nil, siteSpecificAccess: OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccess? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case accessToken
+    case siteSpecificAccess
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.ListAcuDeployTags200ResponseMeta.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.ListAcuDeployTags200ResponseMeta.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ListAcuDeployTags200ResponseMetaAccessToken : Swift.Codable {
+  public var scopeUpdatedAt: Foundation.Date?
+  public init(scopeUpdatedAt: Foundation.Date? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case scopeUpdatedAt
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.ListAcuDeployTags200ResponseMetaAccessToken.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.ListAcuDeployTags200ResponseMetaAccessToken.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ListAcuDeployTags200ResponseMetaSiteSpecificAccess : Swift.Codable {
+  public var isSiteSpecific: Swift.Bool?
+  public var siteIds: [Swift.Int]?
+  public var siteIdsByScope: OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccessSiteIdsByScope?
+  public init(isSiteSpecific: Swift.Bool? = nil, siteIds: [Swift.Int]? = nil, siteIdsByScope: OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccessSiteIdsByScope? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case isSiteSpecific
+    case siteIds
+    case siteIdsByScope
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccess.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccess.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ListAcuDeployTags200ResponseMetaSiteSpecificAccessSiteIdsByScope : Swift.Codable {
+  public var string: [Swift.Int]?
+  public init(string: [Swift.Int]? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case string
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccessSiteIdsByScope.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccessSiteIdsByScope.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ListCredentialConfigs200ResponseDataInnerOrg : Swift.Codable {
+  public var id: Swift.Double?
+  public var name: Swift.String?
+  public init(id: Swift.Double? = nil, name: Swift.String? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case name
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.ListCredentialConfigs200ResponseDataInnerOrg.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.ListCredentialConfigs200ResponseDataInnerOrg.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MasterListOrgs200ResponseDataInnerCreatedByIdentity : Swift.Codable {
+  public var id: Swift.Int
+  public var opal: Swift.String
+  public var firstName: Swift.String?
+  public var middleName: Swift.String?
+  public var lastName: Swift.String?
+  public var fullName: Swift.String?
+  public var initials: Swift.String?
+  public var email: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case opal
+    case firstName
+    case middleName
+    case lastName
+    case fullName
+    case initials
+    case email
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.MasterListOrgs200ResponseDataInnerCreatedByIdentity.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.MasterListOrgs200ResponseDataInnerCreatedByIdentity.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class OpenpathMobileAccessCore : ObjectiveC.NSObject, Foundation.URLSessionDelegate, UserNotifications.UNUserNotificationCenterDelegate {
+  public static let shared: OpenpathMobile.OpenpathMobileAccessCore
+  weak public var delegate: (any OpenpathMobile.OpenpathMobileAccessCoreDelegate)?
+  public func provision(setupMobileToken: Swift.String, callback: ((Swift.Result<OpenpathMobile.ProvisionResult, OpenpathMobile.TitaniumError>) -> Swift.Void)? = nil)
+  public func unlock(itemType: Swift.String, itemId: Swift.Int, requestId: Swift.Int, timeout: Swift.Int)
+  public func unprovision(userOpal: Swift.String?)
+  public func switchUser(userOpal: Swift.String)
+  public func syncUser()
+  public func refreshUserSettings()
+  public func softRefresh()
+  public func requestAuthorization(_ authType: Swift.String)
+  public func refreshItemState(itemType: Swift.String, itemId: Swift.Int)
+  public func _unlockByConnectionType(connectionType: Swift.String, itemType: Swift.String, itemId: Swift.Int, requestId: Swift.Int, timeout: Swift.Int)
+  public func _override(itemType: Swift.String, itemId: Swift.Int, requestId: Swift.Int, timeout: Swift.Int)
+  public func _triggerLockdownPlan(lockdownPlanId: Swift.Int, requestId: Swift.Int, timeout: Swift.Int)
+  public func _revertLockdownPlan(lockdownPlanId: Swift.Int, requestId: Swift.Int, timeout: Swift.Int)
+  public func _revertByConnectionType(connectionType: Swift.String, itemType: Swift.String, itemId: Swift.Int, requestId: Swift.Int, timeout: Swift.Int)
+  public func _revert(itemType: Swift.String, itemId: Swift.Int, requestId: Swift.Int, timeout: Swift.Int)
+  public func sendFeedback(subject: Swift.String, message: Swift.String)
+  public func _setTestMode(testMode: Swift.Int, testFrequency: Swift.Int)
+  public func _enableNotificationsForItem(enabled: Swift.Bool, itemType: Swift.String, itemId: Swift.Int)
+  public func enableErrorNotificationsForItem(enabled: Swift.Bool, itemType: Swift.String, itemId: Swift.Int)
+  @objc public func urlSession(_: Foundation.URLSession, didBecomeInvalidWithError error: (any Swift.Error)?)
+  @objc public func urlSessionDidFinishEvents(forBackgroundURLSession session: Foundation.URLSession)
+  @objc public func urlSession(_: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc deinit
+}
+extension OpenpathMobile.OpenpathMobileAccessCore {
+  @discardableResult
+  public func setLogLevel(logLevel: Swift.String) -> Swift.String
+  public func _logVerbose(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo _: [Swift.String : Any] = [:])
+  public func _logDebug(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo _: [Swift.String : Any] = [:])
+  public func _logInfo(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo _: [Swift.String : Any] = [:])
+  public func _logWarning(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo _: [Swift.String : Any] = [:])
+  public func _logError(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo _: [Swift.String : Any] = [:])
+  public func _logSevere(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo _: [Swift.String : Any] = [:])
+}
+extension OpenpathMobile.OpenpathMobileAccessCore {
+  public func getErrors() -> [Swift.String : Any]
+  public func getSdkVersion() -> [Swift.String : Any]
+  public func getAuthorizationStatuses() -> [Swift.String : Any]
+  public func _getUserAgent() -> [Swift.String : Any]
+  public func _getAppBuild() -> [Swift.String : Any]
+  public func _getAppVersion() -> [Swift.String : Any]
+  public func _getUserApiTokens() -> [Swift.String : Any]
+  public func _getUserAwsCredentials() -> [Swift.String : Any]
+}
+extension OpenpathMobile.OpenpathMobileAccessCore {
+  public func _getIsAutoAccountSwitchingEnabled() -> [Swift.String : Any]
+  public func _setIsAutoAccountSwitchingEnabled(enabled: Swift.Bool)
+  public func getUserApiToken(userOpal: Swift.String) -> [Swift.String : Any]
+  public func _getDeviceToken() -> [Swift.String : Any]
+  public func _setDeviceToken(token: Swift.String?)
+  public func _getUserOpals() -> [Swift.String]
+}
+extension OpenpathMobile.OpenpathMobileAccessCore {
+  public func getReadersInRange(rssiThreshold: Swift.Int = 0) -> [Swift.String : Any]
+}
+extension OpenpathMobile.OpenpathMobileAccessCore {
+  public func _setRssiThreshold(connectThreshold: Swift.Int, disconnectThreshold: Swift.Int)
+}
+extension OpenpathMobile.OpenpathMobileAccessCore {
+  public var _isStoreRelease: [Swift.String : Any] {
+    get
+    set
+  }
+}
+public protocol OpenpathMobileAccessCoreDelegate : AnyObject {
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onProvisionResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onSwitchUserResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onSyncUserResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onItemStatesUpdated message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onUnprovisionResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onUnlockResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onBluetoothStatusChanged message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onInternetStatusChanged message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onUserSettingsSet message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onItemsSet message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onItemsUpdated message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onOverrideResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onTriggerLockdownPlanResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onRevertLockdownPlanResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onLocationStatusChanged message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onMotionStatusChanged message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onLockdownPlansSet messages: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onNotificationStatusChanged message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onMicrophoneStatusChanged message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onRevertResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onSendFeedbackResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onSendFeedbackRequest message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onDebug message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onUnlockByConnectionTypeResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onRevertByConnectionTypeResponse message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onUnlockRequest message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onCredentialConfigSet message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onInitializeUserRequest message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onProtectedDataStatusChanged message: [Swift.String : Any])
+  func openpathMobileAccessCore(_ openpathMobileAccessCore: OpenpathMobile.OpenpathMobileAccessCore, onAppUpdatePaused message: [Swift.String : Any])
+}
+extension OpenpathMobile.OpenpathMobileAccessCoreDelegate {
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onOverrideResponse _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onTriggerLockdownPlanResponse _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onRevertLockdownPlanResponse _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onLocationStatusChanged _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onMotionStatusChanged _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onLockdownPlansSet _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onRevertResponse _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onSendFeedbackResponse _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onSendFeedbackRequest _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onDebug _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onUnlockByConnectionTypeResponse _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onRevertByConnectionTypeResponse _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onUnlockRequest _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onCredentialConfigSet _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onInitializeUserRequest _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onProtectedDataStatusChanged _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onLogoutRequest _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onAppUpdatePaused _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onNotificationStatusChanged _: [Swift.String : Any])
+  public func openpathMobileAccessCore(_: OpenpathMobile.OpenpathMobileAccessCore, onMicrophoneStatusChanged _: [Swift.String : Any])
+}
+public struct OpenpathUser : Swift.Encodable, Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: OpenpathMobile.OpenpathUser, b: OpenpathMobile.OpenpathUser) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ProvisionResult : Swift.Encodable, Swift.Hashable {
+  public let userOpal: Swift.String
+  public let environment: OpenpathMobile.ProvisionResult.Environment
+  public struct Environment : Swift.Encodable, Swift.Hashable {
+    public let heliumEndpoint: Swift.String
+    public let opalEnv: Swift.String
+    public let opalRegion: Swift.String
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: OpenpathMobile.ProvisionResult.Environment, b: OpenpathMobile.ProvisionResult.Environment) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public typealias User = OpenpathMobile.OpenpathUser
+  public let user: OpenpathMobile.ProvisionResult.User
+  public let credential: OpenpathMobile.ProvisionResult.Credential
+  public struct Credential : Swift.Encodable, Swift.Hashable {
+    public let id: Swift.Int
+    public let opal: Swift.String
+    public let credentialType: OpenpathMobile.ProvisionResult.Credential.CredentialType
+    public struct CredentialType : Swift.Encodable, Swift.Hashable {
+      public func hash(into hasher: inout Swift.Hasher)
+      public static func == (a: OpenpathMobile.ProvisionResult.Credential.CredentialType, b: OpenpathMobile.ProvisionResult.Credential.CredentialType) -> Swift.Bool
+      public func encode(to encoder: any Swift.Encoder) throws
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public let mobile: OpenpathMobile.ProvisionResult.Credential.Mobile
+    public struct Mobile : Swift.Encodable, Swift.Hashable {
+      public let id: Swift.Int
+      public let name: Swift.String
+      public let provisionedAt: Foundation.Date?
+      public let allegionMobile: OpenpathMobile.ProvisionResult.Credential.Mobile.AllegionMobileDetails?
+      public struct AllegionMobileDetails : Swift.Encodable, Swift.Hashable {
+        public let userIdExt: Foundation.UUID
+        public let credentialIdExt: Foundation.UUID
+        public let cardNumber: Swift.Int
+        public func hash(into hasher: inout Swift.Hasher)
+        public static func == (a: OpenpathMobile.ProvisionResult.Credential.Mobile.AllegionMobileDetails, b: OpenpathMobile.ProvisionResult.Credential.Mobile.AllegionMobileDetails) -> Swift.Bool
+        public func encode(to encoder: any Swift.Encoder) throws
+        public var hashValue: Swift.Int {
+          get
+        }
+      }
+      public func hash(into hasher: inout Swift.Hasher)
+      public static func == (a: OpenpathMobile.ProvisionResult.Credential.Mobile, b: OpenpathMobile.ProvisionResult.Credential.Mobile) -> Swift.Bool
+      public func encode(to encoder: any Swift.Encoder) throws
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: OpenpathMobile.ProvisionResult.Credential, b: OpenpathMobile.ProvisionResult.Credential) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public let entryCount: Swift.Int
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: OpenpathMobile.ProvisionResult, b: OpenpathMobile.ProvisionResult) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct RefreshMobileCredential200Response : Swift.Codable {
+  public var data: OpenpathMobile.RefreshMobileCredential200ResponseData
+  public var meta: OpenpathMobile.ListAcuDeployTags200ResponseMeta
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case data
+    case meta
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200Response.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200Response.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseData : Swift.Codable {
+  public var user: OpenpathMobile.RefreshMobileCredential200ResponseDataUser
+  public var userOpal: Swift.String?
+  public var credential: OpenpathMobile.RefreshMobileCredential200ResponseDataCredential
+  public var cloudKeyCredentials: [OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInner]
+  public var userScopes: [Swift.String]?
+  public var userCert: OpenpathMobile.RefreshMobileCredential200ResponseDataUserCert
+  public var userIotCert: OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCert
+  public var aws: OpenpathMobile.RefreshMobileCredential200ResponseDataAws?
+  public var environment: OpenpathMobile.RefreshMobileCredential200ResponseDataEnvironment
+  public var accessToken: OpenpathMobile.RefreshMobileCredential200ResponseDataAccessToken
+  public var entryCount: Swift.Int?
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case user
+    case userOpal
+    case credential
+    case cloudKeyCredentials
+    case userScopes
+    case userCert
+    case userIotCert
+    case aws
+    case environment
+    case accessToken
+    case entryCount
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseData.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseData.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataAccessToken : Swift.Codable {
+  public var identityId: Swift.Double?
+  public var token: Swift.String
+  public var tokenScopeList: [OpenpathMobile.RefreshMobileCredential200ResponseDataAccessTokenTokenScopeListInner]?
+  public var expiresAt: Foundation.Date?
+  public var createdAt: Foundation.Date?
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case identityId
+    case token
+    case tokenScopeList
+    case expiresAt
+    case createdAt
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataAccessToken.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataAccessToken.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataAccessTokenTokenScopeListInner : Swift.Codable {
+  public var org: OpenpathMobile.ListCredentialConfigs200ResponseDataInnerOrg?
+  public var scope: [Swift.String]?
+  public init(org: OpenpathMobile.ListCredentialConfigs200ResponseDataInnerOrg? = nil, scope: [Swift.String]? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case org
+    case scope
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataAccessTokenTokenScopeListInner.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataAccessTokenTokenScopeListInner.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataAws : Swift.Codable {
+  public var accessKeyId: Swift.String?
+  public var secretAccessKey: Swift.String?
+  public var endpoint: Swift.String?
+  public var region: Swift.String?
+  public init(accessKeyId: Swift.String? = nil, secretAccessKey: Swift.String? = nil, endpoint: Swift.String? = nil, region: Swift.String? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case accessKeyId
+    case secretAccessKey
+    case endpoint
+    case region
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataAws.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataAws.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataCloudKeyCredentialsInner : Swift.Codable {
+  public var id: Swift.Int?
+  public var cloudKey: OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInnerCloudKey?
+  public var startDate: Foundation.Date?
+  public var endDate: Foundation.Date?
+  public init(id: Swift.Int? = nil, cloudKey: OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInnerCloudKey? = nil, startDate: Foundation.Date? = nil, endDate: Foundation.Date? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case cloudKey
+    case startDate
+    case endDate
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInner.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInner.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataCloudKeyCredentialsInnerCloudKey : Swift.Codable {
+  public var id: Swift.Int?
+  public var name: Swift.String?
+  public var maxDurationSeconds: Swift.Int?
+  public init(id: Swift.Int? = nil, name: Swift.String? = nil, maxDurationSeconds: Swift.Int? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case name
+    case maxDurationSeconds
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInnerCloudKey.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInnerCloudKey.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataCredential : Swift.Codable {
+  public var id: Swift.Int
+  public var opal: Swift.String
+  public var credentialType: OpenpathMobile.GetAcuConfig200ResponseDataTriggerMethodsInnerCredentialType
+  public var startDate: Foundation.Date?
+  public var endDate: Foundation.Date?
+  public var mobile: OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobile
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case opal
+    case credentialType
+    case startDate
+    case endDate
+    case mobile
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataCredential.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataCredential.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataCredentialMobile : Swift.Codable {
+  public var id: Swift.Int
+  public var name: Swift.String
+  public var provisionedAt: Foundation.Date
+  public var appId: Swift.String?
+  public var appReadKeyNumber: Swift.Double?
+  public var appReadKey: Swift.String?
+  public var fileNumber: Swift.Double?
+  public var fileOffset: Swift.Double?
+  public var fileData: Swift.String?
+  public var allegionMobile: OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobileAllegionMobile?
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case name
+    case provisionedAt
+    case appId
+    case appReadKeyNumber
+    case appReadKey
+    case fileNumber
+    case fileOffset
+    case fileData
+    case allegionMobile
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobile.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobile.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataCredentialMobileAllegionMobile : Swift.Codable {
+  public var credentialIdExt: Swift.String?
+  public var cardNumber: Swift.Double?
+  public var facilityCode: Swift.Double?
+  public var issueCode: Swift.Double?
+  public var userIdExt: Swift.String?
+  public var idToken: Swift.String?
+  public var accessRightsToken: Swift.String?
+  public var subscriptionKey: Swift.String?
+  public var integrationId: Swift.String?
+  public init(credentialIdExt: Swift.String? = nil, cardNumber: Swift.Double? = nil, facilityCode: Swift.Double? = nil, issueCode: Swift.Double? = nil, userIdExt: Swift.String? = nil, idToken: Swift.String? = nil, accessRightsToken: Swift.String? = nil, subscriptionKey: Swift.String? = nil, integrationId: Swift.String? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case credentialIdExt
+    case cardNumber
+    case facilityCode
+    case issueCode
+    case userIdExt
+    case idToken
+    case accessRightsToken
+    case subscriptionKey
+    case integrationId
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobileAllegionMobile.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobileAllegionMobile.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataEnvironment : Swift.Codable {
+  public var heliumEndpoint: Swift.String
+  public var opalEnv: Swift.String
+  public var opalRegion: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case heliumEndpoint
+    case opalEnv
+    case opalRegion
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataEnvironment.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataEnvironment.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataUser : Swift.Codable {
+  public var id: Swift.Int
+  public var opal: Swift.String
+  public var pictureUrl: Swift.String?
+  public var identity: OpenpathMobile.MasterListOrgs200ResponseDataInnerCreatedByIdentity?
+  public var org: OpenpathMobile.RefreshMobileCredential200ResponseDataUserOrg?
+  public var hasRemoteUnlock: Swift.Bool?
+  public var isOverrideAllowed: Swift.Bool?
+  public var startDate: Foundation.Date?
+  public var endDate: Foundation.Date?
+  public var status: Swift.String?
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case opal
+    case pictureUrl
+    case identity
+    case org
+    case hasRemoteUnlock
+    case isOverrideAllowed
+    case startDate
+    case endDate
+    case status
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataUser.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataUser.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataUserCert : Swift.Codable {
+  public var id: Swift.Double?
+  public var certificate: Swift.String?
+  public var certOpal: Swift.String?
+  public var certChain: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserCertCertChainInner]?
+  public var caChain: [OpenpathMobile.GetOrgCaChain200ResponseDataCertChainInner]?
+  public init(id: Swift.Double? = nil, certificate: Swift.String? = nil, certOpal: Swift.String? = nil, certChain: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserCertCertChainInner]? = nil, caChain: [OpenpathMobile.GetOrgCaChain200ResponseDataCertChainInner]? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case certificate
+    case certOpal
+    case certChain
+    case caChain
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataUserCert.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserCert.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataUserCertCertChainInner : Swift.Codable {
+  public var caOpal: Swift.String?
+  public var certOpal: Swift.String
+  public var pem: Swift.String
+  public init(caOpal: Swift.String? = nil, certOpal: Swift.String, pem: Swift.String)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case caOpal
+    case certOpal
+    case pem
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataUserCertCertChainInner.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserCertCertChainInner.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataUserIotCert : Swift.Codable {
+  public var id: Swift.Double?
+  public var certificate: Swift.String?
+  public var certOpal: Swift.String?
+  public var awsIotCertArn: Swift.String?
+  public var thingName: Swift.String?
+  public var caChain: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCertCaChainInner]?
+  public init(id: Swift.Double? = nil, certificate: Swift.String? = nil, certOpal: Swift.String? = nil, awsIotCertArn: Swift.String? = nil, thingName: Swift.String? = nil, caChain: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCertCaChainInner]? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case certificate
+    case certOpal
+    case awsIotCertArn
+    case thingName
+    case caChain
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCert.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCert.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataUserIotCertCaChainInner : Swift.Codable {
+  public var pem: Swift.String?
+  public init(pem: Swift.String? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case pem
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCertCaChainInner.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCertCaChainInner.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefreshMobileCredential200ResponseDataUserOrg : Swift.Codable {
+  public var id: Swift.Int
+  public var opal: Swift.String?
+  public var name: Swift.String?
+  public var pictureUrl: Swift.String?
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case id
+    case opal
+    case name
+    case pictureUrl
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.RefreshMobileCredential200ResponseDataUserOrg.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.RefreshMobileCredential200ResponseDataUserOrg.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum ResultMessage<T> {
+  case failure(mssg: Swift.String, code: Swift.String)
+  case success(name: Swift.String, result: T)
+  public var message: [Swift.String : [Swift.String : Any]] {
+    get
+  }
+  public var successResult: T? {
+    get
+  }
+  public var failureResult: (message: Swift.String, code: Swift.String)? {
+    get
+  }
+  public init?(message: [Swift.String : Any])
+}
+extension OpenpathMobile.ResultMessage : Swift.Equatable {
+  public static func == (lhs: OpenpathMobile.ResultMessage<T>, rhs: OpenpathMobile.ResultMessage<T>) -> Swift.Bool
+}
+public enum TitaniumError : Swift.Error {
+  case MIGRATION_PROCESS_ERROR
+  case PROVISION_TOKEN_DECODE_ERROR
+  case PROVISION_TOKEN_PARSE_ERROR
+  case PROVISION_TOKEN_READ_ERROR
+  case PROVISION_TOKEN_VALIDATION_NETWORK_CALL_ERROR
+  case PROVISION_TOKEN_VALIDATION_HELIUM_API_ERROR
+  case PROVISION_TOKEN_VALIDATION_JSON_EXCEPTION_ERROR
+  case PROVISION_TOKEN_VALIDATION_TOKEN_INVALID_ERROR
+  case PROVISION_GENERATE_CERTIFICATE_ERROR
+  case PROVISION_TOKEN_USE_NETWORK_CALL_ERROR
+  case PROVISION_TOKEN_USE_HELIUM_API_ERROR
+  case PROVISION_USER_NOT_ACTIVE_ERROR
+  case PROVISION_TOKEN_USE_JSON_EXCEPTION_ERROR
+  case PROVISION_SAVING_USER_CERTIFICATE_ERROR
+  case PROVISION_MIGRATE_USER_CERTIFICATE_ERROR
+  case PROVISION_SAVING_CREDENTIAL_MOBILE_ERROR
+  case PROVISION_SAVING_IOT_CERTIFICATE_ERROR
+  case SYNC_USER_VALUES_NOT_FOUND_ERROR
+  case SYNC_USER_NETWORK_CALL_ERROR
+  case SYNC_USER_HELIUM_API_ERROR
+  case SYNC_USER_HELIUM_API_RE_PROVISION_ERROR
+  case SYNC_USER_HELIUM_API_USER_NOT_ACTIVE_ERROR
+  case SYNC_USER_HELIUM_API_CREDENTIAL_MISSING_ERROR
+  case SYNC_USER_HELIUM_API_USER_DELETED_ERROR
+  case SYNC_USER_JSON_EXCEPTION_ERROR
+  case SYNC_USER_SAVING_IOT_CERTIFICATE_ERROR
+  case UNPROVISION_CURRENT_USER_NOT_FOUND_ERROR
+  case UNPROVISION_TRYING_CURRENT_USER_ERROR
+  case UNPROVISION_API_ERROR
+  case UNPROVISION_API_STATUS_CODE_ERROR
+  case UNPROVISION_VALUES_NOT_FOUND_ERROR
+  case SEND_FEEDBACK_NETWORK_CALL_ERROR
+  case SEND_FEEDBACK_HELIUM_API_ERROR
+  case SEND_FEEDBACK_USER_ID_OR_ORG_ID_NOT_FOUND_ERROR
+  case SWITCH_USER_PROCESS_ERROR
+  case SWITCH_USER_DOESNT_EXIST_OR_WAS_UNPROVISIONED_ERROR
+  case GET_USER_API_TOKEN_USER_OPAL_ERROR
+  public static func == (a: OpenpathMobile.TitaniumError, b: OpenpathMobile.TitaniumError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension OpenpathMobile.TitaniumError : Swift.CaseIterable {
+  public typealias AllCases = [OpenpathMobile.TitaniumError]
+  public static var allCases: [OpenpathMobile.TitaniumError] {
+    get
+  }
+}
+extension OpenpathMobile.TitaniumError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var failureReason: Swift.String? {
+    get
+  }
+}
+public struct UseSetupMobileTokenRequest : Swift.Codable {
+  public var csr: Swift.String
+  public init(csr: Swift.String)
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case csr
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.UseSetupMobileTokenRequest.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.UseSetupMobileTokenRequest.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ValidateAccessToken200Response : Swift.Codable {
+  public var data: OpenpathMobile.ValidateAccessToken200ResponseData
+  public var meta: OpenpathMobile.ListAcuDeployTags200ResponseMeta
+  public enum CodingKeys : Swift.String, Swift.CodingKey, Swift.CaseIterable {
+    case data
+    case meta
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias AllCases = [OpenpathMobile.ValidateAccessToken200Response.CodingKeys]
+    public typealias RawValue = Swift.String
+    public static var allCases: [OpenpathMobile.ValidateAccessToken200Response.CodingKeys] {
+      get
+    }
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ValidateAccessToken200ResponseData : Swift.Codable {
+  public var isValid: Swift.Bool
+  public var err: OpenpathMobile.ValidateAccessToken200ResponseDataErr?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ValidateAccessToken200ResponseDataErr : Swift.Codable {
+  public var name: Swift.String
+  public var message: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension OpenpathMobile.AuthorizationStatusType : Swift.Equatable {}
+extension OpenpathMobile.AuthorizationStatusType : Swift.Hashable {}
+extension OpenpathMobile.AuthorizationStatusType : Swift.RawRepresentable {}
+extension OpenpathMobile.GetAcuConfig200ResponseDataTriggerMethodsInnerCredentialType.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.GetAcuConfig200ResponseDataTriggerMethodsInnerCredentialType.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.GetAcuConfig200ResponseDataTriggerMethodsInnerCredentialType.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.GetOrgCaChain200ResponseDataCertChainInner.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.GetOrgCaChain200ResponseDataCertChainInner.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.GetOrgCaChain200ResponseDataCertChainInner.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMeta.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMeta.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMeta.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaAccessToken.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaAccessToken.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaAccessToken.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccess.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccess.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccess.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccessSiteIdsByScope.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccessSiteIdsByScope.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.ListAcuDeployTags200ResponseMetaSiteSpecificAccessSiteIdsByScope.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.ListCredentialConfigs200ResponseDataInnerOrg.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.ListCredentialConfigs200ResponseDataInnerOrg.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.ListCredentialConfigs200ResponseDataInnerOrg.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.MasterListOrgs200ResponseDataInnerCreatedByIdentity.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.MasterListOrgs200ResponseDataInnerCreatedByIdentity.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.MasterListOrgs200ResponseDataInnerCreatedByIdentity.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200Response.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200Response.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200Response.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseData.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseData.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseData.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAccessToken.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAccessToken.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAccessToken.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAccessTokenTokenScopeListInner.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAccessTokenTokenScopeListInner.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAccessTokenTokenScopeListInner.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAws.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAws.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataAws.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInner.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInner.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInner.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInnerCloudKey.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInnerCloudKey.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCloudKeyCredentialsInnerCloudKey.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredential.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredential.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredential.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobile.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobile.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobile.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobileAllegionMobile.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobileAllegionMobile.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataCredentialMobileAllegionMobile.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataEnvironment.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataEnvironment.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataEnvironment.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUser.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUser.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUser.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserCert.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserCert.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserCert.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserCertCertChainInner.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserCertCertChainInner.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserCertCertChainInner.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCert.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCert.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCert.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCertCaChainInner.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCertCaChainInner.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserIotCertCaChainInner.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserOrg.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserOrg.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.RefreshMobileCredential200ResponseDataUserOrg.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.TitaniumError : Swift.Equatable {}
+extension OpenpathMobile.TitaniumError : Swift.Hashable {}
+extension OpenpathMobile.UseSetupMobileTokenRequest.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.UseSetupMobileTokenRequest.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.UseSetupMobileTokenRequest.CodingKeys : Swift.RawRepresentable {}
+extension OpenpathMobile.ValidateAccessToken200Response.CodingKeys : Swift.Equatable {}
+extension OpenpathMobile.ValidateAccessToken200Response.CodingKeys : Swift.Hashable {}
+extension OpenpathMobile.ValidateAccessToken200Response.CodingKeys : Swift.RawRepresentable {}
