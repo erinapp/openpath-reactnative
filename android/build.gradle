@@ -147,6 +147,7 @@ dependencies {
   implementation 'no.nordicsemi.android:ble:2.2.4'
   implementation 'no.nordicsemi.android.support.v18:scanner:1.4.4'
   implementation 'com.github.instacart.truetime-android:library:3.5'
+  implementation 'org.conscrypt:conscrypt-android:2.5.2'
   annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.4.1'
 }
 
