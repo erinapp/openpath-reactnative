@@ -68,9 +68,9 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
         try {
             OpenpathMobileAccessCore.getInstance().setForegroundServiceEnabled(enabled);
 
-            promise.resolve("Openpath android foreground service enable has been set to " + (enabled ? "true" : "false"));
+            this.currentPromise.resolve("Openpath android foreground service enable has been set to " + (OpenpathMobileAccessCore.getInstance().getIsForegroundServiceEnabled()));
         } catch (Exception e) {
-            promise.resolve("Failed to set openpath android foreground service with exception: " + e);
+            this.currentPromise.resolve("Failed to set openpath android foreground service with exception: " + e.toString());
         }
     }
 

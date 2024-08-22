@@ -265,10 +265,5 @@ export async function setForegroundServiceEnabled(enabled: boolean) {
       )
     );
 
-  const returnedSetForegroundServiceEnabledResponse =
-    typeof setForegroundServiceEnabledResponse === 'string'
-      ? JSON.parse(setForegroundServiceEnabledResponse)
-      : setForegroundServiceEnabledResponse;
-
-  return returnedSetForegroundServiceEnabledResponse;
+  return setForegroundServiceEnabledResponse;
 }
