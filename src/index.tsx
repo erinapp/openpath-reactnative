@@ -254,3 +254,25 @@ export async function enableErrorNotificationsForItem(
 
   return returnedGetReadersInRangeResponse;
 }
+
+export async function setForegroundServiceEnabled(
+  enabled: boolean,
+  itemId: number
+) {
+  const setForegroundServiceEnabledResponse =
+    await OpenpathReactnative.openpathSetForegroundServiceEnabled(
+      enabled,
+      itemId
+    ).catch((e: any) =>
+      console.error(
+        `Openpath setForegroundServiceEnabled error : ${JSON.stringify(e)}`
+      )
+    );
+
+  const returnedGetReadersInRangeResponse =
+    typeof setForegroundServiceEnabledResponse === 'string'
+      ? JSON.parse(setForegroundServiceEnabledResponse)
+      : setForegroundServiceEnabledResponse;
+
+  return returnedGetReadersInRangeResponse;
+}

@@ -62,6 +62,19 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
     }
 
     @ReactMethod
+    public void openpathSetForegroundServiceEnabled(boolean enabled, Promise promise) {
+        this.currentPromise = promise;
+
+        try {
+            OpenpathMobileAccessCore.getInstance().setForegroundServiceEnabled(enabled);
+
+            promise.resolve("Openpath android foreground service enable has been set to " + (enabled ? "true" : "false"));
+        } catch (Exception e) {
+            promise.resolve("Failed to set openpath android foreground service with exception: " + e);
+        }
+    }
+
+    @ReactMethod
     public void openpathProvision(String setupMobileToken, Promise promise) {
         if (this.isOpenpathInitialized) {
             this.currentPromise = promise;
@@ -200,11 +213,6 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
     }
 
     @Override
-    public void onItemsSet(ArrayList<OpenpathItem> arrayList, ArrayList<OpenpathOrderingItem> arrayList1) {
-
-    }
-
-    @Override
     public void onItemsUpdated(ArrayList<OpenpathItem> arrayList) {
         Gson gson = new Gson();
         String json = gson.toJson(arrayList);
@@ -213,6 +221,11 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
             this.currentPromise.resolve(json);
             this.currentPromise = null;
         }
+    }
+
+    @Override
+    public void onItemStatesUpdated(OpenpathItemState openpathItemState) {
+
     }
 
     @Override
@@ -226,6 +239,11 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
     }
 
     @Override
+    public void onItemsSet(ArrayList<OpenpathItem> arrayList, ArrayList<OpenpathOrderingItem> arrayList1, ArrayList<OpenpathCamera> arrayList2) {
+
+    }
+
+  @Override
     public void onLocationStatusChanged(OpenpathLocationStatus openpathLocationStatus) {
 
     }
@@ -236,12 +254,27 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
     }
 
     @Override
-    public void onBluetoothStatusChanged(boolean b, boolean b1) {
+    public void onBluetoothStatusChanged(OpenpathBluetoothStatus openpathBluetoothStatus) {
 
     }
 
     @Override
     public void onInternetStatusChanged(boolean b) {
+
+    }
+
+    @Override
+    public void onSoundStatusChanged(OpenpathSoundStatus openpathSoundStatus) {
+
+    }
+
+    @Override
+    public void onNotificationStatusChanged(OpenpathNotificationStatus openpathNotificationStatus) {
+
+    }
+
+    @Override
+    public void onAudioDeviceStatusChanged(OpenpathAudioDeviceStatus openpathAudioDeviceStatus) {
 
     }
 
@@ -271,12 +304,17 @@ public class OpenpathReactnativeModule extends ReactContextBaseJavaModule implem
     }
 
     @Override
-    public void onNotificationClicked(String s, int i) {
+    public void onItemUnlockRequest(String s, int i, String s1) {
 
     }
 
     @Override
-    public void onBluetoothError(int i, String s) {
+    public void onNotificationActionClicked(String s) {
+
+    }
+
+    @Override
+    public void onBluetoothError(OpenpathResponse openpathResponse) {
 
     }
 
