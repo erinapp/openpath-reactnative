@@ -269,10 +269,10 @@ export async function setForegroundServiceEnabled(
       )
     );
 
-  const returnedGetReadersInRangeResponse =
+  const returnedSetForegroundServiceEnabledResponse =
     typeof setForegroundServiceEnabledResponse === 'string'
       ? JSON.parse(setForegroundServiceEnabledResponse)
       : setForegroundServiceEnabledResponse;
 
-  return returnedGetReadersInRangeResponse;
+  return returnedSetForegroundServiceEnabledResponse;
 }
